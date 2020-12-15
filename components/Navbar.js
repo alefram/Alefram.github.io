@@ -1,60 +1,34 @@
-import {useState} from 'react';
-import Image from 'next/image'
+import Link from 'next/link'
+
 
 function Navbar() {
 
-  const [show, setShow] = useState(false);
-  const [mode, setMode] = useState(true);
-
-  const push = () => {
-    setShow(true);
-    if (show === true) {
-      setShow(false);
-    }      
-  }
-
-  const styleMode = () => {
-    setMode(true);
-    if (mode === true) {
-      setMode(false);
-    }
-    console.log(mode);
-  }
-
   return (
       <div>
-        <div className="flex">
-          <div className="mx-4">
-            <button className="block" onClick={push}>
-              <Image
-                src="/octocat.png"
-                width={50}
-                height={50}
-                className="rounded-full"
-              />
-              {/* <img src="/octocat.png" className="w-11 h-11 rounded-full"/>   */}
-            </button>
+        <nav className="flex p-4 md:p-10">
+          <div>
+            <Link href="/"> 
+              <a>
+                <img
+                  src="/octocat.png"
+                  className="rounded-full h-14 w-14 md:h-20 md:w-20"
+                />
+              </a>
+            </Link>
           </div>
 
-          <header className="text-2xl mt-2 ml-2 mr-4 font-semibold italic text-gray-900">
-            Alexis Fraudita
-          </header>
-        </div>
-
-        {show ? 
-          (
-            <div className="bg-blue-200 p-5  mx-5  rounded-lg font-semibold">
-              <ul>
-                <li><a href="/" className=" mr-2">Who I am?</a></li>
-                <li><a href="/Articles"className="mr-2">Articles</a></li>
-                <li><a href="/Projects"className="mr-2">Projects</a></li>
-                <li><a href="/ContactMe"className="mr-2">Contact me</a></li>
-              </ul>
-            </div>
-          ):
-          (<div/>)
-        }
-
+          <div className="ml-4 p-3 md:p-6">
+            <Link  href="/Posts">
+              <a >Posts</a>
+            </Link>
+            <Link  href="/Projects">
+              <a className=" mx-4">Projects</a>
+            </Link>
+            <Link href="/About">
+              <a>About</a> 
+            </Link>
+          </div>
+        </nav>
       </div>
   );
 }
