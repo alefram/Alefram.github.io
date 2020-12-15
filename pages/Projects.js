@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar'
+import  Project  from '../components/Project'
 import { getSortedProjectsData } from '../lib/projects'
-
 
 function Projects({allProjectsData}) {
     return (
@@ -17,15 +17,15 @@ function Projects({allProjectsData}) {
             <div className="p-4">
                 <h1 className=" text-center text-4xl text-gray-900">Projects</h1>
             </div>
-            <div>
+            <div className="p-1">
                 <ul>
                     {allProjectsData.map(({ id, date, title }) => (
                         <li key={id}>
-                            {title}
-                            <br />
-                            {id}
-                            <br />
-                            {date}
+                          <Project
+                            title={title}
+                            date={date}
+                            id={id}
+                          />
                         </li>
                     ))}
                 </ul>

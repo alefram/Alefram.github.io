@@ -17,8 +17,7 @@ function Post({postData}) {
             <br />
             <Date dateString={postData.date} />
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        </div>
-        
+        </div>  
     );
 }
 

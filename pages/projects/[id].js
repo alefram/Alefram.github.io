@@ -1,8 +1,24 @@
-import Layout from '../../components/layout'
+import Head from 'next/head';
 import { getAllProjectsIds, getProjectsData } from '../../lib/projects'
+import Navbar from '../../components/Navbar'
+import Date from '../../components/Date'
 
 function Projects({projectsData}) {
-  return <Layout>...</Layout>
+  return (
+    <div>
+      <Head>
+          <title>{projectsData.title}</title>
+          <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <Navbar/> 
+      <br />
+      {projectsData.id}
+      <br />
+      <Date dateString={projectsData.date} />
+      <div dangerouslySetInnerHTML={{ __html: projectsData.contentHtml }} />
+    </div>  
+  );
 }
 
 export async function getStaticPaths() {
@@ -13,7 +29,7 @@ export async function getStaticPaths() {
   }
 }
 export async function getStaticProps({ params }) {
-  const projectsData = getProjectsData(params.id)
+  const projectsData = await getProjectsData(params.id)
   return {
     props: {
       projectsData
