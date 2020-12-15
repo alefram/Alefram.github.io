@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar'
+import { getSortedProjectsData } from '../lib/projects'
 
-function Projects() {
+
+function Projects({allProjectsData}) {
     return (
       <div>
         <Head>
@@ -9,21 +11,37 @@ function Projects() {
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <nav className="pt-2">
-            <Navbar/>     
-        </nav>
+        <Navbar/>     
 
-        <main className="mx-2">
-            <div className="mt-6 text-center">
-                <h1 className="text-4xl ml-4 mb-2 font-semibold text-gray-900">Projects</h1>
+        <main>
+            <div className="p-4">
+                <h1 className=" text-center text-4xl text-gray-900">Projects</h1>
+            </div>
+            <div>
+                <ul>
+                    {allProjectsData.map(({ id, date, title }) => (
+                        <li key={id}>
+                            {title}
+                            <br />
+                            {id}
+                            <br />
+                            {date}
+                        </li>
+                    ))}
+                </ul>
             </div>
         </main>
-
-        <footer className="">
-
-        </footer>
       </div>
     );
 }
+
+export async function getStaticProps() {
+    const allProjectsData = getSortedProjectsData()
+    return {
+      props: {
+        allProjectsData
+      }
+    }
+  }
   
 export default Projects
