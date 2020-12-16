@@ -9,21 +9,24 @@ function Projects({allProjectsData}) {
         <Head>
             <title>Ale Ale Blog</title>
             <link rel="icon" href="/favicon.ico" />
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
+            <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:ital@1&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@800&display=swap" rel="stylesheet"></link>
         </Head>
 
         <Navbar/>     
 
         <main>
             <div className="p-4">
-                <h1 className=" text-center text-4xl text-gray-900">Projects</h1>
+                <h1 className=" text-center text-4xl text-gray-900 font-Alegreya">Projects</h1>
             </div>
             <div className="p-1">
                 <ul>
-                    {allProjectsData.map(({ id, date, title }) => (
+                    {allProjectsData.map(({ id, description, title }) => (
                         <li key={id}>
                           <Project
                             title={title}
-                            date={date}
+                            description={description}
                             id={id}
                           />
                         </li>

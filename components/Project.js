@@ -1,7 +1,6 @@
 import Link from 'next/link'
-import Date from '../components/Date'
 
-function Project({date,title,id}) {
+function Project({description,title,id}) {
     return (
         <div>
             <div className="p-2 flex flex-col">
@@ -9,7 +8,7 @@ function Project({date,title,id}) {
                     <a className="text-lg  font-medium">{title}</a>
                 </Link>
                 <small className="mt-1 text-gray-500">
-                    <Date dateString={date}/>
+                    {description}
                 </small>
             </div>
         </div>

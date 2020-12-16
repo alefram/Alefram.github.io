@@ -4,7 +4,7 @@ import Link from 'next/link'
 function Navbar() {
 
   return (
-      <div>
+      <header>
         <nav className="flex p-4 md:p-10">
           <div>
             <Link href="/"> 
@@ -17,7 +17,7 @@ function Navbar() {
             </Link>
           </div>
 
-          <div className="ml-4 p-3 md:p-6">
+          <div className="ml-2 p-3 md:p-6 flex flex-row font-Roboto">
             <Link  href="/Posts">
               <a >Posts</a>
             </Link>
@@ -29,11 +29,8 @@ function Navbar() {
             </Link>
           </div>
         </nav>
-      </div>
+      </header>
   );
 }
-  
-  {/* <div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
 
-  // <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 export default Navbar;

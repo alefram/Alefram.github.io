@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { getAllProjectsIds, getProjectsData } from '../../lib/projects'
 import Navbar from '../../components/Navbar'
-import Date from '../../components/Date'
 
 function Projects({projectsData}) {
   return (
@@ -12,11 +11,12 @@ function Projects({projectsData}) {
       </Head>
 
       <Navbar/> 
-      <br />
-      {projectsData.id}
-      <br />
-      <Date dateString={projectsData.date} />
-      <div dangerouslySetInnerHTML={{ __html: projectsData.contentHtml }} />
+      <main className="p-4">
+        <div>
+          <h1 className="text-4xl font-medium">{projectsData.id}</h1>
+        </div>
+        <div className=" mt-4 text-justify" dangerouslySetInnerHTML={{ __html: projectsData.contentHtml }} />
+      </main>
     </div>  
   );
 }
