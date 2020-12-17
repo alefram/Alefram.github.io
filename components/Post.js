@@ -5,7 +5,7 @@ function Post({date,title,id}) {
     return (
         <div>
             <div className="p-2 flex flex-col">
-                <Link href={`/projects/${id}`}>
+                <Link href={`/posts/${id}`}>
                     <a className="text-lg  font-medium">{title}</a>
                 </Link>
                 <small className="mt-1 text-gray-500">

@@ -10,7 +10,7 @@ function Posts({allPostsData}) {
                 <title>Ale Ale Blog</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
-                <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:ital@1&display=swap" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:ital@0&display=swap" rel="stylesheet"/>
                 <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@800&display=swap" rel="stylesheet"></link>
             </Head>
 

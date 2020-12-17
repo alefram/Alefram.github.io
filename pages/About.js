@@ -10,7 +10,7 @@ function About() {
                 <title>Ale Ale Blog</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
-                <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:ital@1&display=swap" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:ital@0&display=swap" rel="stylesheet"/>
                 <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@800&display=swap" rel="stylesheet"></link>
             </Head>
 
@@ -18,7 +18,8 @@ function About() {
         
             <main className="p-4">
                 <div className="mb-4">
-                    <h1 className="text-center text-4xl text-gray-900 mb-4 font-Alegreya"> Who I am ?</h1>
+                    <h1 className="text-center text-4xl
+                     text-gray-900 mb-4 font-Alegreya"> Who I am ?</h1>
                     <p className="text-justify font-Roboto">
                     I am Electrical Engineer Student at Central University of Venezuela, also software developer Interested in machine learning and robotics for aerospace and medical applications. Currently, i am working on my Bachelor thesis that is about a collection of Reinforcement Learning enviroments for a robot arm in different tasks.
                     </p>
