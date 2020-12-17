@@ -18,7 +18,7 @@ function Posts({allPostsData}) {
 
             <main className="lg:mx-80">
                 <div className="p-4">
-                    <h1 className=" text-4xl text-center text-gray-900 font-Alegreya">Posts</h1>
+                    <h1 className=" text-4xl text-center text-texts font-Alegreya">Posts</h1>
                 </div>
                 <div  className="p-1">
                     <ul className="justify-center">

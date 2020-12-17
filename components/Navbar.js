@@ -10,7 +10,7 @@ function Navbar() {
             <Link href="/"> 
               <a>
                 <img
-                  src="/octocat.png"
+                  src="/yo.jpg"
                   className=" shadow rounded-full h-14 w-14 md:h-20 md:w-20"
                 />
               </a>

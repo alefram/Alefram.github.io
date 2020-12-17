@@ -14,9 +14,9 @@ function Projects({projectsData}) {
       <Navbar/> 
       <main className="p-4 lg:mx-80">
         <div>
-          <h1 className="text-4xl font-Alegreya font-semibold">{projectsData.id}</h1>
+          <h1 className="text-4xl font-Alegreya font-semibold text-texts">{projectsData.id}</h1>
         </div>
-        <div className=" mt-6 text-justify font-Roboto" dangerouslySetInnerHTML={{ __html: projectsData.contentHtml }} />
+        <div className=" mt-6 text-justify font-Roboto  text-texts" dangerouslySetInnerHTML={{ __html: projectsData.contentHtml }} />
       </main>
     </div>  
   );

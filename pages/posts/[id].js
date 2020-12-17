@@ -16,12 +16,12 @@ function Post({postData}) {
             <Navbar/> 
             <main className="p-4 lg:mx-80">
               <div>
-                <h1 className="text-4xl font-Alegreya font-semibold ">{postData.id}</h1>
+                <h1 className="text-4xl font-Alegreya font-semibold text-texts ">{postData.id}</h1>
                 <small className="mt-1">
                   <Date dateString={postData.date}/>
                 </small>
               </div>
-              <div className=" mt-4 text-justify font-Roboto" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+              <div className=" mt-4 text-justify font-Roboto text-texts" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </main>
         </div>  
     );
