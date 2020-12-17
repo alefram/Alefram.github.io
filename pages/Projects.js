@@ -16,7 +16,7 @@ function Projects({allProjectsData}) {
 
         <Navbar/>     
 
-        <main>
+        <main className="lg:mx-80">
             <div className="p-4">
                 <h1 className=" text-center text-4xl text-gray-900 font-Alegreya">Projects</h1>
             </div>

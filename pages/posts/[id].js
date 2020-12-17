@@ -14,7 +14,7 @@ function Post({postData}) {
             </Head>
 
             <Navbar/> 
-            <main className="p-4">
+            <main className="p-4 lg:mx-80">
               <div>
                 <h1 className="text-4xl font-Alegreya font-semibold ">{postData.id}</h1>
                 <small className="mt-1">

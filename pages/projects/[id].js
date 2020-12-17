@@ -12,7 +12,7 @@ function Projects({projectsData}) {
       </Head>
 
       <Navbar/> 
-      <main className="p-4">
+      <main className="p-4 lg:mx-80">
         <div>
           <h1 className="text-4xl font-Alegreya font-semibold">{projectsData.id}</h1>
         </div>

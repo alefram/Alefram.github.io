@@ -5,7 +5,7 @@ function Navbar() {
 
   return (
       <header>
-        <nav className="flex p-4 md:p-10">
+        <nav className="flex p-4 md:p-10 lg:mx-72">
           <div>
             <Link href="/"> 
               <a>

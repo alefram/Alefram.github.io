@@ -16,7 +16,7 @@ function About() {
 
             <Navbar/>     
         
-            <main className="p-4">
+            <main className="p-4 lg:mx-80">
                 <div className="mb-4">
                     <h1 className="text-center text-4xl
                      text-gray-900 mb-4 font-Alegreya"> Who I am ?</h1>
