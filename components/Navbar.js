@@ -11,13 +11,13 @@ function Navbar() {
               <a>
                 <img
                   src="/yo.jpg"
-                  className=" shadow rounded-full h-14 w-14 md:h-20 md:w-20"
+                  className="transform duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 shadow rounded-full h-14 w-14 md:h-20 md:w-20"
                 />
               </a>
             </Link>
           </div>
 
-          <div className="ml-2 p-3 md:p-6 flex flex-row font-Roboto font-bold">
+          <div className="ml-2 p-3 md:p-6 flex flex-row font-Roboto font-bold text-texts">
             <Link  href="/Posts">
               <a className="hover:text-blue-600 transform duration-500 ease-in-out hover:-translate-y-1 hover:scale-110">Posts</a>
             </Link>

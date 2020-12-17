@@ -7,7 +7,7 @@ function Projects({allProjectsData}) {
     return (
       <div>
         <Head>
-            <title>Ale Ale Blog</title>
+            <title>My Projects  </title>
             <link rel="icon" href="/favicon.ico" />
             <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
             <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:ital@0&display=swap" rel="stylesheet"/>

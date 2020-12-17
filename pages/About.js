@@ -7,7 +7,7 @@ function About() {
     return (
         <div>
             <Head>
-                <title>Ale Ale Blog</title>
+                <title>About me</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
                 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:ital@0&display=swap" rel="stylesheet"/>
@@ -50,7 +50,7 @@ function About() {
                 </div>
 
                 <div>
-                    <h1 className="text-4xl font-Alegreya text-center text-gray-900">Contact Me</h1>
+                    <h1 className="text-4xl font-Alegreya text-center text-texts">Contact Me</h1>
                     <div className="p-4 flex flex-row justify-center">
                         <Link href="https://github.com/Alexfm101">
                             <img src="/github.png"/>
