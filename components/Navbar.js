@@ -9,7 +9,7 @@ function Navbar() {
             <Link href="/"> 
               <a>
                 <img
-                  src="/yo.jpg"
+                  src="/octocat.png"
                   className="transform duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 shadow rounded-full h-14 w-14 md:h-20 md:w-20"
                 />
               </a>
