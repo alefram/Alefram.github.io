@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function About() {
 
@@ -52,15 +53,23 @@ function About() {
                 <div>
                     <h1 className="text-4xl font-Alegreya text-center text-texts">Contact Me</h1>
                     <div className="p-4 flex flex-row justify-center">
-                        <Link href="https://github.com/Alexfm101">
-                            <img src="/github.png"/>
-                        </Link>
-                        <Link href="https://www.linkedin.com/in/alexis-fraudita/">
-                            <img className="h-8 w-8 mx-5" src="/linkedin.png" alt=""/>
-                        </Link>
-                        <Link href="https://twitter.com/FrauditaAlexis">
-                            <img className="h-8 w-8" src="/twitter.svg" alt=""/>
-                        </Link>
+                        <div>
+                            <Link href="https://github.com/Alexfm101">
+                                <Image src="/github.png" width={30} height={30}
+                                />
+                            </Link>
+                        </div>
+                        <div className="mx-5">
+                            <Link href="https://www.linkedin.com/in/alexis-fraudita/">
+                                <Image src="/linkedin.png" width={35} height={30}
+                                />
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href="https://twitter.com/FrauditaAlexis">
+                                <Image src="/twitter.svg" width={30} height={30}/>
+                            </Link>
+                        </div>
                     </div>
                     <p className="text-center text-lg  text-gray-500">
                         cuatroalejandro@gmail.com
