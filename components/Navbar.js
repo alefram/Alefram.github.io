@@ -16,7 +16,7 @@ function Navbar() {
             </Link>
           </div>
 
-          <div className="ml-2 p-3 md:p-6 flex flex-row font-Roboto font-bold text-texts">
+          <div className="ml-2 p-3 md:p-6 flex flex-row font-Roboto font-bold text-gray-500">
             <Link  href="/Posts">
               <a className="hover:text-blue-600 transform duration-500 ease-in-out hover:-translate-y-1 hover:scale-110">Posts</a>
             </Link>
