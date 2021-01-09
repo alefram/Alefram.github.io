@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
+
 
 function Navbar() {
 
@@ -6,13 +8,15 @@ function Navbar() {
       <header>
         <nav className="flex p-4 md:p-10 lg:mx-72">
           <div>
-            <Link href="/"> 
+            <Link href="/">
               <a>
-                <img
-                  src="/octocat.png"
-                  className="transform duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 shadow rounded-full h-14 w-14 md:h-20 md:w-20"
+                <Image
+                  src="/yo.jpeg"
+                  width={100}
+                  height={100}
+                  className=" p-10 rounded-full"
                 />
-              </a>
+              </a> 
             </Link>
           </div>
 

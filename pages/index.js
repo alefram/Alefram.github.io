@@ -5,7 +5,7 @@ export default function Home() {
 
 
   return (
-    <div>
+    <>
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
@@ -23,7 +23,7 @@ export default function Home() {
           Hey I am <a className="font-bold italic"> Alexis Fraudita</a> , I am software Developer, Electrical Engineer student and sometimes Table Tennis Player. I created this blog for share what I'm learning about Machine Learning, Robotics and Electronics... maybe some tutorials too. I hope you enjoy and have fun making cool stuff.
         </p>     
       </main>
-    </div>
+    </>
   );
 }
 
