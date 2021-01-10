@@ -2,16 +2,16 @@ import Link from 'next/link'
 
 function Project({description,title,id}) {
     return (
-        <div>
-            <div className="p-2 flex flex-col">
+        <>
+            <div className="p-2 flex m-2 flex-col">
                 <Link href={`/projects/${id}`}>
-                    <a className="text-lg  font-medium text-texts">{title}</a>
+                    <a className="text-lg  font-normal text-titles">{title}</a>
                 </Link>
-                <small className="mt-1 text-gray-500">
+                <small className="mt-1 text-gray-50">
                     {description}
                 </small>
             </div>
-        </div>
+        </>
     );
 }
 

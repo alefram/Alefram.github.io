@@ -3,16 +3,16 @@ import Date from './Date'
 
 function Post({date,title,id}) {
     return (
-        <div>
-            <div className="p-2 flex flex-col">
+        <>
+            <div className="p-2 flex m-2 flex-col">
                 <Link href={`/posts/${id}`}>
-                    <a className="text-lg  font-medium text-texts">{title}</a>
+                    <a className="text-lg  font-normal text-titles">{title}</a>
                 </Link>
-                <small className="mt-1 text-gray-500">
+                <small className="mt-1 text-gray-50">
                     <Date dateString={date}/>
                 </small>
             </div>
-        </div>
+        </>
     );
 }
 

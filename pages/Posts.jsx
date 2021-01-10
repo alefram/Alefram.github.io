@@ -5,7 +5,7 @@ import { getSortedPostsData } from '../lib/posts'
 
 function Posts({allPostsData}) {
     return (
-        <div>
+        <div className="bg-bgdark"> 
             <Head>
                 <title>My posts</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -16,12 +16,12 @@ function Posts({allPostsData}) {
 
             <Navbar/>     
 
-            <main className="lg:mx-80">
-                <div className="p-4">
-                    <h1 className=" text-4xl text-center text-texts font-Alegreya">Posts</h1>
+            <main className="container mx-auto px-5 lg:max-w-screen-md">
+                <div className="m-2 p-4">
+                    <h1 className=" text-4xl text-center text-titles font-Alegreya">Posts</h1>
                 </div>
-                <div  className="p-1">
-                    <ul className="justify-center">
+                <div>
+                    <ul>
                         {allPostsData.map(({ id, date, title }) => (
                             <li key={id}>
                                 <Post

@@ -9,10 +9,11 @@ module.exports = {
         'Roboto':['Roboto', 'sans-serif'],
         'Alegreya': ['Alegreya', 'serif']
       },
-    colors: {
-      'texts': '#202124',
-    }
-
+      colors: {
+        'subtitles': '#1f6f8b',
+        'bgdark': '#1c2b2d',
+        'titles': '#e6d5b8',
+      }
     },
   },
   variants: {

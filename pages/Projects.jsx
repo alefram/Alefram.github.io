@@ -5,7 +5,7 @@ import { getSortedProjectsData } from '../lib/projects'
 
 function Projects({allProjectsData}) {
     return (
-      <div>
+      <div className="bg-bgdark">
         <Head>
             <title>My Projects  </title>
             <link rel="icon" href="/favicon.ico" />
@@ -16,11 +16,11 @@ function Projects({allProjectsData}) {
 
         <Navbar/>     
 
-        <main className="lg:mx-80">
+        <main className="container mx-auto px-5 lg:max-w-screen-md">
             <div className="p-4">
-                <h1 className=" text-center text-4xl text-texts font-Alegreya">Projects</h1>
+                <h1 className="text-4xl text-center text-titles font-Alegreya">Projects</h1>
             </div>
-            <div className="p-1">
+            <div>
                 <ul>
                     {allProjectsData.map(({ id, description, title }) => (
                         <li key={id}>

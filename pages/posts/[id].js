@@ -5,7 +5,7 @@ import Date from '../../components/Date'
 
 function Post({postData}) {
   return (
-        <div>
+        <div className="bg-bgdark">
             <Head>
                 <title>{postData.title}</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -14,14 +14,14 @@ function Post({postData}) {
             </Head>
 
             <Navbar/> 
-            <main className="p-4 lg:mx-80">
+            <main className="container mx-auto px-5 lg:max-w-screen-md">
               <div>
-                <h1 className="text-4xl font-Alegreya font-semibold text-texts ">{postData.id}</h1>
-                <small className="mt-1">
+                <h1 className="text-4xl font-Alegreya font-semibold text-titles ">{postData.id}</h1>
+                <small className="mt-1 text-gray-100">
                   <Date dateString={postData.date}/>
                 </small>
               </div>
-              <div className=" mt-4 text-justify font-Roboto text-texts" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+              <div className=" mt-4 text-justify font-Roboto text-gray-50 " dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </main>
         </div>  
     );

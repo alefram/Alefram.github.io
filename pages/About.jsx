@@ -6,7 +6,7 @@ import Image from 'next/image'
 function About() {
 
     return (
-        <div>
+        <div className="bg-bgdark">
             <Head>
                 <title>About me</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -17,30 +17,28 @@ function About() {
 
             <Navbar/>     
         
-            <main className="p-4 lg:mx-80">
+            <main className="container mx-auto px-5 lg:max-w-screen-md">
                 <div className="mb-4">
                     <h1 className="text-center text-4xl
-                     text-texts  mb-4 font-Alegreya"> Who I am ?</h1>
-                    <p className="text-justify font-Roboto text-texts">
+                     text-titles  mb-4 font-Alegreya"> Who I am ?</h1>
+                    <p className="text-justify font-Roboto text-gray-50">
                     I am Electrical Engineer Student at Central University of Venezuela, also software developer Interested in machine learning and robotics for aerospace and medical applications. Currently, i am working on my Bachelor thesis that is about a collection of Reinforcement Learning enviroments for a robot arm in different tasks.
                     </p>
                 </div>
-
                 <div className="mb-10">
                     <div className="mb-4">
-                        <h1 className="text-center text-3xl font-Alegreya text-blue-900 font-normal mb-2">
+                        <h1 className="text-center text-3xl font-Alegreya text-subtitles font-normal mb-2">
                             Education
                         </h1>
-                        <div className="font-Roboto text-texts">
+                        <div className="font-Roboto text-gray-50">
                             <ul>
                                 <li>Electrical engineer student at Central University of Venezuela</li>
                             </ul>
                         </div>
                     </div>
-
                     <div className="">
-                        <h1 className="text-center text-3xl font-Alegreya text-blue-900 mb-2">Interested</h1>
-                        <div className="font-Roboto text-texts">
+                        <h1 className="text-center text-3xl font-Alegreya text-subtitles    mb-2">Interested</h1>
+                        <div className="font-Roboto text-gray-50">
                             <ul>
                                 <li>Tiny Machine Learning</li>
                                 <li>Reinforcement Learning</li>
@@ -49,17 +47,16 @@ function About() {
                         </div>
                     </div>
                 </div>
-
                 <div>
-                    <h1 className="text-4xl font-Alegreya text-center text-texts">Contact Me</h1>
-                    <div className="p-4 flex flex-row justify-center">
+                    <h1 className="text-4xl font-Alegreya text-center text-titles">Contact Me</h1>
+                    <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
                             <Link href="https://github.com/Alexfm101">
                                 <Image src="/github.png" width={30} height={30}
                                 />
                             </Link>
                         </div>
-                        <div className="mx-5">
+                        <div>
                             <Link href="https://www.linkedin.com/in/alexis-fraudita/">
                                 <Image src="/linkedin.png" width={35} height={30}
                                 />
@@ -71,9 +68,9 @@ function About() {
                             </Link>
                         </div>
                     </div>
-                    <p className="text-center text-lg  text-gray-500">
+                    <h5 className="text-center text-lg  text-gray-50">
                         cuatroalejandro@gmail.com
-                    </p>
+                    </h5>
                 </div>     
             </main>
         </div>
