@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar'
 import Post from '../components/Post'
 import { getSortedPostsData } from '../lib/posts'
@@ -34,6 +35,9 @@ function Posts({allPostsData}) {
                     </ul>
                 </div>
             </main>
+            <footer>
+                <Footer/>
+            </footer>
         </div>
     );
 }

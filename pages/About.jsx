@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Navbar from '../components/Navbar'
 import Link from 'next/link'
 import Image from 'next/image'
+import Footer from '../components/Footer';
 
 function About() {
 
@@ -52,7 +53,7 @@ function About() {
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
                             <Link href="https://github.com/Alexfm101">
-                                <Image src="/github.png" width={30} height={30}
+                                <Image src="/images/github.png" width={30} height={30}
                                 />
                             </Link>
                         </div>
@@ -64,7 +65,7 @@ function About() {
                         </div>
                         <div>
                             <Link href="https://twitter.com/FrauditaAlexis">
-                                <Image src="/twitter.svg" width={30} height={30}/>
+                                <Image src="/images/twitter.png" width={30} height={30}/>
                             </Link>
                         </div>
                     </div>

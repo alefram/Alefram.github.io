@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar'
 import  Project  from '../components/Project'
 import { getSortedProjectsData } from '../lib/projects'
@@ -34,6 +35,9 @@ function Projects({allProjectsData}) {
                 </ul>
             </div>
         </main>
+        <footer>
+          <Footer/>
+        </footer>
       </div>
     );
 }
