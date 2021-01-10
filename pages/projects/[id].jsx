@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import { getAllProjectsIds, getProjectsData } from '../../lib/projects'
 import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 function Projects({projectsData}) {
   return (
-    <div>
+    <div className="bg-bgdark">
       <Head>
           <title>{projectsData.title}</title>
           <link rel="icon" href="/favicon.ico" />
@@ -12,12 +13,15 @@ function Projects({projectsData}) {
       </Head>
 
       <Navbar/> 
-      <main className="p-4 lg:mx-80">
+      <main className="container mx-auto px-5 lg:max-w-screen-md">
         <div>
-          <h1 className="text-4xl font-Alegreya font-semibold text-texts">{projectsData.id}</h1>
+          <h1 className="text-4xl font-Alegreya font-semibold text-titles">{projectsData.id}</h1>
         </div>
-        <div className=" mt-6 text-justify font-Roboto  text-texts" dangerouslySetInnerHTML={{ __html: projectsData.contentHtml }} />
+        <div className=" mt-6 text-justify font-Roboto  text-gray-50" dangerouslySetInnerHTML={{ __html: projectsData.contentHtml }} />
       </main>
+      <footer>
+        <Footer/>
+      </footer>
     </div>  
   );
 }

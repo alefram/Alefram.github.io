@@ -48,7 +48,7 @@ function About() {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="p-4">
                     <h1 className="text-4xl font-Alegreya text-center text-titles">Contact Me</h1>
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
@@ -69,7 +69,7 @@ function About() {
                             </Link>
                         </div>
                     </div>
-                    <h5 className="text-center text-lg  text-gray-50">
+                    <h5 className="text-center text-lg text-gray-50">
                         cuatroalejandro@gmail.com
                     </h5>
                 </div>     

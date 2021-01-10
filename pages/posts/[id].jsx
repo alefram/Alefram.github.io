@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Navbar from '../../components/Navbar'
 import Date from '../../components/Date'
+import Footer from '../../components/Footer'
 
 function Post({postData}) {
   return (
@@ -23,6 +24,9 @@ function Post({postData}) {
               </div>
               <div className=" mt-4 text-justify font-Roboto text-gray-50 " dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </main>
+            <footer>
+              <Footer/>
+            </footer>
         </div>  
     );
 }
