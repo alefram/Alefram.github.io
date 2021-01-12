@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 
 function Navbar() {
@@ -7,15 +7,16 @@ function Navbar() {
   return (
     <>
       <nav className="flex p-4 container mx-auto lg:max-w-screen-md justify-between">
-        <div className="mt-1">
+        <div className="mt-1 pr-4 py-4">
           <Link href="/">
-            <a>
-              <Image
+            <a className="text-titles text-2xl font-Alegreya font-bold italic ">
+              Alexis Fraudita
+              {/* <Image
                 src="/yo.jpeg"
                 width={100}
                 height={100}
                 className=" rounded-full"
-              />
+              /> */}
             </a> 
           </Link>
         </div>
