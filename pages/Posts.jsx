@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar'
-import Post from '../components/Post'
-import { getSortedPostsData } from '../lib/posts'
+import Navbar from '../components/Navbar';
+import Post from '../components/Post';
+import { getSortedPostsData } from '../lib/posts';
 
-function Posts({allPostsData}) {
+const Posts = ({allPostsData}) => {
     return (
         <div className="bg-bgdark"> 
             <Head>
@@ -40,7 +40,7 @@ function Posts({allPostsData}) {
             </footer>
         </div>
     );
-}
+};
 
 export async function getStaticProps() {
     const allPostsData = getSortedPostsData()
@@ -49,6 +49,6 @@ export async function getStaticProps() {
         allPostsData
       }
     }
-  }
+};
   
-export default Posts
+export default Posts;

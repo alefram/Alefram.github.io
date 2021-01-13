@@ -1,10 +1,8 @@
 import Head from 'next/head';
-import Navbar from '../components/Navbar'
-import  Footer from '../components/Footer'
+import Navbar from '../components/Navbar';
+import  Footer from '../components/Footer';
 
-export default function Home() {
-
-
+const Home = () => {
   return (
     <div className="bg-bgdark">
       <Head>
@@ -33,6 +31,6 @@ export default function Home() {
   );
 }
 
-
+export default Home;
 // #202124
 

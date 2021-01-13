@@ -1,8 +1,7 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 
-function Navbar() {
-
+const Navbar = () => {
   return (
     <>
       <nav className="flex flex-col md:flex-row p-4 container mx-auto lg:max-w-screen-md justify-between">
@@ -27,6 +26,6 @@ function Navbar() {
       </nav>
     </>
   );
-}
+};
 
 export default Navbar;

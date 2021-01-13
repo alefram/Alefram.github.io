@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import { getAllProjectsIds, getProjectsData } from '../../lib/projects'
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import { getAllProjectsIds, getProjectsData } from '../../lib/projects';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
-function Projects({projectsData}) {
+const Projects = ({projectsData}) => {
   return (
     <div className="bg-bgdark">
       <Head>
@@ -24,7 +24,7 @@ function Projects({projectsData}) {
       </footer>
     </div>  
   );
-}
+};
 
 export async function getStaticPaths() {
   const paths = getAllProjectsIds()
@@ -32,7 +32,8 @@ export async function getStaticPaths() {
     paths,
     fallback: false
   }
-}
+};
+
 export async function getStaticProps({ params }) {
   const projectsData = await getProjectsData(params.id)
   return {
@@ -40,7 +41,7 @@ export async function getStaticProps({ params }) {
       projectsData
     }
   }
-}
+};
 
 
-export default Projects
+export default Projects;

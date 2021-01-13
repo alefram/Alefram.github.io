@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from 'next/link';
+import Image from 'next/image';
 
-function Project({description,title,id}) {
+const Project = ({description,title,id}) => {
     return (
         <>
             <div className="p-2 flex flex-col md:flex-row m-2 space-x-8  mt-5  shadow-lg rounded-lg border border-titles">
@@ -23,6 +23,6 @@ function Project({description,title,id}) {
             </div>
         </>
     );
-}
+};
 
-export default Project
+export default Project;

@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import { getAllPostIds, getPostData } from '../../lib/posts'
-import Navbar from '../../components/Navbar'
-import Date from '../../components/Date'
-import Footer from '../../components/Footer'
+import { getAllPostIds, getPostData } from '../../lib/posts';
+import Navbar from '../../components/Navbar';
+import Date from '../../components/Date';
+import Footer from '../../components/Footer';
 
-function Post({postData}) {
+const Post = ({postData}) => {
   return (
         <div className="bg-bgdark">
             <Head>
@@ -29,7 +29,7 @@ function Post({postData}) {
             </footer>
         </div>  
     );
-}
+};
 
 export async function getStaticPaths() {
   const paths = getAllPostIds()
@@ -37,7 +37,7 @@ export async function getStaticPaths() {
     paths,
     fallback: false
   }
-}
+};
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
@@ -46,6 +46,6 @@ export async function getStaticProps({ params }) {
       postData
     }
   }
-}
+};
 
-export default Post
+export default Post;

@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import Date from './Date'
+import Link from 'next/link';
+import Date from './Date';
 
-function Post({date,title,id}) {
+const Post = ({date,title,id}) => {
     return (
         <>
             <div className="p-2 flex m-2 flex-col">
@@ -16,4 +16,4 @@ function Post({date,title,id}) {
     );
 }
 
-export default Post
+export default Post;

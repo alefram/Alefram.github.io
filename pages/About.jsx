@@ -1,11 +1,9 @@
 import Head from 'next/head';
-import Navbar from '../components/Navbar'
-import Link from 'next/link'
-import Image from 'next/image'
-import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import Link from 'next/link';
+import Image from 'next/image';
 
-function About() {
-
+const About = () => {
     return (
         <div className="bg-bgdark">
             <Head>
@@ -59,7 +57,7 @@ function About() {
                         </div>
                         <div>
                             <Link href="https://www.linkedin.com/in/alexis-fraudita/">
-                                <Image src="/linkedin.png" width={35} height={30}
+                                <Image src="/images/linkedin.png" width={35} height={30}
                                 />
                             </Link>
                         </div>
@@ -76,7 +74,7 @@ function About() {
             </main>
         </div>
     );
-}
+};
 
 
-export  default About
+export  default About;

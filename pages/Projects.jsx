@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar'
-import  Project  from '../components/Project'
-import { getSortedProjectsData } from '../lib/projects'
+import Navbar from '../components/Navbar';
+import  Project  from '../components/Project';
+import { getSortedProjectsData } from '../lib/projects';
 
-function Projects({allProjectsData}) {
+const Projects = ({allProjectsData}) => {
     return (
       <div className="bg-bgdark">
         <Head>
@@ -40,7 +40,7 @@ function Projects({allProjectsData}) {
         </footer>
       </div>
     );
-}
+};
 
 export async function getStaticProps() {
     const allProjectsData = getSortedProjectsData()
@@ -49,6 +49,6 @@ export async function getStaticProps() {
         allProjectsData
       }
     }
-  }
+};
   
-export default Projects
+export default Projects;
