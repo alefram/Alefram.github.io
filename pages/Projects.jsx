@@ -11,15 +11,16 @@ const Projects = ({allProjectsData}) => {
             <title>My Projects  </title>
             <link rel="icon" href="/favicon.ico" />
             <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
-            <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:ital@0&display=swap" rel="stylesheet"/>
-            <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@800&display=swap" rel="stylesheet"></link>
+            <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
         </Head>
 
         <Navbar/>     
 
         <main className="container mx-auto px-5 lg:max-w-screen-md">
             <div className="p-4">
-                <h1 className="text-5xl text-center text-title font-Alegreya">Projects</h1>
+                <h1 className="text-5xl text-center text-text font-bebasNue">Projects</h1>
             </div>
             <div>
                 <ul>

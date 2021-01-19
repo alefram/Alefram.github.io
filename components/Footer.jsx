@@ -8,29 +8,22 @@ const Footer = () => {
                 <div className="flex justify-center space-x-4 mt-4">
                     <Link href="https://github.com/Alexfm101">
                         <a>
-                            <Image
-                                src="/images/github.png"
-                                width={30}
-                                height={30}
-                            />
-                        </a> 
+                            <Image src="/images/github.svg" height={30} width={30}/>
+                        </a>
                     </Link>
                     <Link href="https://twitter.com/FrauditaAlexis">
                         <a>
-                            <Image
-                                src="/images/twitter.png"
-                                width={30}
-                                height={30}
-                            />
-                        </a> 
+                            <Image src="/images/twitter.svg" height={30} width={30}/>                    
+                        </a>
                     </Link>
                 </div>
-                <div className="text-center mt-1 text-lg text-gray-600">
+                <div className="text-center mt-1 text-lg text-text">
                     <small>
-                        Make with &#128153; and <Link href="https://tailwindcss.com/"><a className="font-bold text-text">Tailwindcss</a></Link> and deploy on <Link href="https://vercel.com/"><a className="font-bold text-text">Vercel</a></Link>
+                        Make with &#128153; and <Link href="https://tailwindcss.com/"><a className="font-bold text-supertext">Tailwindcss</a></Link> and deploy on <Link href="https://vercel.com/"><a className="font-bold text-supertext">Vercel</a></Link>
                     </small> 
                 </div>
             </div>
+            {/* <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div> */}
         </>
     );
 };

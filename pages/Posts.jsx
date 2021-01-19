@@ -11,15 +11,16 @@ const Posts = ({allPostsData}) => {
                 <title>My posts</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
-                <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:ital@0&display=swap" rel="stylesheet"/>
-                <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@800&display=swap" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
             </Head>
 
             <Navbar/>     
 
             <main className="container mx-auto px-5 lg:max-w-screen-md">
                 <div className="m-2 p-4">
-                    <h1 className=" text-5xl text-center text-title font-Alegreya">Posts</h1>
+                    <h1 className=" text-5xl text-center text-gray-800 font-bebasNue">Posts</h1>
                 </div>
                 <div>
                     <ul>

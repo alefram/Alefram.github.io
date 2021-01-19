@@ -5,16 +5,16 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'Merriweather': ['Merriweather', 'serif'],
         'Roboto':['Roboto', 'sans-serif'],
-        'Alegreya': ['Alegreya', 'serif']
+        'bebasNue': ['Bebas Neue', 'cursive'],
+        'banger': ['Bangers', 'cursive'],
+        'nunito': ['Nunito Sans', 'sans-serif']
+
       },
       colors: {
-        'text': '#f05454',
-        'background': '#f4f5db',
-        'title': '#487e95',
-        'subtitle':'#23689b'
-        
+        'text': '#202124',
+        'supertext': '#f05454',
+        'background': '#f4f5db',        
       }
     },
   },
