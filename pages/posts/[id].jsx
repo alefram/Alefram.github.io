@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 
 const Post = ({postData}) => {
   return (
-        <div className="bg-bgdark">
+        <div className="bg-background">
             <Head>
                 <title>{postData.title}</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -17,12 +17,12 @@ const Post = ({postData}) => {
             <Navbar/> 
             <main className="container mx-auto px-5 lg:max-w-screen-md">
               <div>
-                <h1 className="text-4xl font-Alegreya font-semibold text-titles ">{postData.id}</h1>
-                <small className="mt-1 text-gray-100">
+                <h1 className="text-5xl font-Alegreya font-bold text-title">{postData.id}</h1>
+                <small className="mt-1 text-base text-gray-500">
                   <Date dateString={postData.date}/>
                 </small>
               </div>
-              <div className=" mt-4 text-justify font-Roboto text-gray-50 " dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+              <div className=" mt-4 text-justify font-Roboto text-gray-600" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </main>
             <footer>
               <Footer/>

@@ -25,8 +25,10 @@ const Footer = () => {
                         </a> 
                     </Link>
                 </div>
-                <div className="text-center mt-1 text-lg text-gray-50">
-                    <small>make with &#128153;</small> 
+                <div className="text-center mt-1 text-lg text-gray-600">
+                    <small>
+                        Make with &#128153; and <Link href="https://tailwindcss.com/"><a className="font-bold text-text">Tailwindcss</a></Link> and deploy on <Link href="https://vercel.com/"><a className="font-bold text-text">Vercel</a></Link>
+                    </small> 
                 </div>
             </div>
         </>

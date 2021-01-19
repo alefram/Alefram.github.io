@@ -10,9 +10,11 @@ module.exports = {
         'Alegreya': ['Alegreya', 'serif']
       },
       colors: {
-        'subtitles': '#1f6f8b',
-        'bgdark': '#1c2b2d',
-        'titles': '#e6d5b8',
+        'text': '#f05454',
+        'background': '#f4f5db',
+        'title': '#487e95',
+        'subtitle':'#23689b'
+        
       }
     },
   },

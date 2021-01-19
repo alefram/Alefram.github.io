@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const About = () => {
     return (
-        <div className="bg-bgdark">
+        <div className="bg-background">
             <Head>
                 <title>About me</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -18,26 +18,26 @@ const About = () => {
         
             <main className="container mx-auto px-5 lg:max-w-screen-md">
                 <div className="mb-4">
-                    <h1 className="text-center text-4xl
-                     text-titles  mb-4 font-Alegreya"> Who I am ?</h1>
-                    <p className="text-justify font-Roboto text-gray-50">
+                    <h1 className="text-center text-5xl
+                     text-title  mb-4 font-Alegreya"> Who I am ?</h1>
+                    <p className="text-justify font-Roboto text-gray-600">
                     I am Electrical Engineer Student at Central University of Venezuela, also software developer Interested in machine learning and robotics for aerospace and medical applications. Currently, i am working on my Bachelor thesis that is about a collection of Reinforcement Learning enviroments for a robot arm in different tasks.
                     </p>
                 </div>
                 <div className="mb-10">
                     <div className="mb-4">
-                        <h1 className="text-center text-3xl font-Alegreya text-subtitles font-normal mb-2">
+                        <h1 className="text-center text-3xl font-Alegreya text-subtitle font-normal mb-2">
                             Education
                         </h1>
-                        <div className="font-Roboto text-gray-50">
+                        <div className="font-Roboto text-gray-600">
                             <ul>
                                 <li>Electrical engineer student at Central University of Venezuela</li>
                             </ul>
                         </div>
                     </div>
                     <div className="">
-                        <h1 className="text-center text-3xl font-Alegreya text-subtitles    mb-2">Interested</h1>
-                        <div className="font-Roboto text-gray-50">
+                        <h1 className="text-center text-3xl font-Alegreya text-subtitle    mb-2">Interested</h1>
+                        <div className="font-Roboto text-gray-600">
                             <ul>
                                 <li>Tiny Machine Learning</li>
                                 <li>Reinforcement Learning</li>
@@ -47,7 +47,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="p-4">
-                    <h1 className="text-4xl font-Alegreya text-center text-titles">Contact Me</h1>
+                    <h1 className="text-4xl font-Alegreya text-center text-title">Contact Me</h1>
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
                             <Link href="https://github.com/Alexfm101">
@@ -67,7 +67,7 @@ const About = () => {
                             </Link>
                         </div>
                     </div>
-                    <h5 className="text-center text-lg text-gray-50">
+                    <h5 className="text-center text-lg text-gray-600">
                         cuatroalejandro@gmail.com
                     </h5>
                 </div>     

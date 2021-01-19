@@ -6,9 +6,9 @@ const Post = ({date,title,id}) => {
         <>
             <div className="p-2 flex m-2 flex-col">
                 <Link href={`/posts/${id}`}>
-                    <a className="text-lg  font-normal text-white">{title}</a>
+                    <a className="text-lg  font-semibold text-gray-600">{title}</a>
                 </Link>
-                <small className="mt-1 text-gray-400">
+                <small className="mt-1 text-base text-gray-500">
                     <Date dateString={date}/>
                 </small>
             </div>

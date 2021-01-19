@@ -6,7 +6,7 @@ import { getSortedProjectsData } from '../lib/projects';
 
 const Projects = ({allProjectsData}) => {
     return (
-      <div className="bg-bgdark">
+      <div className="bg-background">
         <Head>
             <title>My Projects  </title>
             <link rel="icon" href="/favicon.ico" />
@@ -19,7 +19,7 @@ const Projects = ({allProjectsData}) => {
 
         <main className="container mx-auto px-5 lg:max-w-screen-md">
             <div className="p-4">
-                <h1 className="text-4xl text-center text-titles font-Alegreya">Projects</h1>
+                <h1 className="text-5xl text-center text-title font-Alegreya">Projects</h1>
             </div>
             <div>
                 <ul>

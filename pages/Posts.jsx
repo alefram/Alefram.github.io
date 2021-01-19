@@ -6,7 +6,7 @@ import { getSortedPostsData } from '../lib/posts';
 
 const Posts = ({allPostsData}) => {
     return (
-        <div className="bg-bgdark"> 
+        <div className="bg-background"> 
             <Head>
                 <title>My posts</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -19,7 +19,7 @@ const Posts = ({allPostsData}) => {
 
             <main className="container mx-auto px-5 lg:max-w-screen-md">
                 <div className="m-2 p-4">
-                    <h1 className=" text-4xl text-center text-titles font-Alegreya">Posts</h1>
+                    <h1 className=" text-5xl text-center text-title font-Alegreya">Posts</h1>
                 </div>
                 <div>
                     <ul>
