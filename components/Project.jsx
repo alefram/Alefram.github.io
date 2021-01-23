@@ -14,9 +14,9 @@ const Project = ({description,title,id}) => {
                 </div>
                 <div className="flex flex-col m-4 p-4">
                     <Link href={`/projects/${id}`}>
-                        <a className="text-xl  font-bold text-text">{title}</a>
+                        <a className="text-xl  font-bold text-gray-100">{title}</a>
                     </Link>
-                    <small className="mt-1 text-base text-text">
+                    <small className="mt-1 text-base text-gray-50">
                         {description}
                     </small>
                 </div>

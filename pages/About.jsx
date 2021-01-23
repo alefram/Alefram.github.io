@@ -23,27 +23,27 @@ const About = () => {
                 <div className="mb-4">
                     <div className="p-4">
                         <h1 className="text-center text-5xl
-                        text-text  mb-4 font-bebasNue"> Who I am ?</h1>
+                        text-gray-100  mb-4 font-bebasNue"> Who I am ?</h1>
                     </div>
 
-                    <p className="text-justify font-nunito text-base text-text">
+                    <p className="text-justify font-nunito text-base text-gray-50">
                     I am Electrical Engineer Student at Central University of Venezuela, also software developer Interested in machine learning and robotics for aerospace and medical applications. Currently, i am working on my Bachelor thesis that is about a collection of Reinforcement Learning enviroments for a robot arm in different tasks.
                     </p>
                 </div>
                 <div className="mb-10">
                     <div className="mb-4">
-                        <h1 className="text-center text-3xl font-bebasNue text-text font-normal mb-2">
+                        <h1 className="text-center text-3xl font-bebasNue text-gray-100 font-normal mb-2">
                             Education
                         </h1>
-                        <div className="font-nunito text-text">
+                        <div className="font-nunito text-gray-50">
                             <ul>
                                 <li>Electrical engineer student at Central University of Venezuela</li>
                             </ul>
                         </div>
                     </div>
                     <div className="">
-                        <h1 className="text-center text-3xl font-bebasNue text-text font-normal mb-2">Interested</h1>
-                        <div className=" font-nunito text-text">
+                        <h1 className="text-center text-3xl font-bebasNue text-gray-100 font-normal mb-2">Interested</h1>
+                        <div className=" font-nunito text-gray-50">
                             <ul>
                                 <li>Tiny Machine Learning</li>
                                 <li>Reinforcement Learning</li>
@@ -53,7 +53,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="p-4">
-                    <h1 className="text-4xl font-bebasNue text-center text-text">Contact Me</h1>
+                    <h1 className="text-4xl font-bebasNue text-center text-gray-100">Contact Me</h1>
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
                             <Link href="https://github.com/Alexfm101">
@@ -73,7 +73,7 @@ const About = () => {
                             </Link>
                         </div>
                     </div>
-                    <h5 className="text-center text-lg text-text">
+                    <h5 className="text-center text-lg text-gray-100">
                         cuatroalejandro@gmail.com
                     </h5>
                 </div>     

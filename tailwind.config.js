@@ -12,9 +12,8 @@ module.exports = {
 
       },
       colors: {
-        'text': '#202124',
+        'background': '#202124',
         'supertext': '#f05454',
-        'background': '#f4f5db',        
       }
     },
   },

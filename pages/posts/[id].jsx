@@ -19,13 +19,13 @@ const Post = ({postData}) => {
             <Navbar/> 
             <main className="container mx-auto px-5 lg:max-w-screen-md">
               <div>
-                <h1 className="text-5xl text-text font-bebasNue">{postData.id}</h1>
-                <small className="mt-1 text-base text-text">
+                <h1 className="text-5xl text-supertext font-bebasNue">{postData.id}</h1>
+                <small className="mt-1 text-base text-gray-400">
                   <Date dateString={postData.date}/>
                 </small>
               </div>
               <div className=" mt-4 text-justify text-lg
-               font-nunito text-text markdown" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+               font-nunito text-gray-50 markdown" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </main>
             <footer>
               <Footer/>

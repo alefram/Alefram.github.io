@@ -18,9 +18,9 @@ const Projects = ({projectsData}) => {
 
       <main className="container mx-auto px-5 lg:max-w-screen-md">
         <div>
-          <h1 className="text-5xl font-bebasNue text-text">{projectsData.id}</h1>
+          <h1 className="text-5xl font-bebasNue text-supertext">{projectsData.id}</h1>
         </div>
-        <div className=" mt-6 text-justify font-Roboto text-text" dangerouslySetInnerHTML={{ __html: projectsData.contentHtml }} />
+        <div className=" mt-6 text-justify font-Roboto text-gray-50" dangerouslySetInnerHTML={{ __html: projectsData.contentHtml }} />
       </main>
       <footer>
         <Footer/>

@@ -20,7 +20,7 @@ const Projects = ({allProjectsData}) => {
 
         <main className="container mx-auto px-5 lg:max-w-screen-md">
             <div className="p-4">
-                <h1 className="text-5xl text-center text-text font-bebasNue">Projects</h1>
+                <h1 className="text-5xl text-center text-gray-100 font-bebasNue">Projects</h1>
             </div>
             <div>
                 <ul>

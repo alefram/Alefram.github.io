@@ -17,7 +17,7 @@ const Home = () => {
       <main className="container mx-auto px-5 lg:max-w-screen-md">
         <div className="md:ml-4">
           <h1 className="text-4xl max-w-xs lg:mt-10 font-banger text-gradient bg-gradient-to-r from-gray-500  to-supertext font-thin mb-5"> Alexis Fraudita</h1>
-          <div className="space-y-4 text-text font-nunito text-lg text-justify">
+          <div className="space-y-4 text-gray-50 font-nunito text-lg text-justify">
             <p>
               Hey &#9996;, I am Alexis but my girlfriend tells me Ale Ale, i am a lectrical Engineer student and sometimes Table Tennis Player &#127955; from Venezuela.
             </p>
