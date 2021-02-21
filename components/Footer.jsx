@@ -8,16 +8,16 @@ const Footer = () => {
                 <div className="flex justify-center space-x-4 mt-4">
                     <Link href="https://github.com/Alexfm101">
                         <a>
-                            <Image src="/images/github.svg" height={30} width={30}/>
+                            <Image src="/images/github.png" height={30} width={30}/>
                         </a>
                     </Link>
                     <Link href="https://twitter.com/FrauditaAlexis">
                         <a>
-                            <Image src="/images/twitter.svg" height={30} width={30}/>                    
+                            <Image src="/images/twitter.png" height={30} width={30}/>                    
                         </a>
                     </Link>
                 </div>
-                <div className="text-center mt-1 text-lg text-text">
+                <div className="text-center mt-1 text-lg text-text text-gray-100">
                     <small>
                         Make with &#128153; and <Link href="https://tailwindcss.com/"><a className="font-bold text-supertext">Tailwindcss</a></Link> and deploy on <Link href="https://vercel.com/"><a className="font-bold text-supertext">Vercel</a></Link>
                     </small> 

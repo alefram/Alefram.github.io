@@ -5,4 +5,4 @@ const Date = ({ dateString }) => {
   return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>
 }
 
-export default Date
+export default Date;

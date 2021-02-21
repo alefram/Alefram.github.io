@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const Home = () => {
   return (
@@ -19,16 +18,10 @@ const Home = () => {
           <h1 className="text-4xl max-w-xs lg:mt-10 font-banger text-gradient bg-gradient-to-r from-gray-500  to-supertext font-thin mb-5"> Alexis Fraudita</h1>
           <div className="space-y-4 text-gray-50 font-nunito text-lg text-justify">
             <p>
-              Hey &#9996;, I am Alexis but my girlfriend tells me Ale Ale, i am a lectrical Engineer student and sometimes Table Tennis Player &#127955; from Venezuela.
+              Hey &#9996;, I am Alexis but my girlfriend tells me Ale Ale, I am a electrical Engineer student and sometimes Table Tennis Player &#127955; from Venezuela.
             </p>
             <p>
-              I created this blog for share what I'm learning about Machine Learning, Robotics and privacy preserving AI trought tutorials and articles. I hope you enjoy and have fun making cool stuff.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt atque omnis animi temporibus alias debitis error aut minus facere nostrum molestias harum, voluptatum quo fugiat laborum nulla pariatur aspernatur voluptatibus?
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quis esse cumque non, quisquam recusandae quos, quia ex ab assumenda deleniti libero sint blanditiis harum mollitia aut quibusdam, itaque enim.
+              I created this blog because for share what I'm learning about Electronics, Robotics, and other cool stuff like private AI and quantum computing trought tutorials and articles. I hope you enjoy and have fun making cool stuff.
             </p>
           </div>
           <div className=" flex flex-wrap mt-5 space-x-4 text-supertext font-bold">
