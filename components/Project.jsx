@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Project = ({description,title,id}) => {
     return (
         <>
-            <div className=" p-2 flex flex-col md:flex-row m-2 space-x-8  mt-5 shadow-lg ">
+            <div className=" p-2 flex flex-col md:flex-row m-2 space-x-8  mt-5 ">
                 <div className="mx-auto md:m-2">
                     <Image
                         src="/images/twitter.png"

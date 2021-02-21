@@ -32,6 +32,7 @@ const Posts = ({allPostsData}) => {
                                     id={id}
                                 />
                             </li>
+
                         ))}
                     </ul>
                 </div>
