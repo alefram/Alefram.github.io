@@ -28,9 +28,6 @@ const Home = () => {
             <Link href="/Posts">
               <a>My Blog Posts</a>
             </Link>
-            <Link href="/Projects">
-              <a>My Projects</a>
-            </Link>
             <Link href="/About">
               <a>More about me</a>
             </Link>

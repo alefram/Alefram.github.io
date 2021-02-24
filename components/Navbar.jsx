@@ -17,9 +17,6 @@ const Navbar = () => {
             <Link  href="/Posts">
               <a className="text-gray-200 font-Roboto font-semibold hover:underline hover:text-supertext">Posts</a>
             </Link>
-            <Link  href="/Projects">
-              <a className="text-gray-200 font-semibold font-Roboto hover:underline hover:text-supertext">Projects</a>
-            </Link>
             <Link href="/About">
               <a className="text-gray-200 font-semibold font-Roboto hover:underline hover:text-supertext">About</a> 
             </Link>
