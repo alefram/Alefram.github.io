@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const About = () => {
     return (
-        <div className="bg-background md:h-screen">
+        <div className="bg-background ">
             <Head>
                 <title>About me</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -13,8 +13,6 @@ const About = () => {
                 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
                 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>
-
-
             </Head>
 
             <Navbar/>     
@@ -26,11 +24,12 @@ const About = () => {
                         text-gray-100  mb-4 font-bebasNue"> Who I am ?</h1>
                     </div>
 
-                    <p className="text-justify font-nunito text-base text-gray-50">
-                    I am Electrical Engineer Student at Central University of Venezuela, also software developer Interested in machine learning and robotics for aerospace and medical applications. Currently, i am working on my Bachelor thesis that is about a collection of Reinforcement Learning enviroments for a robot arm in different tasks.
+                    <img src="/images/me.jpg" className=" w-40 rounded-xl float-right p-2" alt=""/>
+                    <p className="text-justify font-nunito text-base text-gray-50 clear-left">
+                        I am Electrical Engineer Student at Central University of Venezuela, also software developer Interested in robotics especially soft robots and autonomous robots for aerospace and medical applications. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots arms using Reinforcement Learning i hope in future do some tutorials about what i am learning it this area.
                     </p>
-                    <p className="text-justify font-nunito text-base text-gray-50">
-                        I am passion for technology  
+                    <p className="text-justify font-nunito text-base text-gray-50 mt-2">
+                        I love technology in different areas and how it can be integrated for resolve real problems that people needs. I want to contribute in research in robotics for medical applications how surgery in remote places or help people with neurodevelopmental disorders and maybe in future how it can be integrated in space explorations. I like, sports like table tennis and movies that for me is a source of inspirations.
                     </p>
                 </div>
                 <div className="p-4">

@@ -21,7 +21,7 @@ const Home = () => {
               Hey &#9996;, I am Alexis but my girlfriend tells me Ale Ale, I am a electrical Engineer student and sometimes Table Tennis Player &#127955; from Venezuela.
             </p>
             <p>
-              I created this blog because for share what I'm learning about Electronics, Robotics, and other cool stuff like private AI and quantum computing trought tutorials and articles. I hope you enjoy and have fun making cool stuff.
+              I created this blog for share what I'm learning about Electronics, Robotics, research papers and other cool stuff like privacy preserving AI and quantum computing applied to robotics trought tutorials and articles. I hope you enjoy learn a lot and have fun making cool stuff.
             </p>
           </div>
           <div className=" flex flex-wrap mt-5 space-x-4 text-supertext font-bold">

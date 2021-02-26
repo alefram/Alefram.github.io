@@ -24,8 +24,10 @@ const Post = ({postData}) => {
                   <Date dateString={postData.date}/>
                 </small>
               </div>
-              <div className=" mt-4 text-justify text-lg
-               font-nunito text-gray-50 markdown" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+              <div 
+                className=" mt-4 text-justify text-lg font-nunito text-gray-50 markdown" 
+                dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
+              />
             </main>
             <footer>
               <Footer/>

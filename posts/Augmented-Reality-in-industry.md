@@ -5,11 +5,11 @@ date: '2021-09-08'
 
 Currently, Augmented Reality is increasingly useful and necessary for different types of areas like video games, medicine, military uses, engineering, etc. The invention of mixed reality, smartphones and smart glasses, allow connecting the virtual world and the real world in real time allowing users to visualize the world in another way.
 
-## What is Augmented Reality?
+# What is Augmented Reality?
 
 Augmented Reality is the integration of digital information with the user’s environment in real time. This field allows developers to create virtual 3D modelings, images, animations and many types of interfaces that interact with the real world. The term Augmented Reality was invented for the Boeing researcher Tom Caudell where software was used to display the wiring plans on the pieces produced. However, it was later when this technology was properly born with two works, one of them with Louis B.Rosenberg who invented which is considered the first augmented reality system, a device that advises the user on how to perform specific tasks while they are presented, a kind of virtual guide for the US Army.
 
-## Augmented Reality applications
+# Augmented Reality applications
 
 Currently, Augmented Reality has become in a useful tool, with researchers from different universities, startups and developers of all around the world, the Augmented Reality every day covers more and more applications which will be used for different types of industries.
 
