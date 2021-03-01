@@ -26,7 +26,7 @@ const About = () => {
 
                     <img src="/images/me.jpg" className=" w-40 rounded-xl float-right p-2" alt=""/>
                     <p className="text-justify font-nunito text-base text-gray-50 clear-left">
-                        I am Electrical Engineer Student at Central University of Venezuela, also software developer Interested in robotics especially soft robots and autonomous robots for aerospace and medical applications. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots arms using Reinforcement Learning i hope in future do some tutorials about what i am learning it this area.
+                        I am Electrical Engineer Student at Central University of Venezuela, also software developer Interested in AI techniques specially in reinforcement learning for control problems in robotics and computers like quantum computers. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots arms using Reinforcement Learning i hope in future do some tutorials about what i am learning it this area.
                     </p>
                     <p className="text-justify font-nunito text-base text-gray-50 mt-2">
                         I love technology in different areas and how it can be integrated for resolve real problems that people needs. I want to contribute in research in robotics for medical applications how surgery in remote places or help people with neurodevelopmental disorders and maybe in future how it can be integrated in space explorations. I like, sports like table tennis and movies that for me is a source of inspirations.
