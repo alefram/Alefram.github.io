@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Home = () => {
   return (
-    <div className="bg-background p-6 lg:h-screen">
+    <div className="bg-background p-6">
       <Head>
         <title>Ale ale Blog</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
@@ -21,10 +21,10 @@ const Home = () => {
               Hey &#9996;, I am Alexis but my girlfriend tells me Ale Ale, I am a electrical Engineer student and sometimes Table Tennis Player &#127955; from Venezuela.
             </p>
             <p>
-              I created this blog for share what I'm learning about Electronics, Robotics, research papers and other cool stuff like privacy preserving AI and quantum computing applied to robotics trought tutorials and articles. I hope you enjoy learn a lot and have fun making cool stuff.
+              I created this blog for share what I'm learning about Electronics, Robotics, research papers and other cool stuff like privacy preserving AI and quantum computing trought tutorials and articles. I hope you enjoy learn a lot and have fun making cool stuff.
             </p>
           </div>
-          <div className=" flex flex-wrap mt-5 space-x-4 text-supertext font-bold">
+          <div className="flex flex-wrap mt-5 space-x-4 text-supertext font-bold">
             <Link href="/Posts">
               <a>My Blog Posts</a>
             </Link>
