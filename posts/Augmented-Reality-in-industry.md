@@ -11,6 +11,7 @@ Augmented Reality is the integration of digital information with the user’s en
 
 # Augmented Reality applications
 
+
 Currently, Augmented Reality has become in a useful tool, with researchers from different universities, startups and developers of all around the world, the Augmented Reality every day covers more and more applications which will be used for different types of industries.
 
 In automation, technicians will visualize industrial equipment with so many details like graphics that allow watching in real time how the machine behaves in a specific zone. Also, they will see if there is an issue, where precisely the problem is and fix it. Besides new technicians can improve more faster with interactive manuals that will help in real time interact with the equipment allowing to be more productive.

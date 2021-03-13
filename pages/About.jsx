@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const About = () => {
     return (
-        <div className="bg-background ">
+        <div className="bg-background min-h-screen">
             <Head>
                 <title>About me</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -17,7 +17,7 @@ const About = () => {
 
             <Navbar/>     
         
-            <main className="container mx-auto px-5 lg:max-w-screen-md">
+            <main className="container mx-auto p-5 lg:max-w-screen-md min-h-screen">
                 <div className="mb-4">
                     <div className="p-4">
                         <h1 className="text-center text-5xl
@@ -25,6 +25,7 @@ const About = () => {
                     </div>
 
                     <img src="/images/me.jpg" className=" w-40 rounded-xl float-right p-2" alt=""/>
+        
                     <p className="text-justify font-nunito text-base text-gray-50 clear-left">
                         I am Electrical Engineer Student at Central University of Venezuela, also software developer Interested in AI techniques specially in reinforcement learning for control problems in robotics and computers like quantum computers. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots arms using Reinforcement Learning i hope in future do some tutorials about what i am learning it this area.
                     </p>
@@ -32,7 +33,7 @@ const About = () => {
                         I love technology in different areas and how it can be integrated for resolve real problems that people needs. I want to contribute in research in robotics for medical applications how surgery in remote places or help people with neurodevelopmental disorders and maybe in future how it can be integrated in space explorations. I like, sports like table tennis and movies that for me is a source of inspirations.
                     </p>
                 </div>
-                <div className="p-4">
+                <div className="p-4 mt-20">
                     <h1 className="text-4xl font-bebasNue text-center text-supertext">Contact Me</h1>
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
