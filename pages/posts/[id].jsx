@@ -12,25 +12,24 @@ const Post = ({postData}) => {
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
                 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
-                <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"/>
                 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
             </Head>
 
             <Navbar/> 
             <main className="container mx-auto px-5 lg:max-w-screen-md">
-              <div>
-                <h1 className="text-5xl text-supertext font-bebasNue">{postData.id}</h1>
-                <small className="mt-1 text-base text-gray-400">
-                  <Date dateString={postData.date}/>
-                </small>
-              </div>
-              <div 
-                className=" mt-4 text-justify text-lg font-nunito text-gray-50 markdown" 
-                dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
-              />
+                <div>
+                    <h1 className="text-5xl text-supertext font-bebasNue">{postData.id}</h1>
+                    <small className="mt-1 text-base text-gray-400">
+                        <Date dateString={postData.date}/>
+                    </small>
+                </div>
+                <div 
+                    className=" prose-lg text-justify mt-4 font-nunito text-gray-50 markdown" 
+                    dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
+                />
             </main>
             <footer>
-              <Footer/>
+                <Footer/>
             </footer>
         </div>  
     );

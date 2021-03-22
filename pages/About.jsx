@@ -20,21 +20,23 @@ const About = () => {
             <main className="container mx-auto p-5 lg:max-w-screen-md min-h-screen">
                 <div className="mb-4">
                     <div className="p-4">
-                        <h1 className="text-center text-5xl
-                        text-gray-100  mb-4 font-bebasNue"> Who I am ?</h1>
+                        <h1 className=" prose-xl text-center text-5xl text-gray-100  mb-4 font-bebasNue"> 
+                            Who I am ?
+                        </h1>
                     </div>
+
 
                     <img src="/images/me.jpg" className=" w-40 rounded-xl float-right p-2" alt=""/>
         
-                    <p className="text-justify font-nunito text-base text-gray-50 clear-left">
-                        I am Electrical Engineer Student at Central University of Venezuela, also software developer Interested in AI techniques specially in reinforcement learning for control problems in robotics and computers like quantum computers. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots arms using Reinforcement Learning i hope in future do some tutorials about what i am learning it this area.
+                    <p className=" prose md:text-justify text-gray-50  font-nunito clear-left">
+                        I am Electrical Engineer Student at Central University of Venezuela, also software developer interested in AI techniques specially in reinforcement learning for control problems in robotics and computers. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots arms using Reinforcement Learning i hope in future do some tutorials about what i am learning in this area.
                     </p>
-                    <p className="text-justify font-nunito text-base text-gray-50 mt-2">
-                        I love technology in different areas and how it can be integrated for resolve real problems that people needs. I want to contribute in research in robotics for medical applications how surgery in remote places or help people with neurodevelopmental disorders and maybe in future how it can be integrated in space explorations. I like, sports like table tennis and movies that for me is a source of inspirations.
+                    <p className=" prose md:text-justify font-nunito text-gray-50 mt-2">
+                        I love technology in different areas and how it can be integrated for resolve real problems that people needs. I want to contribute in research in robotics for different kind of applications where the robot help humans to be better and not only take their jobs and maybe in future how it can be integrated in space explorations. I like sports like table tennis and movies that for me is a source of inspiration.
                     </p>
                 </div>
                 <div className="p-4 mt-20">
-                    <h1 className="text-4xl font-bebasNue text-center text-supertext">Contact Me</h1>
+                    <h1 className="prose text-supertext text-4xl font-bebasNue text-center ">Contact Me</h1>
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
                             <Link href="https://github.com/Alexfm101">
@@ -54,9 +56,9 @@ const About = () => {
                             </Link>
                         </div>
                     </div>
-                    <h5 className="text-center text-lg text-gray-100">
+                    <h1 className="prose-lg text-center text-gray-100">
                         cuatroalejandro@gmail.com
-                    </h5>
+                    </h1>
                 </div>     
             </main>
         </div>

@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Footer = () => {
     return (
         <>
-            <div className="py-12">
+            <div className="py-12 prose-lg">
                 <div className="flex justify-center space-x-4 mt-4">
                     <Link href="https://github.com/Alexfm101">
                         <a>
