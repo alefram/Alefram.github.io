@@ -37,9 +37,8 @@ const Posts = ({allPostsData}) => {
                     </ul>
                 </div>
             </main>
-            <footer className="">
-                <Footer/>
-            </footer>
+            
+            <Footer/>
         </div>
     );
 };

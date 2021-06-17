@@ -33,6 +33,9 @@ const Home = () => {
                     <Link href="/About">
                         <a className="text-supertext">More about me</a>
                     </Link>
+                    <Link href="/Projects">
+                        <a className="text-supertext">My Projects</a>
+                    </Link>
                 </div>
             </div>
         </main>
