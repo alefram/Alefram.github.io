@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const Home = () => {
+
   return (
     <div className="bg-background min-h-screen">
       <Head>
@@ -12,7 +13,7 @@ const Home = () => {
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
       </Head>
 
-`      <main className="mx-auto px-4 md:px-8 lg:max-w-screen-md flex items-center justify-center min-h-screen">
+      <main className="mx-auto px-4 md:px-8 lg:max-w-screen-md flex items-center justify-center absolute inset-0">
             <div className="md:ml-4">
                 <h1 className="prose-2xl text-4xl max-w-xs font-banger text-gradient bg-gradient-to-r from-gray-500  to-supertext font-thin mb-5">
                     Alexis Fraudita
@@ -22,7 +23,7 @@ const Home = () => {
                         Hey &#9996;, I am Alexis but my girlfriend tells me Ale Ale, I am a electrical Engineer student and sometimes Table Tennis Player &#127955; from Venezuela.
                     </p>
                     <p>
-                    I created this blog for share what I'm learning about Robotics, both in software and hardware. Also i would like to share how machine learning is pushing this area to the next level, allowing to develop smart robots for different tasks and how new advances in hardware make this area more cheaper and powerfull. I hope you learn a lot and have fun making cool stuff.
+                        I created this blog for share what I'm learning about Robotics, both in software and hardware. Also i would like to share how machine learning is pushing this area to the next level, allowing to develop smart robots for different tasks and how new advances in hardware make this area more cheaper and powerfull. I hope you learn a lot and have fun making cool stuff. 
                     </p>
                 </div>
                 <div className="flex flex-wrap mt-5 space-x-4 prose-lg font-bold">
@@ -34,7 +35,7 @@ const Home = () => {
                     </Link>
                 </div>
             </div>
-        </main>`
+        </main>
     </div>
   );
 }
