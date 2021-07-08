@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-
 const Navbar = () => {
   return (
     <>
@@ -10,7 +9,7 @@ const Navbar = () => {
             <Link href="/">
 				<a className="text-gradient bg-gradient-to-r from-gray-500 to-supertext text-3xl font-banger font-semibold ">
 					Aleale Blog
-				</a> 
+				</a>
             </Link>
           </div>
           <div className=" md:m-2 md:p-4 space-x-4 md:text-center">
@@ -21,7 +20,7 @@ const Navbar = () => {
 				<a className="text-gray-200 font-semibold font-Roboto hover:underline hover:text-supertext">Projects</a>
             </Link>
             <Link href="/About">
-              	<a className="text-gray-200 font-semibold font-Roboto hover:underline hover:text-supertext">About</a> 
+              	<a className="text-gray-200 font-semibold font-Roboto hover:underline hover:text-supertext">About</a>
             </Link>
           </div>
         </div>
