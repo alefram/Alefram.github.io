@@ -28,12 +28,14 @@ const About = () => {
                     </div>
                     <div className="">
                         <img src="/images/me.jpg" className=" w-40 rounded-xl float-right md:float-none p-2 md:mx-auto" alt=""/>
-                        <p className=" md:mx-auto prose md:text-justify text-gray-50  font-nunito clear-left">
-                            I am Electrical Engineer Student at Central University of Venezuela, also software developer interested in AI techniques specially in reinforcement learning for control problems in robotics and embedded computers. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots arms using Reinforcement Learning i hope in future do some tutorials about what i am learning in this area.
-                        </p>
-                        <p className=" md:mx-auto prose md:text-justify font-nunito text-gray-50 mt-2">
-                            I love technology in different areas and how it can be integrated for resolve real problems that people needs. I want to contribute in research in robotics for different kind of applications where the robot help humans to be better and not only take their jobs and maybe in future how it can be integrated in different applications. I like sports like table tennis, compose music and watch movies that for me is a source of inspiration.
-                        </p>
+                        <div>
+                            <p className=" md:mx-auto prose md:text-justify text-gray-50  font-nunito clear-left">
+                                I am Electrical Engineer Student at Central University of Venezuela, also software developer interested in AI techniques specially in reinforcement learning for control problems in robotics and embedded computers. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots arms using Reinforcement Learning i hope in future do some tutorials about what i am learning in this area.
+                            </p>
+                            <p className=" md:mx-auto prose md:text-justify font-nunito text-gray-50 mt-2">
+                                I love technology in different areas and how it can be integrated for resolve real problems that people needs. I want to contribute in research in robotics for different kind of applications where the robot help humans to be better and not only take their jobs and maybe in future how it can be integrated in different applications. I like sports like table tennis, compose music and watch movies that for me is a source of inspiration.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div className="p-4 mt-20">

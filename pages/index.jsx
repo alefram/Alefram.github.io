@@ -23,7 +23,7 @@ const Home = () => {
                         Hey &#9996;, I am Alexis but my girlfriend tells me Ale Ale, I am a electrical Engineer student and sometimes Table Tennis Player &#127955; from Venezuela.
                     </p>
                     <p>
-                        I created this blog for share what I'm learning about Robotics, both in software and hardware. Also i would like to share how machine learning is pushing this area to the next level, allowing to develop smart robots for different tasks and how new advances in hardware make this area more cheaper and powerfull. I hope you learn a lot and have fun making cool stuff.
+                        I created this blog for share what I'm learning about Robotics control, simulation and hardware. Also i would like to share how machine learning is apply to robotics and web development. I hope you learn a lot and have fun making cool stuff.
                     </p>
                 </div>
                 <div className="flex flex-wrap mt-5 space-x-4 prose-lg font-bold">
