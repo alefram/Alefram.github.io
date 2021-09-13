@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="bg-background min-h-screen">
         <Head>
-            <title>Ale ale Blog</title>
+            <title>AlealeBlog</title> 
             <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
             <meta name="description" content="Hey I'm Alexis Fraudita, I'm software developer and I will share with you everything that i'm learning about machine learning, electronics and more." />
             <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"></link>
