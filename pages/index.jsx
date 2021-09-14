@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Home = () => {
 
   return (
-    <div className="bg-background min-h-screen">
+    <div className="bg-background h-screen">
         <Head>
             <title>AlealeBlog</title> 
             <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
@@ -15,12 +15,15 @@ const Home = () => {
 
         <main className="mx-auto px-4 md:px-8 lg:max-w-screen-md flex items-center justify-center absolute inset-0">
             <div className="md:ml-4">
-                <h1 className="prose-2xl text-4xl max-w-xs font-banger text-gradient bg-gradient-to-r from-gray-500  to-supertext font-thin mb-5">
-                    Alexis Fraudita
-                </h1>
+                <div className="flex mb-2">
+                    <h1 className="prose-2xl text-4xl font-banger p-2 text-gradient bg-gradient-to-r from-gray-500  to-supertext ">
+                        Hey 
+                    </h1>
+                    <h1 className="text-4xl">&#9996;</h1>
+                </div>
                 <div className="space-y-4 text-gray-50 prose-lg font-nunito text-justify">
                     <p>
-                        Hey &#9996;, I am Alexis but my girlfriend tells me Ale Ale, I am a electrical Engineer student and sometimes Table Tennis Player &#127955; from Venezuela.
+                        I am Alexis Fraudita but my girlfriend tells me Ale Ale. I am a electrical Engineer student and sometimes Table Tennis Player &#127955; from Venezuela.
                     </p>
                     <p>
                         I created this blog for share what I'm learning about Robotics control, simulation and hardware. Also i would like to share how machine learning is apply to robotics and web development. I hope you learn a lot and have fun making cool stuff.
