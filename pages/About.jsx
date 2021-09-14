@@ -27,7 +27,7 @@ const About = () => {
                         </h1>
                     </div>
                     <div className="">
-                        <img src="/images/me.jpg" className=" w-40 rounded-xl float-right md:float-none p-2 md:mx-auto" alt=""/>
+                        <img src="/images/me.jpg" className=" w-40 rounded-xl float-right p-2 mt:m-4" alt=""/>
                         <div>
                             <p className=" md:mx-auto prose md:text-justify text-gray-50  font-nunito clear-left">
                                 I am Electrical Engineer Student at Central University of Venezuela, also software developer interested in AI techniques specially in reinforcement learning for control problems in robotics and embedded computers. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots arms using Reinforcement Learning i hope in future do some tutorials about what i am learning in this area.
