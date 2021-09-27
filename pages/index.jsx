@@ -23,10 +23,10 @@ const Home = () => {
                 </div>
                 <div className="space-y-4 text-gray-50 prose-lg font-nunito text-justify">
                     <p>
-                        I am Alexis Fraudita but my girlfriend tells me Ale Ale. I am a electrical Engineer student and sometimes Table Tennis Player &#127955; from Venezuela.
+                        I am Alexis Fraudita but my girlfriend tells me Ale Ale. I am a electrical Engineer student from Venezuela, software developer and sometimes Table Tennis Player &#127955;.
                     </p>
                     <p>
-                        I created this blog for share what I'm learning about Robotics control, simulation and hardware. Also i would like to share how machine learning is apply to robotics and web development. I hope you learn a lot and have fun making cool stuff.
+                        I created this blog for share what I'm learning about Machine Learning techniques applied to Robotics, simulation and hardware, because i learn that is a good fun way to study and getting into the AI community. I hope you learn a lot and have fun making cool stuff.
                     </p>
                 </div>
                 <div className="flex flex-wrap mt-5 space-x-4 prose-lg font-bold">
