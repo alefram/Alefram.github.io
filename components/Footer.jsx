@@ -8,12 +8,12 @@ const Footer = () => {
                 <div className="flex justify-center space-x-4 mt-4">
                     <Link href="https://github.com/Alexfm101">
                         <a>
-                            <Image src="/images/github.png" height={30} width={30}/>
+                            <Image alt="githubFooter" src="/images/github.png" height={30} width={30}/>
                         </a>
                     </Link>
                     <Link href="https://twitter.com/FrauditaAlexis">
                         <a>
-                            <Image src="/images/twitter.png" height={30} width={30}/>                    
+                            <Image alt="twitterFooter" src="/images/twitter.png" height={30} width={30}/>                    
                         </a>
                     </Link>
                 </div>

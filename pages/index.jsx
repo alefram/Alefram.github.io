@@ -11,8 +11,8 @@ const Home = ({allPostsData}) => {
             <title>Aleale Blog</title> 
             <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
             <meta name="description" content="Hey I'm Alexis Fraudita, I'm software developer and I will share with you everything that i'm learning about machine learning, electronics and more." />
-            <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"></link>
-            <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
+            <style data-href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"/>
+            <style data-href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
         </Head>
        
         <Navbar/>
@@ -21,10 +21,10 @@ const Home = ({allPostsData}) => {
             <div className="max-w-screen-md mx-4">
                 <div className="flex">
                     <p className="w-8 text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl  md:text-3xl md:w-10  ">Hey</p>
-                    <p className="text-2xl md:text-3xl">👋</p>
+                    <p className="text-2xl md:text-3xl"> &#128075;</p>
                 </div>
                 <p className=" text-gray-400 font-nunito text-base">
-                    I'm Alexis Fraudita, I'm Electrical Engineer student and I will share with you everything that i'm learning about machine learning in robotics, electronics and more.
+                    I&#39;m Alexis Fraudita, I&#39;m Electrical Engineer student and I will share with you everything that i&#39;m learning about machine learning in robotics, electronics and more.
                 </p>
             </div>
             <div className="mt-10">
