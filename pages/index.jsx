@@ -19,13 +19,16 @@ const Home = ({allPostsData}) => {
 
         <main className=" mt-5 mx-auto md:px-8 lg:max-w-screen-md">
             <div className="max-w-screen-md mx-4">
-                <p className=" text-gray-100 font-banger text-2xl ">Hey 👋</p>
+                <div className="flex">
+                    <p className="w-8 text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl  md:text-3xl md:w-10  ">Hey</p>
+                    <p className="text-2xl md:text-3xl">👋</p>
+                </div>
                 <p className=" text-gray-400 font-nunito text-base">
                     I'm Alexis Fraudita, I'm Electrical Engineer student and I will share with you everything that i'm learning about machine learning in robotics, electronics and more.
                 </p>
             </div>
             <div className="mt-10">
-                <h1 className="text-gray-100 font-banger text-2xl max-w-screen-md mx-4">Posts</h1>
+                <h1 className="text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl max-w-screen-md mx-4 md:text-3xl">Posts</h1>
                 <ul>
                     {allPostsData.map(({ id, date, title }) => (
                         <li key={id}>
