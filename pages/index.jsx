@@ -1,50 +1,59 @@
 import Head from 'next/head';
-import Link from 'next/link';
+import Navbar from '../components/Navbar';
+import { getSortedPostsData } from '../lib/posts';
+import Post from '../components/Post';
 
-const Home = () => {
+const Home = ({allPostsData}) => {
 
   return (
-    <div className="bg-background h-screen">
-        <Head>
-            <title>AlealeBlog</title> 
+    <div className="bg-background min-h-screen">
+        <Head> 
+            <title>Aleale Blog</title> 
             <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
             <meta name="description" content="Hey I'm Alexis Fraudita, I'm software developer and I will share with you everything that i'm learning about machine learning, electronics and more." />
             <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"></link>
             <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
         </Head>
+       
+        <Navbar/>
 
-        <main className="mx-auto px-4 md:px-8 lg:max-w-screen-md flex items-center justify-center absolute inset-0">
-            <div className="md:ml-4">
-                <div className="flex mb-2">
-                    <h1 className="prose-2xl text-4xl font-banger p-2 text-gradient bg-gradient-to-r from-gray-500  to-supertext ">
-                        Hey 
-                    </h1>
-                    <h1 className="text-4xl">&#9996;</h1>
+        <main className=" mt-5 mx-auto md:px-8 lg:max-w-screen-md">
+            <div className="max-w-screen-md mx-4">
+                <div className="flex">
+                    <p className="w-8 text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl  md:text-3xl md:w-10  ">Hey</p>
+                    <p className="text-2xl md:text-3xl">👋</p>
                 </div>
-                <div className="space-y-4 text-gray-50 prose-lg font-nunito text-justify">
-                    <p>
-                        I am Alexis Fraudita but my girlfriend tells me Ale Ale. I am a electrical Engineer student from Venezuela, software developer and sometimes Table Tennis Player &#127955;.
-                    </p>
-                    <p>
-                        I created this blog for share what I'm learning about Machine Learning techniques applied to Robotics, simulation and hardware, because i learn that is a good fun way to study and getting into the AI community. I hope you learn a lot and have fun making cool stuff.
-                    </p>
-                </div>
-                <div className="flex flex-wrap mt-5 space-x-4 prose-lg font-bold">
-                    <Link href="/Posts">
-                        <a className="text-supertext">My Blog Posts</a>
-                    </Link>
-                    <Link href="/About">
-                        <a className="text-supertext">More about me</a>
-                    </Link>
-                    <Link href="/Projects">
-                        <a className="text-supertext">My Projects</a>
-                    </Link>
-                </div>
+                <p className=" text-gray-400 font-nunito text-base">
+                    I'm Alexis Fraudita, I'm Electrical Engineer student and I will share with you everything that i'm learning about machine learning in robotics, electronics and more.
+                </p>
+            </div>
+            <div className="mt-10">
+                <h1 className="text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl max-w-screen-md mx-4 md:text-3xl">Posts</h1>
+                <ul>
+                    {allPostsData.map(({ id, date, title }) => (
+                        <li key={id}>
+                            <Post
+                                title={title}
+                                date={date}
+                                id={id}
+                            />
+                        </li>
+                    ))}
+                </ul>
             </div>
         </main>
     </div>
   );
-}
+};
+
+export async function getStaticProps() {
+    const allPostsData = getSortedPostsData()
+    return {
+      props: {
+        allPostsData
+      }
+    }
+};
 
 export default Home;
 // #202124
