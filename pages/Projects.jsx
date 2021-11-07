@@ -24,11 +24,7 @@ export default function Projects({allProjectsData}) {
                     <h1 className=" prose text-5xl text-center text-gray-100 font-bebasNue">Projects</h1>
                 </div>
                 <div>
-                    {allProjectsData.length === 0 && (
-                        <h1 className="text-2xl text-center text-gray-100 font-bold">
-                            There is no projects for now :(
-                        </h1>
-                    )}
+
                     <ul>
                         {allProjectsData.map(({ id, date, title }) => (
                             <li key={id}>
