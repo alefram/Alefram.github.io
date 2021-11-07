@@ -10,11 +10,8 @@ const About = () => {
                 <title>About me</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
-                <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
-                <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"></link>
-
+                <style data-href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"></style>
+                <style data-href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap"></style>           
             </Head>
 
             <Navbar/>     
@@ -26,9 +23,10 @@ const About = () => {
                             Who I am ?
                         </h1>
                     </div>
-                    <div className="">
-                        <img src="/images/me.jpg" className="mx-auto w-40 rounded-xl p-2 mt:m-4" alt=""/>
-
+                    <div>
+                        <div className="flex justify-center mb-4">
+                            <Image src="/images/me.jpg" className={`rounded-xl`} alt="me" width={130} height={160}/>
+                        </div>
                         <div>
                             <p className="md:mx-auto prose md:text-justify text-gray-50  font-nunito clear-left">
                                 I am Electrical Engineer Student at Central University of Venezuela, also software developer interested in AI techniques specially in reinforcement learning and Federated Learning for control problems in robotics and embedded computers. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots arms using Reinforcement Learning i hope in future do some tutorials about what i am learning in this area.
@@ -46,20 +44,18 @@ const About = () => {
                     <h1 className="prose text-supertext text-4xl font-bebasNue text-center ">Contact Me</h1>
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
-                            <Link href="https://github.com/Alexfm101">
-                                <Image src="/images/github.png" width={30} height={30}
-                                />
+                            <Link href="https://github.com/Alexfm101" passHref={true}>
+                                <a><Image alt="github" src="/images/github.png" width={30} height={30}/></a>
                             </Link>
                         </div>
                         <div>
-                            <Link href="https://www.linkedin.com/in/alexis-fraudita/">
-                                <Image src="/images/linkedin.svg" width={35} height={30}
-                                />
+                            <Link href="https://www.linkedin.com/in/alexis-fraudita/" passHref={true}>
+                                <a><Image alt="linkedin" src="/images/linkedin.svg" width={35} height={30}/></a>
                             </Link>
                         </div>
                         <div>
-                            <Link href="https://twitter.com/FrauditaAlexis">
-                                <Image src="/images/twitter.png" width={30} height={30}/>
+                            <Link href="https://twitter.com/FrauditaAlexis" passHref={true}>
+                                <a><Image alt="twitter" src="/images/twitter.png" width={30} height={30}/></a>
                             </Link>
                         </div>
                     </div>

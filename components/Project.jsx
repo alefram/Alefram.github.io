@@ -1,5 +1,7 @@
+import Link from 'next/link';
+import Date from './Date';
 
-export default function Project() {
+export default function Project({id, title, date}) {
     return (
         <>
             <div className="p-2 flex m-2 flex-col">
