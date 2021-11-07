@@ -27,7 +27,6 @@ const About = () => {
                         </h1>
                     </div>
                     <div className="">
-                        <img src="/images/me.jpg" className=" w-40 rounded-xl float-right p-2 mt:m-4" alt=""/>
                         <div>
                             <p className=" md:mx-auto prose md:text-justify text-gray-50  font-nunito clear-left">
                                 I am Electrical Engineer Student at Central University of Venezuela, also software developer interested in AI techniques specially in reinforcement learning and Federated Learning for control problems in robotics and embedded computers. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots arms using Reinforcement Learning i hope in future do some tutorials about what i am learning in this area.
@@ -67,5 +66,11 @@ const About = () => {
 
 // <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
 
+{/* <p>
+I am Alexis Fraudita but my girlfriend tells me Ale Ale. I am a electrical Engineer student from Venezuela, software developer and sometimes Table Tennis Player &#127955;.
+</p>
+<p>
+I created this blog for share what I'm learning about Machine Learning techniques applied to Robotics, simulation and hardware, because i learn that is a good fun way to study and getting into the AI community. I hope you learn a lot and have fun making cool stuff.
+</p> */}
 
 export  default About;
