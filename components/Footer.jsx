@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 const Footer = () => {
     return (
@@ -8,16 +7,16 @@ const Footer = () => {
                 <div className="flex justify-center space-x-4 mt-4">
                     <Link href="https://github.com/Alexfm101">
                         <a>
-                            <Image alt="githubFooter" src="/images/github.png" height={30} width={30}/>
+                            <img alt="githubFooter" src="/images/github.png" className="w-8"/>
                         </a>
                     </Link>
                     <Link href="https://twitter.com/FrauditaAlexis">
                         <a>
-                            <Image alt="twitterFooter" src="/images/twitter.png" height={30} width={30}/>                    
+                            <img alt="twitterFooter" src="/images/twitter.png" className="w-8"/>                    
                         </a>
                     </Link>
                 </div>
-                <div className="text-center mt-1 text-lg text-text text-gray-100">
+                <div className="text-center text-lg text-text text-gray-100">
                     <small>
                         Make with &#128153; deploy on <Link href="https://vercel.com/"><a className="font-bold text-supertext">Vercel</a></Link>
                     </small> 

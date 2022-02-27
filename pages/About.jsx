@@ -2,7 +2,9 @@ import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Link from 'next/link';
 
+
 const About = () => {
+    console.log(process.env.LOCALROUTE)
     return (
         <div className="bg-background min-h-screen">
             <Head>
@@ -44,17 +46,17 @@ const About = () => {
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
                             <Link href="https://github.com/Alexfm101" passHref={true}>
-                                <a><img alt="github" src="/images/github.png" className="w-8"/></a>
+                                <a><img alt="github" src="/images/github.png" className="w-8" /></a>
                             </Link>
                         </div>
                         <div>
                             <Link href="https://www.linkedin.com/in/alexis-fraudita/" passHref={true}>
-                                <a><img alt="linkedin" src="/images/linkedin.svg" className="w-8"/></a>
+                                <a><img alt="linkedin" src="/images/linkedin.svg" className="w-8" /></a>
                             </Link>
                         </div>
                         <div>
                             <Link href="https://twitter.com/FrauditaAlexis" passHref={true}>
-                                <a><img alt="twitter" src="/images/twitter.png" className=" w-8"/></a>
+                                <a><img alt="twitter" src="/images/twitter.png" className="w-8" /></a>
                             </Link>
                         </div>
                     </div>
