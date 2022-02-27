@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const About = () => {
     return (
@@ -25,7 +24,7 @@ const About = () => {
                     </div>
                     <div>
                         <div className="flex justify-center mb-4">
-                            <Image src="/images/me.jpg" className={`rounded-xl`} alt="me" width={130} height={160}/>
+                            <img src="/images/me.jpg" className="rounded-xl w-40" alt="me"/>
                         </div>
                         <div>
                             <p className="md:mx-auto prose md:text-justify text-gray-50  font-nunito clear-left">
@@ -45,17 +44,17 @@ const About = () => {
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
                             <Link href="https://github.com/Alexfm101" passHref={true}>
-                                <a><Image alt="github" src="/images/github.png" width={30} height={30}/></a>
+                                <a><img alt="github" src="/images/github.png" className="w-8"/></a>
                             </Link>
                         </div>
                         <div>
                             <Link href="https://www.linkedin.com/in/alexis-fraudita/" passHref={true}>
-                                <a><Image alt="linkedin" src="/images/linkedin.svg" width={35} height={30}/></a>
+                                <a><img alt="linkedin" src="/images/linkedin.svg" className="w-8"/></a>
                             </Link>
                         </div>
                         <div>
                             <Link href="https://twitter.com/FrauditaAlexis" passHref={true}>
-                                <a><Image alt="twitter" src="/images/twitter.png" width={30} height={30}/></a>
+                                <a><img alt="twitter" src="/images/twitter.png" className=" w-8"/></a>
                             </Link>
                         </div>
                     </div>
