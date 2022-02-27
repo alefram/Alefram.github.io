@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear();  
+
     return (
         <>
             <footer className="py-12 prose-lg">
@@ -18,7 +20,7 @@ const Footer = () => {
                 </div>
                 <div className="text-center text-lg text-text text-gray-100">
                     <small>
-                        Make with &#128153; deploy on <Link href="https://vercel.com/"><a className="font-bold text-supertext">Vercel</a></Link>
+                        Make with &#128153; &copy;{currentYear} All rights reserved
                     </small> 
                 </div>
             </footer>
