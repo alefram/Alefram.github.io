@@ -24,8 +24,10 @@ export default function Projects({allProjectsData}) {
                     <h1 className=" prose text-5xl text-center text-gray-100 font-bebasNue">Projects</h1>
                 </div>
                 <div>
-
-                    <ul>
+                    <div className="flex justify-center mt-10">
+                        <p className="text-gray-400 font-banger text-4xl">Coming soon</p>
+                    </div>
+                    {/* <ul>
                         {allProjectsData.map(({ id, date, title }) => (
                             <li key={id}>
                                 <Project
@@ -35,7 +37,7 @@ export default function Projects({allProjectsData}) {
                                 />
                             </li>
                         ))}
-                    </ul>
+                    </ul> */}
                 </div>
             </main>
             

@@ -20,7 +20,7 @@ const Home = ({allPostsData}) => {
         <main className=" mt-5 mx-auto md:px-8 lg:max-w-screen-md">
             <div className="max-w-screen-md mx-4">
                 <div className="flex">
-                    <p className="w-8 text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl  md:text-3xl md:w-10  ">Hey</p>
+                    <p className="w-8 text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl  md:text-3xl md:w-10">Hey</p>
                     <p className="text-2xl md:text-3xl"> &#128075;</p>
                 </div>
                 <p className=" text-gray-400 font-nunito text-base">
@@ -28,8 +28,13 @@ const Home = ({allPostsData}) => {
                 </p>
             </div>
             <div className="mt-10">
-                <h1 className="text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl max-w-screen-md mx-4 md:text-3xl">Posts</h1>
-                <ul>
+                <h1 className="text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl mx-4 md:text-3xl">
+                    Posts
+                </h1>
+                <div className="flex justify-center mt-10">
+                    <p className="text-gray-400 font-banger text-4xl">Coming soon</p>
+                </div>
+                {/* <ul>
                     {allPostsData.map(({ id, date, title }) => (
                         <li key={id}>
                             <Post
@@ -39,7 +44,7 @@ const Home = ({allPostsData}) => {
                             />
                         </li>
                     ))}
-                </ul>
+                </ul> */}
             </div>
         </main>
     </div>
