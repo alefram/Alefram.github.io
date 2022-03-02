@@ -9,7 +9,7 @@ export default function Projects({allProjectsData}) {
     return (
         <div className="bg-background min-h-screen"> 
             <Head>
-                <title>My projects</title>
+                <title>Projects | Alexis Fraudita</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
                 <style data-href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
