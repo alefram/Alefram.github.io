@@ -29,14 +29,14 @@ const About = () => {
                             <img src="/images/me.jpg" className="rounded-xl w-40 lg:w-80 " alt="me"/>
                         </div>
                         <div className=''>
-                            <p className="md:mx-auto prose md:text-justify text-gray-50 font-nunito clear-left">
+                            <p className="md:mx-auto prose md:text-justify text-gray-200 font-nunito clear-left">
                                 I am Electrical Engineer Student at Central University of Venezuela and software developer, interested in AI techniques specially in reinforcement learning for robotics applications. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots manipulators using Reinforcement Learning.
                             </p>
-                            <p className="md:mx-auto prose md:text-justify font-nunito text-gray-50 mt-2">
+                            <p className="md:mx-auto prose md:text-justify font-nunito text-gray-200 mt-2">
                                 I love technology in general and how it can be integrated for resolve real problems that people needs, so I decided to create this blog to share my projects and post about what i am learning.
  
                             </p>
-                            <p className="md:mx-auto prose md:text-justify font-nunito text-gray-50 mt-2">
+                            <p className="md:mx-auto prose md:text-justify font-nunito text-gray-200 mt-2">
                                 Some others things and interests that I enjoy are sports like table tennis, compose music and watch movies that for me is a source of inspiration.  
                             </p>
                         </div>
