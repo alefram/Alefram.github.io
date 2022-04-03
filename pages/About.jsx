@@ -24,25 +24,26 @@ const About = () => {
                             Who I am ?
                         </h1>
                     </div>
-                    <div>
-                        <div className="flex justify-center mb-4">
-                            <img src="/images/me.jpg" className="rounded-xl w-40" alt="me"/>
+                    <div className='flex flex-col lg:flex-row lg:space-x-10'>
+                        <div className="justify-center mb-10 mx-auto">
+                            <img src="/images/me.jpg" className="rounded-xl w-40 lg:w-80 " alt="me"/>
                         </div>
-                        <div>
-                            <p className="md:mx-auto prose md:text-justify text-gray-50  font-nunito clear-left">
-                                I am Electrical Engineer Student at Central University of Venezuela, also software developer interested in AI techniques specially in reinforcement learning and Federated Learning for control problems in robotics and embedded computers. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots arms using Reinforcement Learning i hope in future do some tutorials about what i am learning in this area.
+                        <div className=''>
+                            <p className="md:mx-auto prose md:text-justify text-gray-50 font-nunito clear-left">
+                                I am Electrical Engineer Student at Central University of Venezuela and software developer, interested in AI techniques specially in reinforcement learning for robotics applications. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots manipulators using Reinforcement Learning.
                             </p>
                             <p className="md:mx-auto prose md:text-justify font-nunito text-gray-50 mt-2">
-                                I love technology in different areas and how it can be integrated for resolve real problems that people needs. I want to contribute in research in robotics for different kind of applications where the robot help humans to be better and not only take their jobs.
+                                I love technology in general and how it can be integrated for resolve real problems that people needs, so I decided to create this blog to share my projects and post about what i am learning.
+ 
                             </p>
                             <p className="md:mx-auto prose md:text-justify font-nunito text-gray-50 mt-2">
-                                Some others things and interests that i have are sports like table tennis, compose music and watch movies that for me is a source of inspiration.  
+                                Some others things and interests that I enjoy are sports like table tennis, compose music and watch movies that for me is a source of inspiration.  
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="p-4 mt-20">
-                    <h1 className="prose text-supertext text-4xl font-bebasNue text-center ">Contact Me</h1>
+                <div className="p-4 mt-10">
+                    <h1 className="prose text-supertext text-4xl font-bebasNue text-center ">You can Find me On</h1>
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
                             <Link href="https://github.com/Alexfm101" passHref={true}>
