@@ -31,6 +31,7 @@ const Home = ({allPostsData}) => {
                 <h1 className="text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl mx-4 md:text-3xl">
                     Posts
                 </h1>
+                
                 <div className="flex justify-center mt-10">
                     <p className="text-gray-400 font-banger text-4xl">Coming soon</p>
                 </div>
