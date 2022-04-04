@@ -24,20 +24,19 @@ export default function Projects({allProjectsData}) {
                     <h1 className=" prose text-5xl text-center text-gray-100 font-bebasNue">Projects</h1>
                 </div>
                 <div>
-                    <div className="flex justify-center mt-10">
-                        <p className="text-gray-400 font-banger text-4xl">Coming soon</p>
-                    </div>
-                    {/* <ul>
-                        {allProjectsData.map(({ id, title, description }) => (
+                    <ul>
+                        {allProjectsData.map(({ id, title, description, image, altImage }) => (
                             <li key={id}>
                                 <Project
                                     title={title}
                                     id={id}
                                     description={description}
+                                    image={image}
+                                    altImage={altImage}
                                 />
                             </li>
                         ))}
-                    </ul> */}
+                    </ul>
                 </div>
             </main>
             

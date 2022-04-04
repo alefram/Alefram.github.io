@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { getAllProjectsIds, getProjectsData } from '../../lib/projects';
 import Navbar from '../../components/Navbar';
-import Date from '../../components/Date';
 import Footer from '../../components/Footer';
 
 const Post = ({projectData}) => {
@@ -13,15 +12,16 @@ const Post = ({projectData}) => {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
                 <style data-href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
                 <style data-href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
+				<script
+					src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+					type="text/javascript">
+				</script>
             </Head>
 
             <Navbar/> 
             <main className="container mx-auto px-5 lg:max-w-screen-md">
                 <div>
                     <h1 className="text-5xl text-supertext font-bebasNue">{projectData.id}</h1>
-                    <small className="mt-1 text-base text-gray-400">
-                        <Date dateString={projectData.date}/>
-                    </small>
                 </div>
                 <div 
                     className=" prose-lg text-justify mt-4 font-nunito text-gray-50 markdown" 

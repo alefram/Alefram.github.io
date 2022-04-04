@@ -1,9 +1,13 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Navbar from '../components/Navbar';
-import { getSortedPostsData } from '../lib/posts';
-import Post from '../components/Post';
+import Footer from '../components/Footer';
+// import { getSortedPostsData } from '../lib/posts';
+// import Post from '../components/Post';
+import Project from '../components/Project';
+import { getLastProjects } from '../lib/projects';
 
-const Home = ({allPostsData}) => {
+const Home = ({lastProjectsData}) => {
 
   return (
     <div className="bg-background min-h-screen">
@@ -24,12 +28,37 @@ const Home = ({allPostsData}) => {
                     <p className="text-2xl md:text-3xl"> &#128075;</p>
                 </div>
                 <p className=" text-gray-400 font-nunito text-base">
-                    I&#39;m Alexis Fraudita, I&#39;m Electrical Engineer student and I will share with you everything that i&#39;m learning about machine learning in robotics, electronics and more.
+                    I&#39;m Alexis, I&#39;m Electrical Engineer student and I will share with you everything that i&#39;m learning about machine learning in robotics, electronics and more.
                 </p>
+            </div>
+            <div className='mt-10'>
+                <h1 className="text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl mx-4 md:text-3xl">
+                        My Projects
+                </h1>
+                <ul className='mx-5'>
+                    {lastProjectsData.map(({ id, title, description, image, altImage }) => (
+                        <li key={id}>
+                            <Project
+                                title={title}
+                                id={id}
+                                description={description}
+                                image={image}
+                                altImage={altImage}
+                            />
+                        </li>
+                    ))}
+                </ul>
+                <div className="mt-5 text-center">
+					<Link href="/Projects">
+						<a className="text-gray-400 font-nunito text-base hover:underline">
+							see more...
+						</a>
+					</Link>
+				</div>
             </div>
             <div className="mt-10">
                 <h1 className="text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl mx-4 md:text-3xl">
-                    Posts
+                    My Last Posts
                 </h1>
                 
                 <div className="flex justify-center mt-10">
@@ -48,18 +77,24 @@ const Home = ({allPostsData}) => {
                 </ul> */}
             </div>
         </main>
+        <Footer/>
+
     </div>
   );
 };
 
 export async function getStaticProps() {
-    const allPostsData = getSortedPostsData()
+    const lastProjectsData = getLastProjects('TEG');
+//  const allPostsData = getSortedPostsData()
+
     return {
-      props: {
-        allPostsData
-      }
+        props: {
+            lastProjectsData,
+//          allPostsData
+        }
     }
 };
+
 
 export default Home;
 // #202124
