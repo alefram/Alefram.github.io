@@ -28,12 +28,12 @@ export default function Projects({allProjectsData}) {
                         <p className="text-gray-400 font-banger text-4xl">Coming soon</p>
                     </div>
                     {/* <ul>
-                        {allProjectsData.map(({ id, date, title }) => (
+                        {allProjectsData.map(({ id, title, description }) => (
                             <li key={id}>
                                 <Project
                                     title={title}
-                                    date={date}
                                     id={id}
+                                    description={description}
                                 />
                             </li>
                         ))}
