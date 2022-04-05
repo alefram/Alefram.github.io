@@ -21,7 +21,7 @@ export default function Posts() {
 
             <main className="mx-auto px-5 lg:max-w-screen-md">
                 <div className="m-2 p-4">   
-                    <h1 className=" prose text-5xl text-center text-background font-bebasNue">Posts</h1>
+                    <h1 className="text-5xl text-center text-background font-bebasNue">Posts</h1>
                 </div>
                 <div>
                     <div className="flex justify-center mt-10">

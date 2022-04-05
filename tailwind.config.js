@@ -6,8 +6,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'Roboto':['Roboto', 'sans-serif'],
-        'bebasNue': ['Bebas Neue', 'cursive'],
-        'banger': ['Bangers', 'cursive'],
+        'bebasNue': ['Bebas Neue'],
+        'banger': ['Bangers'],
         'nunito': ['Nunito Sans', 'sans-serif']
 
       },

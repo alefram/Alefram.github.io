@@ -24,7 +24,7 @@ const Home = ({lastProjectsData}) => {
         <main className=" mt-5 mx-auto md:px-8 lg:max-w-screen-md">
             <div className="max-w-screen-md mx-4">
                 <div className="flex">
-                    <p className="w-8 text-gradient bg-gradient-to-br from-blue-600 to-supertext font-banger text-2xl  md:text-3xl md:w-10">Hey</p>
+                    <p className="w-10 text-gradient bg-gradient-to-br from-blue-600 to-supertext font-banger text-2xl  md:text-3xl md:w-12">Hey</p>
                     <p className="text-2xl md:text-3xl"> &#128075;</p>
                 </div>
                 <p className=" text-background font-nunito text-base">
