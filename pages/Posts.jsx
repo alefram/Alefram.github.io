@@ -10,7 +10,7 @@ export default function Posts() {
         <div> 
             <Head>
                 <title>Posts | Alexis Fraudita</title>
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" type='image/png' href="/images/earth.png" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
                 <style data-href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
                 <style data-href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"/>
@@ -21,7 +21,7 @@ export default function Posts() {
 
             <main className="mx-auto px-5 lg:max-w-screen-md">
                 <div className="m-2 p-4">   
-                    <h1 className="text-5xl text-center text-background font-medium">Posts</h1>
+                    <h1 className="text-5xl text-center text-background font-semibold">Posts</h1>
                 </div>
                 <div>
                     <div className="flex justify-center mt-10">

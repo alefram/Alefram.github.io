@@ -7,6 +7,7 @@ const Home = () => {
     <div>
         <Head> 
             <title>Alexis Fraudita</title> 
+            <link rel="icon" type='image/png' href="/images/earth.png" />
             <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
             <meta name="description" content="Hey I'm Alexis Fraudita, I'm software developer and I will share with you everything that i'm learning about machine learning, electronics and more." />
             <style data-href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"/>
@@ -23,7 +24,7 @@ const Home = () => {
             <div className="max-w-screen-md mx-4">
                 
                 <p className="mt-2 font-nunito  text-gray-600 lg:text-lg">
-                    Hey &#128075;, my name is Alexis, I'm Electrical Engineer Student and Software Developer from Venezuela.
+                    Hey &#128075;, my name is Alexis, I'm Electrical Engineer Student and Software Developer from Venezuela 🇻🇪.
                 </p>
                 <p className="font-nunito  text-gray-600 mt-2 lg:text-lg">
                     I'm interested in AI techniques and Electronics for robotics applications, so I decided to create this blog to share my projects and learning notes in this fields.
@@ -32,7 +33,7 @@ const Home = () => {
                     Currently, I am working on my Bachelor thesis about a framework for create smart controllers in robots manipulators using Reinforcement Learning.
                 </p>
                 <p className="font-nunito text-gray-600 mt-2 lg:text-lg">
-                    Some others things and interests that I enjoy are sports like table tennis, compose music and watch movies that for me is a source of inspiration. 
+                    Some others things and interests that I enjoy are sports like table tennis, compose music, videogames  and watch movies  that for me is a source of inspiration. 
                 </p>
             </div>
             <dl className='flex space-x-5 justify-center mt-5'>
