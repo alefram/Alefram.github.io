@@ -4,9 +4,8 @@ import Link from 'next/link';
 
 
 const About = () => {
-    console.log(process.env.LOCALROUTE)
     return (
-        <div className="bg-background min-h-screen">
+        <div>
             <Head>
                 <title>About | Alexis Fraudita</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -20,23 +19,23 @@ const About = () => {
             <main className="container mx-auto p-5 lg:max-w-screen-md min-h-screen">
                 <div className="mb-4">
                     <div className="p-4">
-                        <h1 className=" prose-xl text-center text-5xl text-gray-100  mb-4 font-bebasNue"> 
+                        <h1 className=" prose-xl text-center text-5xl text-background  mb-4 font-bebasNue"> 
                             Who I am ?
                         </h1>
                     </div>
                     <div className='flex flex-col lg:flex-row lg:space-x-10'>
                         <div className="justify-center mb-10 mx-auto">
-                            <img src="/images/me.jpg" className="rounded-xl w-40 lg:w-80 " alt="me"/>
+                            <img src="/images/me.jpeg" className="rounded-xl w-40 lg:w-80 " alt="me"/>
                         </div>
                         <div className=''>
-                            <p className="md:mx-auto prose md:text-justify text-gray-200 font-nunito clear-left">
+                            <p className="md:mx-auto prose md:text-justify text-background font-nunito clear-left">
                                 I am Electrical Engineer Student at Central University of Venezuela and software developer, interested in AI techniques specially in reinforcement learning for robotics applications. Currently, i am working on my Bachelor thesis that is about a framework for create smart controllers in robots manipulators using Reinforcement Learning.
                             </p>
-                            <p className="md:mx-auto prose md:text-justify font-nunito text-gray-200 mt-2">
+                            <p className="md:mx-auto prose md:text-justify font-nunito text-background mt-2">
                                 I love technology in general and how it can be integrated for resolve real problems that people needs, so I decided to create this blog to share my projects and post about what i am learning.
  
                             </p>
-                            <p className="md:mx-auto prose md:text-justify font-nunito text-gray-200 mt-2">
+                            <p className="md:mx-auto prose md:text-justify font-nunito text-background mt-2">
                                 Some others things and interests that I enjoy are sports like table tennis, compose music and watch movies that for me is a source of inspiration.  
                             </p>
                         </div>
@@ -47,7 +46,7 @@ const About = () => {
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
                             <Link href="https://github.com/Alexfm101" passHref={true}>
-                                <a><img alt="github" src="/images/github.png" className="w-8" /></a>
+                                <a><img alt="github" src="/images/github.svg" className="w-8" /></a>
                             </Link>
                         </div>
                         <div>
@@ -57,7 +56,7 @@ const About = () => {
                         </div>
                         <div>
                             <Link href="https://twitter.com/FrauditaAlexis" passHref={true}>
-                                <a><img alt="twitter" src="/images/twitter.png" className="w-8" /></a>
+                                <a><img alt="twitter" src="/images/twitter.svg" className="w-8" /></a>
                             </Link>
                         </div>
                     </div>

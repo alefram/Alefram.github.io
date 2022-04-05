@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 
 const Post = ({postData}) => {
   return (
-        <div className="bg-background">
+        <div>
             <Head>
                 <title>{postData.title}</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -28,7 +28,7 @@ const Post = ({postData}) => {
                     </small>
                 </div>
                 <div 
-                    className=" prose-lg text-justify mt-4 font-nunito text-gray-50 markdown" 
+                    className="prose prose-lg text-justify mt-4 font-nunito markdown" 
                     dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
                 />
             </main>

@@ -10,7 +10,7 @@ import { getLastProjects } from '../lib/projects';
 const Home = ({lastProjectsData}) => {
 
   return (
-    <div className="bg-background min-h-screen">
+    <div>
         <Head> 
             <title>Alexis Fraudita</title> 
             <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
@@ -24,15 +24,15 @@ const Home = ({lastProjectsData}) => {
         <main className=" mt-5 mx-auto md:px-8 lg:max-w-screen-md">
             <div className="max-w-screen-md mx-4">
                 <div className="flex">
-                    <p className="w-8 text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl  md:text-3xl md:w-10">Hey</p>
+                    <p className="w-8 text-gradient bg-gradient-to-br from-blue-600 to-supertext font-banger text-2xl  md:text-3xl md:w-10">Hey</p>
                     <p className="text-2xl md:text-3xl"> &#128075;</p>
                 </div>
-                <p className=" text-gray-400 font-nunito text-base">
-                    I&#39;m Alexis, I&#39;m Electrical Engineer student and I will share with you everything that i&#39;m learning about machine learning in robotics, electronics and more.
+                <p className=" text-background font-nunito text-base">
+                    I am Alexis, I am Electrical Engineer student and I will share with you everything about what I am learning in machine learning in robotics, electronics and more.
                 </p>
             </div>
             <div className='mt-10'>
-                <h1 className="text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl mx-4 md:text-3xl">
+                <h1 className="text-gradient bg-gradient-to-br from-blue-600 to-supertext font-banger text-2xl mx-4 md:text-3xl">
                         My Projects
                 </h1>
                 <ul className='mx-5'>
@@ -50,19 +50,19 @@ const Home = ({lastProjectsData}) => {
                 </ul>
                 <div className="mt-5 text-center">
 					<Link href="/Projects">
-						<a className="text-gray-400 font-nunito text-base hover:underline">
+						<a className="text-gray-600 font-nunito text-base hover:underline">
 							see more...
 						</a>
 					</Link>
 				</div>
             </div>
             <div className="mt-10">
-                <h1 className="text-gradient bg-gradient-to-br from-blue-400 to-supertext font-banger text-2xl mx-4 md:text-3xl">
+                <h1 className="text-gradient bg-gradient-to-br from-blue-600 to-supertext font-banger text-2xl mx-4 md:text-3xl">
                     My Last Posts
                 </h1>
                 
                 <div className="flex justify-center mt-10">
-                    <p className="text-gray-400 font-banger text-4xl">Coming soon</p>
+                    <p className="text-gray-600 font-banger text-4xl">Coming soon</p>
                 </div>
                 {/* <ul>
                     {allPostsData.map(({ id, date, title }) => (

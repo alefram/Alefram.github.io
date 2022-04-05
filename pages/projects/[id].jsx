@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 
 const Post = ({projectData}) => {
   return (
-        <div className="bg-background">
+        <div>
             <Head>
                 <title>{projectData.title}</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -21,10 +21,10 @@ const Post = ({projectData}) => {
             <Navbar/> 
             <main className="container mx-auto px-5 lg:max-w-screen-md">
                 <div>
-                    <h1 className="text-5xl text-supertext font-bebasNue">{projectData.id}</h1>
+                    <h1 className="text-5xl text-supertext font-bebasNue">{projectData.title}</h1>
                 </div>
                 <div 
-                    className=" prose-lg text-justify mt-4 font-nunito text-gray-50 markdown" 
+                    className="text-justify mt-4 font-Roboto markdown prose prose-lg prose-blue	text-background" 
                     dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} 
                 />
             </main>

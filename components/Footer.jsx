@@ -5,20 +5,20 @@ const Footer = () => {
 
     return (
         <>
-            <footer className="py-12 prose-lg">
+            <footer className="py-12">
                 <div className="flex justify-center space-x-4 mt-4">
                     <Link href="https://github.com/Alexfm101">
                         <a>
-                            <img alt="githubFooter" src="/images/github.png" className="w-8"/>
+                            <img alt="githubFooter" src="/images/github.svg" className="w-8"/>
                         </a>
                     </Link>
                     <Link href="https://twitter.com/FrauditaAlexis">
                         <a>
-                            <img alt="twitterFooter" src="/images/twitter.png" className="w-8"/>                    
+                            <img alt="twitterFooter" src="/images/twitter.svg" className="w-8"/>                    
                         </a>
                     </Link>
                 </div>
-                <div className="text-center text-lg text-text text-gray-100">
+                <div className="text-center text-lg text-background">
                     <small>
                         Make with &#128153; &copy;{currentYear} All rights reserved
                     </small> 

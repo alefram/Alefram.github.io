@@ -4,10 +4,10 @@ import Navbar from '../components/Navbar';
 import Post from '../components/Post';
 import { getSortedPostsData } from '../lib/posts';
 
-export default function Posts({allPostsData}) {
+export default function Posts() {
 
     return (
-        <div className="bg-background min-h-screen"> 
+        <div> 
             <Head>
                 <title>Posts | Alexis Fraudita</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -21,11 +21,11 @@ export default function Posts({allPostsData}) {
 
             <main className="mx-auto px-5 lg:max-w-screen-md">
                 <div className="m-2 p-4">   
-                    <h1 className=" prose text-5xl text-center text-gray-100 font-bebasNue">Posts</h1>
+                    <h1 className=" prose text-5xl text-center text-background font-bebasNue">Posts</h1>
                 </div>
                 <div>
                     <div className="flex justify-center mt-10">
-                        <p className="text-gray-400 font-banger text-4xl">Coming soon</p>
+                        <p className="text-gray-600 font-banger text-4xl">Coming soon</p>
                     </div>
                     {/* <ul>
                         {allPostsData.map(({ id, date, title }) => (

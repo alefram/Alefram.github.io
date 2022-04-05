@@ -7,7 +7,7 @@ import { getSortedProjectsData } from '../lib/projects';
 export default function Projects({allProjectsData}) {
 
     return (
-        <div className="bg-background min-h-screen"> 
+        <div> 
             <Head>
                 <title>Projects | Alexis Fraudita</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -21,7 +21,7 @@ export default function Projects({allProjectsData}) {
 
             <main className="mx-auto px-5 lg:max-w-screen-md">
                 <div className="m-2 p-4">   
-                    <h1 className=" prose text-5xl text-center text-gray-100 font-bebasNue">Projects</h1>
+                    <h1 className=" prose text-5xl text-center text-background font-bebasNue">Projects</h1>
                 </div>
                 <div>
                     <ul>
