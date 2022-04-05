@@ -1,13 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-// import { getSortedPostsData } from '../lib/posts';
-// import Post from '../components/Post';
-import Project from '../components/Project';
-import { getLastProjects } from '../lib/projects';
 
-const Home = ({lastProjectsData}) => {
+const Home = () => {
 
   return (
     <div>
@@ -19,80 +13,64 @@ const Home = ({lastProjectsData}) => {
             <style data-href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
         </Head>
        
-        <Navbar/>
-
-        <main className=" mt-5 mx-auto md:px-8 lg:max-w-screen-md">
+        <main className="mt-5 mx-auto md:px-8 lg:max-w-screen-md">
+            <div className="ml-5">
+                <img src="/images/me.jpeg" className="rounded-full border-8 border-blue-400 w-40 " alt="me"/>
+            </div>
+            <h1 className="text-gradient bg-gradient-to-r from-gray-700 to-supertext text-4xl font-bold ml-5 mt-5 md:text-5xl">
+                Alexis Fraudita 
+            </h1>
             <div className="max-w-screen-md mx-4">
-                <div className="flex">
-                    <p className="w-10 font-bold text-background text-2xl  md:text-3xl md:w-14">Hey</p>
-                    <p className="text-2xl md:text-3xl"> &#128075;</p>
-                </div>
-                <p className=" text-background font-nunito text-base">
-                    I am Alexis, I am Electrical Engineer student and I will share with you everything about what I am learning in machine learning in robotics, electronics and more.
+                
+                <p className="mt-2 font-nunito  text-gray-600 lg:text-lg">
+                    Hey &#128075;, my name is Alexis, I'm Electrical Engineer Student and Software Developer from Venezuela.
+                </p>
+                <p className="font-nunito  text-gray-600 mt-2 lg:text-lg">
+                    I'm interested in AI techniques and Electronics for robotics applications, so I decided to create this blog to share my projects and learning notes in this fields.
+                </p>
+                <p className='mt-2 font-nunito text-gray-600 lg:text-lg'>
+                    Currently, I am working on my Bachelor thesis about a framework for create smart controllers in robots manipulators using Reinforcement Learning.
+                </p>
+                <p className="font-nunito text-gray-600 mt-2 lg:text-lg">
+                    Some others things and interests that I enjoy are sports like table tennis, compose music and watch movies that for me is a source of inspiration. 
                 </p>
             </div>
-            <div className='mt-10'>
-                <h1 className="text-2xl font-bold text-background mx-4 md:text-3xl">
-                        My Projects
-                </h1>
-                <ul className='mx-5'>
-                    {lastProjectsData.map(({ id, title, description, image, altImage }) => (
-                        <li key={id}>
-                            <Project
-                                title={title}
-                                id={id}
-                                description={description}
-                                image={image}
-                                altImage={altImage}
-                            />
-                        </li>
-                    ))}
-                </ul>
-                <div className="mt-5 text-center">
-					<Link href="/Projects">
-						<a className="text-gray-600 font-nunito text-base hover:underline">
-							see more...
-						</a>
-					</Link>
-				</div>
-            </div>
-            <div className="mt-10">
-                <h1 className=" text-2xl font-bold text-background mx-4 md:text-3xl">
-                    My Last Posts
-                </h1>
-                
-                <div className="flex justify-center mt-10">
-                    <p className="text-gray-600 font-bold text-4xl">Coming soon</p>
-                </div>
-                {/* <ul>
-                    {allPostsData.map(({ id, date, title }) => (
-                        <li key={id}>
-                            <Post
-                                title={title}
-                                date={date}
-                                id={id}
-                            />
-                        </li>
-                    ))}
-                </ul> */}
-            </div>
+            <dl className='flex space-x-5 justify-center mt-5'>
+                <dd>
+                    <Link href="/Posts">
+                        <a className='text-blue-500 font-bold text-lg'>My blog</a>
+                    </Link>
+                </dd>
+                <dd>
+                    <Link href="/Projects">
+                        <a className='text-blue-500 font-bold text-lg'>My Projects</a>
+                    </Link>
+                </dd>            
+            </dl>
+            <div className="p-4 mt-5">
+                    <h1 className=" text-supertext text-2xl font-semibold text-center ">Also you can Find me On</h1>
+                    <div className="p-4 flex flex-row justify-center space-x-4">
+                        <div>
+                            <Link href="https://github.com/Alexfm101" passHref={true}>
+                                <a><img alt="github" src="/images/github.svg" className="w-8" /></a>
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href="https://www.linkedin.com/in/alexis-fraudita/" passHref={true}>
+                                <a><img alt="linkedin" src="/images/linkedin.svg" className="w-8" /></a>
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href="https://twitter.com/FrauditaAlexis" passHref={true}>
+                                <a><img alt="twitter" src="/images/twitter.svg" className="w-8" /></a>
+                            </Link>
+                        </div>
+                    </div>
+                </div> 
         </main>
-        <Footer/>
 
     </div>
   );
-};
-
-export async function getStaticProps() {
-    const lastProjectsData = getLastProjects('TEG');
-//  const allPostsData = getSortedPostsData()
-
-    return {
-        props: {
-            lastProjectsData,
-//          allPostsData
-        }
-    }
 };
 
 
