@@ -12,10 +12,10 @@ const Post = ({projectData}) => {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
                 <style data-href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
                 <style data-href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
-				<script
-					src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-					type="text/javascript">
-				</script>
+                <script
+                  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                  type="text/javascript">
+                </script>
             </Head>
 
             <Navbar/> 
@@ -28,9 +28,7 @@ const Post = ({projectData}) => {
                     dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} 
                 />
             </main>
-            <footer>
-                <Footer/>
-            </footer>
+            <Footer/>
         </div>  
     );
 };
