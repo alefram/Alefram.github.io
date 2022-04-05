@@ -21,11 +21,11 @@ export default function Posts() {
 
             <main className="mx-auto px-5 lg:max-w-screen-md">
                 <div className="m-2 p-4">   
-                    <h1 className="text-5xl text-center text-background font-bebasNue">Posts</h1>
+                    <h1 className="text-5xl text-center text-background font-medium">Posts</h1>
                 </div>
                 <div>
                     <div className="flex justify-center mt-10">
-                        <p className="text-gray-600 font-banger text-4xl">Coming soon</p>
+                        <p className="text-gray-600 font-bold text-4xl">Coming soon</p>
                     </div>
                     {/* <ul>
                         {allPostsData.map(({ id, date, title }) => (

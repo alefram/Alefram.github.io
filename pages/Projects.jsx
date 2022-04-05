@@ -21,7 +21,7 @@ export default function Projects({allProjectsData}) {
 
             <main className="mx-auto px-5 lg:max-w-screen-md">
                 <div className="m-2 p-4">   
-                    <h1 className="text-5xl text-center text-background font-bebasNue">Projects</h1>
+                    <h1 className="text-5xl text-center text-background font-medium">Projects</h1>
                 </div>
                 <div>
                     <ul>

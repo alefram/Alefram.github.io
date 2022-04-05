@@ -7,7 +7,7 @@ const Navbar = () => {
 			<div className="flex flex-col md:flex-row p-4 container mx-auto lg:max-w-screen-md justify-between">
 				<div className="mt-1 pr-4 py-4">
 					<Link href="/">
-						<a className="text-gradient bg-gradient-to-r from-gray-700 to-supertext text-4xl font-banger font-semibold ">
+						<a className="text-gradient bg-gradient-to-r from-gray-700 to-supertext text-4xl font-semibold ">
 							Alexis Fraudita 
 						</a>
 					</Link>

@@ -24,7 +24,7 @@ const Home = ({lastProjectsData}) => {
         <main className=" mt-5 mx-auto md:px-8 lg:max-w-screen-md">
             <div className="max-w-screen-md mx-4">
                 <div className="flex">
-                    <p className="w-10 text-gradient bg-gradient-to-br from-blue-600 to-supertext font-banger text-2xl  md:text-3xl md:w-14">Hey</p>
+                    <p className="w-10 font-bold text-background text-2xl  md:text-3xl md:w-14">Hey</p>
                     <p className="text-2xl md:text-3xl"> &#128075;</p>
                 </div>
                 <p className=" text-background font-nunito text-base">
@@ -32,7 +32,7 @@ const Home = ({lastProjectsData}) => {
                 </p>
             </div>
             <div className='mt-10'>
-                <h1 className="text-gradient bg-gradient-to-br from-blue-600 to-supertext font-banger text-2xl mx-4 md:text-3xl">
+                <h1 className="text-2xl font-bold text-background mx-4 md:text-3xl">
                         My Projects
                 </h1>
                 <ul className='mx-5'>
@@ -57,12 +57,12 @@ const Home = ({lastProjectsData}) => {
 				</div>
             </div>
             <div className="mt-10">
-                <h1 className="text-gradient bg-gradient-to-br from-blue-600 to-supertext font-banger text-2xl mx-4 md:text-3xl">
+                <h1 className=" text-2xl font-bold text-background mx-4 md:text-3xl">
                     My Last Posts
                 </h1>
                 
                 <div className="flex justify-center mt-10">
-                    <p className="text-gray-600 font-banger text-4xl">Coming soon</p>
+                    <p className="text-gray-600 font-bold text-4xl">Coming soon</p>
                 </div>
                 {/* <ul>
                     {allPostsData.map(({ id, date, title }) => (

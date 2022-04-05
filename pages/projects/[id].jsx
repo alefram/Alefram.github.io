@@ -17,7 +17,7 @@ const Post = ({projectData}) => {
             <Navbar/> 
             <main className="container mx-auto px-5 lg:max-w-screen-md">
                 <div>
-                    <h1 className="text-5xl text-supertext font-bebasNue">{projectData.title}</h1>
+                    <h1 className="text-5xl text-supertext font-medium">{projectData.title}</h1>
                 </div>
                 <div 
                     className="text-justify mt-4 font-Roboto markdown prose prose-lg prose-blue	text-background" 

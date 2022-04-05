@@ -19,7 +19,7 @@ const About = () => {
             <main className="container mx-auto p-5 lg:max-w-screen-md min-h-screen">
                 <div className="mb-4">
                     <div className="p-4">
-                        <h1 className="text-center text-5xl text-background  mb-4 font-bebasNue"> 
+                        <h1 className="text-center text-5xl text-background  mb-4 font-medium"> 
                             Who I am ?
                         </h1>
                     </div>
@@ -42,7 +42,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="p-4 mt-10">
-                    <h1 className=" text-supertext text-4xl font-bebasNue text-center ">You can Find me On</h1>
+                    <h1 className=" text-supertext text-4xl font-semibold text-center ">You can Find me On</h1>
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
                             <Link href="https://github.com/Alexfm101" passHref={true}>
