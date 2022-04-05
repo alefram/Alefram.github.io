@@ -27,7 +27,7 @@ const Home = () => {
                     Hey &#128075;, my name is Alexis, I&apos;m Electrical Engineer Student and Software Developer from Venezuela 🇻🇪.
                 </p>
                 <p className="font-nunito  text-gray-600 mt-2 lg:text-lg">
-                    I&apos;m interested in AI techniques and Electronics for robotics applications, so I decided to create this blog to share my projects and learning notes in these fields.
+                    I&apos;m interested in AI techniques and Electronics for robotic perception and control, so I decided to create this blog to share my projects and learning notes in these fields.
                 </p>
                 <p className='mt-2 font-nunito text-gray-600 lg:text-lg'>
                     Currently, I&apos;m working on my Bachelor thesis about a framework for create smart controllers in robots manipulators using Reinforcement Learning.
