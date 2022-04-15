@@ -10,6 +10,16 @@ export default function Projects({allProjectsData}) {
         <div> 
             <Head>
                 <title>Projects | Alexis Fraudita</title>
+                <meta name="description" content="Here There are my projects about Machine Learning, Robotics and Electronics that are my personal portfolio" />
+                <meta name="author" content="Alexis Fraudita"/>
+
+                <meta name="keywords" content="Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch"/>
+
+                <meta property="og:title" content="Projects | Alexis Fraudita" />
+                <meta property="og:description" content="Here There are my projects about Machine Learning, Robotics and Electronics that are my personal portfolio" />
+                <meta property="og:url" content="https://alexfm101.github.io/Projects" />
+                <meta property="og:type" content="website" />
+
 
             </Head>
 

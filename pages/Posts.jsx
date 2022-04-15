@@ -10,6 +10,15 @@ export default function Posts() {
         <div> 
             <Head>
                 <title>Posts | Alexis Fraudita</title>
+                <meta name="description" content="Here There are my posts about Machine Learning, Robotics, Electronics and more." />
+                <meta name="author" content="Alexis Fraudita"/>
+
+                <meta name="keywords" content="Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch"/>
+
+                <meta property="og:title" content="Posts | Alexis Fraudita" />
+                <meta property="og:description" content="Here There are my posts about Machine Learning, Robotics, Electronics and more." />
+                <meta property="og:url" content="https://alexfm101.github.io/Posts" />
+                <meta property="og:type" content="website" />
 
             </Head>
 

@@ -8,6 +8,12 @@ const Post = ({projectData}) => {
         <div>
             <Head>
                 <title>{projectData.title}</title>
+                <meta name="author" content="Alexis Fraudita"/>
+                <meta name="keywords" content="Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch"/>
+                <meta property="og:title" content={projectData.title} />
+                <meta property="og:description" content={projectData.description} />
+                <meta property="og:type" content="article" />
+                <meta property="og:url" content={`https://alexfm101.github.io/projects/${projectData.title}`} />
 
             </Head>
 

@@ -9,11 +9,12 @@ const Post = ({postData}) => {
         <div>
             <Head>
                 <title>{postData.title}</title>
-
-                {/* <script
-                  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-                  type="text/javascript">
-                </script> */}
+                <meta name="author" content="Alexis Fraudita"/>
+                <meta name="keywords" content="Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch"/>
+                <meta property="og:title" content={postData.title} />
+                <meta property="og:description" content={postData.description} />
+                <meta property="og:type" content="article" />
+                <meta property="og:url" content={`https://alexfm101.github.io/posts/${postData.title}`} />
             </Head>
 
             <Navbar/> 

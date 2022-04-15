@@ -8,6 +8,16 @@ const Home = () => {
             <Head>
                 <title>Alexis Fraudita</title>
                 <meta name="description" content="Hey I'm Alexis Fraudita, I'm software developer and I will share with you everything that i'm learning about machine learning, electronics and more." />
+                <meta name="author" content="Alexis Fraudita"/>
+
+                <meta name="keywords" content="Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch"/>
+
+                <meta property="og:title" content="Alexis Fraudita" />
+                <meta property="og:description" content="Hey I'm Alexis Fraudita, I'm software developer and I will share with you everything that i'm learning about machine learning, electronics and more." />
+                <meta property="og:image" content="https://alexfm101.github.io/images/me.jpeg" />
+                <meta property="og:url" content="https://alexfm101.github.io/" />
+                <meta property="og:type" content="website" />
+                
             </Head>
 
             <main className="mx-auto md:px-8 lg:max-w-screen-md pt-10">
