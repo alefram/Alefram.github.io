@@ -10,11 +10,7 @@ export default function Projects({allProjectsData}) {
         <div> 
             <Head>
                 <title>Projects | Alexis Fraudita</title>
-                <link rel="icon" type='image/png' href="/images/earth.png" />
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
-                <style data-href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
-                <style data-href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"/>
-                <style data-href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
+
             </Head>
 
             <Navbar/>     
