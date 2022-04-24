@@ -6,8 +6,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'Roboto':['Roboto', 'sans-serif'],
-        'nunito': ['Nunito Sans', 'sans-serif']
-
+        'nunito': ['Nunito Sans', 'sans-serif'],
+        'square-peg': ['Square Peg', 'cursive']
       },
       colors: {
         'background': '#202124',

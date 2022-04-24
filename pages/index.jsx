@@ -21,11 +21,12 @@ const Home = () => {
                 <div className=" ml-2 md:ml-0">
                     <img src="/images/me.jpeg" className="rounded-full border-8 border-gray-700 w-40" alt="me" />
                 </div>
-                <div className="flex pt-5">
-                    <h1 className="text-gradient bg-gradient-to-r from-gray-700 to-indigo-500 text-4xl font-bold ml-3 py-2 font-sans md:text-5xl">
+                <div className="flex pt-5 w-full">
+                    <h1 className="text-gradient bg-gradient-to-r from-blue-600 to-blue-500 text-6xl font-bold font-square-peg
+                     ml-3 py-3 pr-3  md:text-7xl">
                         Hey 
                     </h1>
-                    <p className='text-4xl md:text-5xl py-2'>&#128075;</p>
+                    <p className='text-4xl md:text-5xl py-6'>&#128075;</p>
                 </div>
                 <div className="max-w-screen-md mx-4">
 
