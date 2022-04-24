@@ -19,7 +19,7 @@ export default function Posts() {
                 <meta property="og:description" content="Here There are my posts about Machine Learning, Robotics, Electronics and more." />
                 <meta property="og:url" content="https://alexfm101.github.io/Posts" />
                 <meta property="og:type" content="website" />
-
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
             </Head>
 
             <Navbar/>     

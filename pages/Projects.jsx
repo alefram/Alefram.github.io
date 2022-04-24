@@ -17,6 +17,7 @@ export default function Projects({allProjectsData}) {
                 <meta property="og:description" content="Here There are my projects about Machine Learning, Robotics and Electronics that are my personal portfolio" />
                 <meta property="og:url" content="https://alexfm101.github.io/Projects" />
                 <meta property="og:type" content="website" />
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
             </Head>
 
             <Navbar/>     

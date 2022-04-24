@@ -17,7 +17,7 @@ const Post = ({projectData}) => {
             </Head>
 
             <Navbar/> 
-            <main className="container mx-auto px-5 lg:max-w-screen-md">
+            <main className="mx-auto px-5 lg:max-w-screen-md">
                 <div>
                     <h1 className="text-5xl text-gray-900 font-bold">{projectData.title}</h1>
                 </div>
