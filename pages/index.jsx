@@ -35,7 +35,7 @@ const Home = () => {
                         My name is Alexis Fraudita, I&apos;m Electrical Engineer Student and Software Developer from Venezuela 🇻🇪.
                     </p>
                     <p className="font-Roboto  text-gray-600 mt-2 lg:text-lg">
-                         I&apos;m very interested in Machine learning applied to robotics and the hardware for machine learning computation, so I decided to create this blog to share my projects and learning notes in these fields.
+                         I&apos;m very interested in Robot Learning and the hardware for robotics, so I decided to create this blog to share my projects and learning notes in these fields.
                     </p>
                     <p className='mt-2 font-Roboto text-gray-600 lg:text-lg'>
                         Currently, I&apos;m working on my Bachelor thesis about a framework for create smart controllers in robots manipulators using Reinforcement Learning.
