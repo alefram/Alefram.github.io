@@ -10,27 +10,54 @@ export default function Posts() {
         <div> 
             <Head>
                 <title>Posts | Alexis Fraudita</title>
-                <meta name="description" content="Here There are my posts about Machine Learning, Robotics, Electronics and more." />
+                <meta 
+                    name="description" 
+                    content="Here There are my posts about Machine Learning, 
+                    Robotics, Electronics and more." 
+                />
                 <meta name="author" content="Alexis Fraudita"/>
 
-                <meta name="keywords" content="Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch"/>
+                <meta 
+                    name="keywords" 
+                    content="Machine Learning, Robotics, Electronics, 
+                    Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, 
+                    Alexis Fraudita, Python, Pytorch"
+                />
 
                 <meta property="og:title" content="Posts | Alexis Fraudita" />
-                <meta property="og:description" content="Here There are my posts about Machine Learning, Robotics, Electronics and more." />
-                <meta property="og:url" content="https://alexfm101.github.io/Posts" />
+                <meta 
+                    property="og:description" 
+                    content="Here There are my posts about Machine Learning, 
+                    Robotics, Electronics and more." 
+                />
+                <meta 
+                    property="og:url" 
+                    content="https://alexfm101.github.io/Posts" 
+                />
                 <meta property="og:type" content="website" />
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
+                <meta 
+                    name="viewport" 
+                    content="initial-scale=1.0, width=device-width" 
+                    key="viewport" 
+                />
             </Head>
 
             <Navbar/>     
 
             <main className="mx-auto px-5 lg:max-w-screen-md">
                 <div className="m-2 p-4">   
-                    <h1 className="text-5xl text-center text-background font-semibold">Posts</h1>
+                    <h1 
+                        className="text-5xl text-center text-background 
+                        font-semibold">
+                        Posts
+                    </h1>
                 </div>
                 <div>
                     <div className="flex justify-center mt-10">
-                        <p className="text-gray-600 font-bold text-4xl">Coming soon</p>
+                        <p 
+                            className="text-gray-600 font-bold text-4xl">
+                            Coming soon
+                        </p>
                     </div>
                     {/* <ul>
                         {allPostsData.map(({ id, date, title }) => (
@@ -44,8 +71,7 @@ export default function Posts() {
                         ))}
                     </ul> */}
                 </div>
-            </main>
-            
+            </main>  
             <Footer/>
         </div>
     );
