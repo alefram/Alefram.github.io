@@ -46,21 +46,21 @@ const About = () => {
                 </div>
                 <div className="max-w-screen-md mx-4">
 
-                    <p className="mt-2 font-Roboto  text-gray-600 lg:text-lg">
+                    <p className="mt-2 font-Roboto  text-gray-600">
                         My name is Alexis Fraudita, I&apos;m Electrical Engineer
                         Student and Software Developer from Venezuela 🇻🇪.
                     </p>
-                    <p className="font-Roboto  text-gray-600 mt-2 lg:text-lg">
+                    <p className="font-Roboto  text-gray-600 mt-2">
                          I&apos;m very interested in Robot Learning and the hardware
                           for robotics, so I decided to create this blog to share
                            my projects and learning notes in these fields.
                     </p>
-                    <p className='mt-2 font-Roboto text-gray-600 lg:text-lg'>
+                    <p className='mt-2 font-Roboto text-gray-600'>
                         Currently, I&apos;m working on my Bachelor thesis about 
                         a framework for create smart controllers in robots 
                         manipulators using Reinforcement Learning.
                     </p>
-                    <p className="font-Roboto text-gray-600 mt-2 lg:text-lg">
+                    <p className="font-Roboto text-gray-600 mt-2">
                         Some others things and interests that I enjoy are sports
                         like table tennis, compose music, videogames  and watch 
                         movies that for me is a source of inspiration.

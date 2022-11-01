@@ -15,13 +15,6 @@ const Navbar = () => {
 					</Link>
 				</div>
 				<div className="mt-2 md:m-2 md:p-4 space-x-4 md:text-center">
-					<Link href="/Posts">
-						<a 
-							className="text-background font-bold hover:underline 
-							hover:text-blue-500 font-nunito">
-							Posts
-						</a>
-					</Link>
 					<Link href="/Projects">
 						<a 
 							className="text-background font-bold hover:underline 

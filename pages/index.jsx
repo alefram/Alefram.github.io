@@ -1,7 +1,10 @@
 import Head from 'next/head';
-import Link from 'next/link';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import { getSortedPostsData } from '../lib/posts';
+import Post from '../components/Post';
 
-const Home = () => {
+export default function Home ({allPostsData}) {
 
     return (
         <div>
@@ -33,67 +36,56 @@ const Home = () => {
                 />
             </Head>
 
+            <Navbar/>
+
             <main className="mx-auto md:px-8 lg:max-w-screen-md pt-10">
-                <div className=" ml-2 md:ml-0">
-                    <img src="/images/me.jpeg" className="rounded-full border-8 
-                    border-gray-700 w-40" alt="me" />
-                </div>
                 <div className="flex pt-5 w-full">
-                    <h1 className="text-gradient bg-gradient-to-r from-blue-600
-                     to-blue-500 text-6xl font-bold font-square-peg
-                     ml-3 py-3 pr-3  md:text-7xl">
-                        Hey 
+                    <h1 className="text-gray-900 font-bold font-nunito
+                     py-3 pr-2  md:text-3xl">
+                        Welcome
                     </h1>
-                    <p className='text-4xl md:text-5xl py-6'>&#128075;</p>
+                    <p className='text-4xl md:text-3xl py-3'>&#128075;</p>
                 </div>
-                <div className="max-w-screen-md mx-4">
-
-                    <p className="mt-2 font-Roboto  text-gray-600 lg:text-lg">
-                        My name is Alexis Fraudita, I&apos;m Electrical Engineer
-                        Student and Software Developer from Venezuela 🇻🇪.
-                    </p>
-                    <p className="font-Roboto  text-gray-600 mt-2 lg:text-lg">
-                         I&apos;m very interested in Robot Learning and the hardware
-                          for robotics, so I decided to create this blog to share
-                           my projects and learning notes in these fields.
-                    </p>
-                    <p className='mt-2 font-Roboto text-gray-600 lg:text-lg'>
-                        Currently, I&apos;m working on my Bachelor thesis about 
-                        a framework for create smart controllers in robots 
-                        manipulators using Reinforcement Learning.
-                    </p>
-                    <p className="font-Roboto text-gray-600 mt-2 lg:text-lg">
-                        Some others things and interests that I enjoy are sports
-                        like table tennis, compose music, videogames  and watch 
-                        movies that for me is a source of inspiration.
+                <p className='font-Roboto text-gray-700'>
+                    Hi, I am Alexis, I create this blog for share my learning notes 
+                    and projects about Machine learning applied to Robotics, 
+                    Electronics and Music.
+                </p>
+                <div className="flex justify-center mt-20">
+                    <p 
+                        className="text-gray-600 font-bold text-5xl">
+                        Stay soon
                     </p>
                 </div>
-                <dl className='flex space-x-5 justify-center mt-5'>
-                    <dd>
-                        <Link href="/Posts">
-                            <a 
-                                className='text-background hover:text-blue-500 
-                                font-bold text-lg'>
-                                My blog
-                            </a>
-                        </Link>
-                    </dd>
-                    <dd>
-                        <Link href="/Projects">
-                            <a 
-                                className='text-background hover:text-blue-500 
-                                font-bold text-lg'>
-                                My Projects
-                            </a>
-                        </Link>
-                    </dd>
-                </dl>
 
+                {/* <ul>
+                    {allPostsData.map(({ id, date, title }) => (
+                        <li key={id}>
+                            <Post
+                                title={title}
+                                date={date}
+                                id={id}
+                            />
+                        </li>
+                    ))}
+                </ul> */}
+
+            
             </main>
+
+            <Footer/>
         </div>
     );
 };
 
 
-export default Home;
+export async function getStaticProps() {
+    const allPostsData = getSortedPostsData()
+    return {
+      props: {
+        allPostsData
+      }
+    }
+};
+
 // #202124
