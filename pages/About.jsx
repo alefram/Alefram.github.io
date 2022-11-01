@@ -70,7 +70,7 @@ const About = () => {
                 <div className="p-4 mt-5">
                     <h1 
                         className=" text-supertext text-2xl font-bold 
-                        text-center">
+                        text-center font-nunito">
                         Also you can Find me On
                     </h1>
                     <div className="p-4 flex flex-row justify-center space-x-4">

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { getSortedPostsData } from '../lib/posts';
-import Post from '../components/Post';
+// import Post from '../components/Post';
 
 export default function Home ({allPostsData}) {
 
@@ -41,12 +41,12 @@ export default function Home ({allPostsData}) {
             <main className="mx-auto md:px-8 lg:max-w-screen-md pt-10">
                 <div className="flex pt-5 w-full">
                     <h1 className="text-gray-900 font-bold font-nunito
-                     py-3 pr-2  md:text-3xl">
+                     py-3 pr-2 ml-3 text-2xl md:ml-0 md:text-3xl">
                         Welcome
                     </h1>
-                    <p className='text-4xl md:text-3xl py-3'>&#128075;</p>
+                    <p className='text-2xl md:text-3xl py-3'>&#128075;</p>
                 </div>
-                <p className='font-Roboto text-gray-700'>
+                <p className='font-Roboto text-gray-700 px-3 md:p-0'>
                     Hi, I am Alexis, I create this blog for share my learning notes 
                     and projects about Machine learning applied to Robotics, 
                     Electronics and Music.
