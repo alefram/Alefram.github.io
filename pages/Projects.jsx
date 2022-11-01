@@ -46,10 +46,10 @@ export default function Projects({allProjectsData}) {
             <Navbar/>     
 
             <main className="mx-auto px-5 lg:max-w-screen-md">
-                <div className="m-2 p-4">   
+                <div className="m-2 p-4 mt-10">   
                     <h1 
-                        className="text-5xl text-center text-background 
-                        font-bold"
+                        className="text-4xl text-center text-background 
+                        font-bold font-nunito"
                     >
                         Projects
                     </h1>

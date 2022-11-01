@@ -17,13 +17,13 @@ export default function Project({id, title, description, image, altImage}) {
                     <Link href={`/projects/${id}`}>
                         <a 
                             className="mt-2 md:mt-0 font-bold text-background 
-                            text-lg lg:text-3xl"
+                            text-lg lg:text-2xl font-nunito"
                         >
                             {title}
                         </a>
                     </Link>
                     <small 
-                        className="mt-1 font-Roboto text-base text-background"
+                        className="mt-1 font-Roboto text-gray-600 text-base"
                     >
                         {description}
                     </small>
