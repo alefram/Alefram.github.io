@@ -11,8 +11,8 @@ export default function Home ({allPostsData}) {
             <Head>
                 <title>Alexis Fraudita</title>
                 <meta name="description" content="Hey I'm Alexis Fraudita, I'm 
-                software developer and I will share with you everything that i'm
-                 learning about machine learning, electronics and more." 
+                Electrical Engineer and I will share with you everything that I'm
+                learning about Machine Learning, Electronics and more." 
                  />
                 <meta name="author" content="Alexis Fraudita"/>
                 <meta name="keywords" content="Machine Learning, Robotics, 
@@ -21,8 +21,8 @@ export default function Home ({allPostsData}) {
                 />
                 <meta property="og:title" content="Alexis Fraudita" />
                 <meta property="og:description" content="Hey I'm Alexis Fraudita, 
-                I'm software developer and I will share with you everything that 
-                i'm learning about machine learning, electronics and more." 
+                I'm Electrical Engineer and I will share with you everything that 
+                I'm learning about Machine Learning, Electronics and more." 
                 />
                 <meta 
                     property="og:image" 
