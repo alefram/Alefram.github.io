@@ -27,15 +27,15 @@ const Post = ({projectData}) => {
 			</Head>
 
 			<Navbar/> 
-			<main className="mx-auto px-5 lg:max-w-screen-md">
+			<main className="mt-10 mx-auto max-w-screen-sm px-4 md:px-2">
 					<div>
-						<h1 className="text-5xl text-gray-900 font-bold">
+						<h1 className="text-4xl text-supertext font-bold font-nunito">
 							{projectData.title}
 						</h1>
 					</div>
 					<div 
 						className="text-justify mt-4 font-Roboto markdown prose 
-						prose-lg prose-blue text-background" 
+						 prose-blue text-background text-base 2xl:text-lg" 
 						dangerouslySetInnerHTML={{ 
 							__html: projectData.contentHtml 
 						}} 
