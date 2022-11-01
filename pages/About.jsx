@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import Link from 'next/dist/client/link';
 
 const About = () => {
 
@@ -38,12 +38,11 @@ const About = () => {
 
             <main className="mx-auto md:px-8 lg:max-w-screen-md pt-10">
                 <div className="flex pt-5 w-full">
-                    <h1 className="text-gradient bg-gradient-to-r from-blue-600
-                     to-blue-500 text-6xl font-bold font-square-peg
-                     ml-3 py-3 pr-3  md:text-7xl">
-                        Hey 
+                    <h1 className="text-gray-900 font-bold font-Roboto
+                     ml-3 py-3 pr-3  md:text-3xl">
+                        Hi 
                     </h1>
-                    <p className='text-4xl md:text-5xl py-6'>&#128075;</p>
+                    <p className='text-4xl md:text-3xl py-2'>&#128075;</p>
                 </div>
                 <div className="max-w-screen-md mx-4">
 
@@ -68,8 +67,57 @@ const About = () => {
                     </p>
                 </div>
 
-                <Footer/>
-
+                <div className="p-4 mt-5">
+                    <h1 
+                        className=" text-supertext text-2xl font-bold 
+                        text-center">
+                        Also you can Find me On
+                    </h1>
+                    <div className="p-4 flex flex-row justify-center space-x-4">
+                        <div>
+                            <Link 
+                                href="https://github.com/Alexfm101" 
+                                passHref={true}
+                            >
+                                <a>
+                                    <img 
+                                        alt="github" 
+                                        src="/images/github.svg" 
+                                        className="w-8"
+                                    />
+                                </a>
+                            </Link>
+                        </div>
+                        <div>
+                            <Link 
+                                href="https://www.linkedin.com/in/alexis-fraudita/" 
+                                passHref={true}
+                            >
+                                <a>
+                                    <img 
+                                        alt="linkedin" 
+                                        src="/images/linkedin.svg" 
+                                        className="w-8"
+                                    />
+                                </a>
+                            </Link>
+                        </div>
+                        <div>
+                            <Link 
+                                href="https://twitter.com/FrauditaAlexis" 
+                                passHref={true}
+                            >
+                                <a>
+                                    <img 
+                                        alt="twitter" 
+                                        src="/images/twitter.svg" 
+                                        className="w-8" 
+                                    />
+                                </a>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
     );

@@ -88,57 +88,7 @@ const Home = () => {
                         </Link>
                     </dd>
                 </dl>
-                <div className="p-4 mt-5">
-                    <h1 
-                        className=" text-supertext text-2xl font-bold 
-                        text-center">
-                        Also you can Find me On
-                    </h1>
-                    <div className="p-4 flex flex-row justify-center space-x-4">
-                        <div>
-                            <Link 
-                                href="https://github.com/Alexfm101" 
-                                passHref={true}
-                            >
-                                <a>
-                                    <img 
-                                        alt="github" 
-                                        src="/images/github.svg" 
-                                        className="w-8"
-                                    />
-                                </a>
-                            </Link>
-                        </div>
-                        <div>
-                            <Link 
-                                href="https://www.linkedin.com/in/alexis-fraudita/" 
-                                passHref={true}
-                            >
-                                <a>
-                                    <img 
-                                        alt="linkedin" 
-                                        src="/images/linkedin.svg" 
-                                        className="w-8"
-                                    />
-                                </a>
-                            </Link>
-                        </div>
-                        <div>
-                            <Link 
-                                href="https://twitter.com/FrauditaAlexis" 
-                                passHref={true}
-                            >
-                                <a>
-                                    <img 
-                                        alt="twitter" 
-                                        src="/images/twitter.svg" 
-                                        className="w-8" 
-                                    />
-                                </a>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+
             </main>
         </div>
     );
