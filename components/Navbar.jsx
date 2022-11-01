@@ -9,13 +9,8 @@ const Navbar = () => {
 			>
 				<div className="mt-1">
 					<Link href="/">
-						<a className="text-4xl font-bold font-sans">
-							<img 
-								src="/images/me.jpeg" 
-								className="rounded-full border-4 border-gray-700 
-								w-10 md:w-14" 
-								alt="me" 
-							/>
+						<a className=' text-background font-bold text-4xl font-square-peg'>
+							AleBlog
 						</a>
 					</Link>
 				</div>
@@ -32,6 +27,13 @@ const Navbar = () => {
 							className="text-background font-bold hover:underline 
 							hover:text-blue-500">
 							Projects
+						</a>
+					</Link>
+					<Link href="/About">
+						<a 
+							className="text-background font-bold hover:underline 
+							hover:text-blue-500">
+							About
 						</a>
 					</Link>
 				</div>
