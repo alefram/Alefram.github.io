@@ -28,4 +28,3 @@ Some of the resources that I have used to create this project are:
 
 
 This project is in continuous development so you can find issues and bugs but If you wanna see more information about this project, you can visit my [*GitHub*](www.github.com/Alexfm101/TEG), I hope it would be usefull for you.
-
