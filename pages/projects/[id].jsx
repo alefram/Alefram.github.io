@@ -33,7 +33,7 @@ const Post = ({projectData}) => {
 							{projectData.title}
 						</h1>
 					</div>
-					<div 
+					<article 
 						className="text-justify mx-auto mt-4 font-Roboto markdown prose 
 						 prose-blue text-background text-base" 
 						dangerouslySetInnerHTML={{ 
