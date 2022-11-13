@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { getSortedPostsData } from '../lib/posts';
-// import Post from '../components/Post';
+import Post from '../components/Post';
 
 export default function Home ({allPostsData}) {
 
@@ -51,24 +51,20 @@ export default function Home ({allPostsData}) {
                     and projects about Machine learning applied to Robotics, 
                     Electronics and Music.
                 </p>
-                <div className="flex justify-center mt-20">
-                    <p 
-                        className="text-gray-600 font-bold text-5xl">
-                        Stay soon
-                    </p>
+                <div className="mt-20">
+                    <ul>
+                        {allPostsData.map(({ id, date, title }) => (
+                            <li key={id}>
+                                <Post
+                                    title={title}
+                                    date={date}
+                                    id={id}
+                                />
+                            </li>
+                        ))}
+                    </ul>
                 </div>
 
-                {/* <ul>
-                    {allPostsData.map(({ id, date, title }) => (
-                        <li key={id}>
-                            <Post
-                                title={title}
-                                date={date}
-                                id={id}
-                            />
-                        </li>
-                    ))}
-                </ul> */}
 
             
             </main>
