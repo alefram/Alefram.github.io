@@ -71,7 +71,7 @@ const About = () => {
 
                 <div className="p-4 mt-5">
                     <h1 
-                        className=" text-supertext text-2xl font-bold 
+                        className=" text-blue-700 text-2xl font-bold 
                         text-center font-nunito">
                         Also you can Find me On
                     </h1>

@@ -28,13 +28,13 @@ const Post = ({postData}) => {
             </Head>
 
             <Navbar/> 
-            <main className="container mx-auto px-5 lg:max-w-screen-md">
+            <main className="container mx-auto px-5 lg:max-w-screen-md mt-10">
                 <div>
                     <h1 
-                        className="text-5xl text-supertext font-bebasNue">
-                        {postData.id}
+                        className=" text-lg font-sans font-bold text-supertext md:text-2xl lg:text-3xl">
+                        {postData.title}
                     </h1>
-                    <small className="mt-1 text-base text-gray-400">
+                    <small className="mt-1 text-gray-500 md:text-lg">
                         <Date dateString={postData.date}/>
                     </small>
                 </div>

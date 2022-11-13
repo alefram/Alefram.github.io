@@ -41,7 +41,7 @@ export default function Home ({allPostsData}) {
             <main className="mx-auto md:px-8 lg:max-w-screen-md pt-10">
                 <div className="flex pt-5 w-full">
                     <h1 className="text-gray-900 font-bold font-nunito
-                     py-3 pr-2 ml-3 text-2xl md:ml-0 md:text-3xl">
+                     py-3 pr-2 ml-3 text-2xl md:ml-0 md:text-4xl">
                         Welcome
                     </h1>
                     <p className='text-2xl md:text-3xl py-3'>&#128075;</p>
@@ -52,7 +52,12 @@ export default function Home ({allPostsData}) {
                     Electronics and Music.
                 </p>
                 <div className="mt-20">
-                    <ul>
+
+                    <h1 className='font-bold font-sans text-zinc-800 text-lg lg:text-2xl'>
+                        Blog
+                    </h1>
+
+                    <ul className='mt-4'>
                         {allPostsData.map(({ id, date, title }) => (
                             <li key={id}>
                                 <Post
