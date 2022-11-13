@@ -4,7 +4,7 @@ import Date from './Date';
 const Post = ({date,title,id}) => {
     return (
         <>
-            <div className="flex justify-between px-5">
+            <div className="flex justify-between">
                 <Link href={`/posts/${id}`}>
                     <a 
                         className=" font-bold font-nunito 
