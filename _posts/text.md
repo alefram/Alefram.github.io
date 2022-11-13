@@ -1,4 +1,4 @@
 ---
-title: 'TEG'
-date: '01 12,2022'
+title: 'How to build a simple car model in Mujoco'
+date: '2022-11-13'
 ---

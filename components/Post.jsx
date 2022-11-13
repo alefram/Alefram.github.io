@@ -4,17 +4,17 @@ import Date from './Date';
 const Post = ({date,title,id}) => {
     return (
         <>
-            <div className="p-2 flex m-2 flex-col">
+            <div className="flex justify-between px-5">
                 <Link href={`/posts/${id}`}>
                     <a 
-                        className=" prose-2xl font-semibold font-nunito 
-                        text-gray-100 text-lg lg:text-xl">
+                        className=" font-bold font-nunito 
+                         text-blue-700 text-lg lg:text-xl">
                         {title}
                     </a>
                 </Link>
                 <small 
-                    className="prose-lg mt-1 font-nunito text-gray-400 text-sm 
-                    lg:text-lg"
+                    className="mt-1 font-nunito text-gray-700 text-sm 
+                        lg:text-base"
                 >
                     <Date dateString={date}/>
                 </small>
