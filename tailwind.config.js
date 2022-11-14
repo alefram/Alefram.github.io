@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         'background': '#202124',
         'supertext': '#f05454',
-      }
+      },
     },
   },
   plugins: [
