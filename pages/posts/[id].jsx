@@ -31,7 +31,7 @@ const Post = ({postData}) => {
             <main className="container mx-auto px-5 lg:max-w-screen-md mt-10">
                 <div>
                     <h1 
-                        className=" text-lg font-sans font-bold text-supertext md:text-2xl lg:text-3xl">
+                        className=" text-lg font-sans font-bold text-background md:text-2xl lg:text-4xl">
                         {postData.title}
                     </h1>
                     <small className="mt-1 text-gray-500 md:text-lg">
@@ -39,8 +39,8 @@ const Post = ({postData}) => {
                     </small>
                 </div>
                 <div 
-                    className="prose prose-lg text-justify mt-4 font-nunito 
-                    markdown" 
+                    className="prose prose-lg prose-p:text-base mt-4 font-nunito 
+                    markdown prose-p:text-gray-900 prose-h2:text-background" 
                     dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
                 />
             </main>

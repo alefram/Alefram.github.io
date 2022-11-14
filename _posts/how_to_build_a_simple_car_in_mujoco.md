@@ -2,3 +2,47 @@
 title: 'How to build a simple car model in Mujoco'
 date: '2022-11-13'
 ---
+
+Mujoco is one of the physics engine most use in robotics research, biomechanics and machine learning for train AI agents.
+When I did my bachelor thesis in reinforcement learning, I learned how to create simple Mujoco models for create reinforcement
+learning environments, I will show you how, so let's get started:
+
+## Installation
+
+First we need to install Mujoco, in this tutorial we are going to use the **Mujoco python binding** library which use Python3.7+.
+
+```bash
+python -m  pip install mujoco
+```
+
+## Creating the Mujoco model
+
+
+
+## Citation
+
+Cited as:
+
+>  Fraudita, Alexis. (Nov 2022). How to build a simple car model in Mujoco
+. Ale'blog. http://Alexfm101.github.io/posts/how_to_build_a_simple_car_in_mujoco.  
+
+or 
+
+```latex
+@article{Ale2022CarModel,
+  title   = "How to build a simple car model in Mujoco",
+  author  = "Fraudita, Alexis",
+  journal = "Ale'Blog",
+  year    = "2022",
+  month   = "Nov",
+  url     = "http://Alexfm101.github.io/posts/how_to_build_a_simple_car_in_mujoco"
+}
+```
+
+## Reference
+
+- [1] [https://mujoco.readthedocs.io/en/latest/modeling.html](https://mujoco.readthedocs.io/en/latest/modeling.html)
+
+
+
+ 
