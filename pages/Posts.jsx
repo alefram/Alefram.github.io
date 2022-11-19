@@ -32,7 +32,7 @@ export default function Posts() {
                 />
                 <meta 
                     property="og:url" 
-                    content="https://alexfm101.github.io/Posts" 
+                    content="https://alefram.github.io/Posts" 
                 />
                 <meta property="og:type" content="website" />
                 <meta 
