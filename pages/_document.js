@@ -4,7 +4,7 @@ export default function Document() {
     return (
         <Html lang="en">
             <Head>
-                <link rel="canonical" href="https://alexfm101.github.io/"/>
+                <link rel="canonical" href="https://alefram.github.io/"/>
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet"></link>
                 <meta name="robots" content="index, follow"/>
