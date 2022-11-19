@@ -24,9 +24,9 @@ const About = () => {
                 />
                 <meta 
                     property="og:image" 
-                    content="https://alexfm101.github.io/images/me.jpeg" 
+                    content="https://alefram.github.io/images/me.jpeg" 
                 />
-                <meta property="og:url" content="https://alexfm101.github.io/" />
+                <meta property="og:url" content="https://alefram.github.io/" />
                 <meta property="og:type" content="website" />
                 <meta 
                     name="viewport" content="initial-scale=1.0, 
@@ -78,7 +78,7 @@ const About = () => {
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
                             <Link 
-                                href="https://github.com/Alexfm101" 
+                                href="https://github.com/alefram" 
                                 passHref={true}
                             >
                                 <a>
