@@ -26,9 +26,9 @@ export default function Home ({allPostsData}) {
                 />
                 <meta 
                     property="og:image" 
-                    content="https://alexfm101.github.io/images/me.jpeg" 
+                    content="https://alefram.github.io/images/me.jpeg" 
                 />
-                <meta property="og:url" content="https://alexfm101.github.io/" />
+                <meta property="og:url" content="https://alefram.github.io/" />
                 <meta property="og:type" content="website" />
                 <meta 
                     name="viewport" content="initial-scale=1.0, 
