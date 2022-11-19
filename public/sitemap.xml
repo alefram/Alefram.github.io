@@ -9,22 +9,27 @@
 
 <url>
   <loc>https://alefram.github.io/</loc>
-  <lastmod>2022-04-11T05:29:57+00:00</lastmod>
+  <lastmod>2022-11-19T21:20:21+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://alefram.github.io/Posts</loc>
-  <lastmod>2022-04-11T05:29:57+00:00</lastmod>
+  <loc>https://alefram.github.io/Projects</loc>
+  <lastmod>2022-11-19T21:20:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://alefram.github.io/Projects</loc>
-  <lastmod>2022-04-11T05:29:57+00:00</lastmod>
+  <loc>https://alefram.github.io/About</loc>
+  <lastmod>2022-11-19T21:20:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://alefram.github.io/projects/TEG</loc>
-  <lastmod>2022-04-11T05:29:57+00:00</lastmod>
+  <lastmod>2022-11-19T21:20:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://alefram.github.io/projects/Automata</loc>
+  <lastmod>2022-11-19T21:20:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
