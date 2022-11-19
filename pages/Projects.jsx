@@ -33,7 +33,7 @@ export default function Projects({allProjectsData}) {
                 />
                 <meta 
                     property="og:url" 
-                    content="https://alexfm101.github.io/Projects" 
+                    content="https://alefram.github.io/Projects" 
                 />
                 <meta property="og:type" content="website" />
                 <meta 
