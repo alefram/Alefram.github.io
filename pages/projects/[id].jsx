@@ -21,7 +21,7 @@ const Post = ({projectData}) => {
 				<meta 
 					property="og:url" 
 					content={
-					`https://alexfm101.github.io/projects/${projectData.title}`
+					`https://alefram.github.io/projects/${projectData.title}`
 					} 
 				/>
 			</Head>
