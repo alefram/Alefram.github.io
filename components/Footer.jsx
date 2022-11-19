@@ -7,7 +7,7 @@ const Footer = () => {
         <>
             <footer className="py-12">
                 <div className="flex justify-center space-x-4 mt-4">
-                    <Link href="https://github.com/Alexfm101">
+                    <Link href="https://github.com/alefram">
                         <a>
                             <img 
                                 alt="githubFooter" 
