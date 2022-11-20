@@ -3,6 +3,9 @@ import { getAllPostIds, getPostData } from '../../lib/posts';
 import Navbar from '../../components/Navbar';
 import Date from '../../components/Date';
 import Footer from '../../components/Footer';
+import { MDXRemote } from 'next-mdx-remote'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+
 
 const Post = ({postData}) => {
   return (
@@ -38,11 +41,11 @@ const Post = ({postData}) => {
                         <Date dateString={postData.date}/>
                     </small>
                 </div>
-                <div 
-                    className="prose prose-lg prose-p:text-base mt-4 font-nunito 
-                    markdown prose-p:text-gray-900 prose-h2:text-background" 
-                    dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
-                />
+				<div className="prose prose-lg prose-p:text-base mt-4 font-nunito 
+						markdown prose-p:text-gray-900 prose-h2:text-background ">
+					<MDXRemote {...postData.contentHtml} components={{ SyntaxHighlighter }} />
+				</div>
+
             </main>
             <Footer/>
         </div>  
