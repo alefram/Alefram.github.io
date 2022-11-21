@@ -4,8 +4,8 @@ import Footer from '../components/Footer';
 import { getSortedPostsData } from '../lib/posts';
 import Post from '../components/Post';
 
-export default function Home ({allPostsData}) {
-
+export default function Home ({posts}) {
+  
     return (
         <div>
             <Head>
@@ -58,14 +58,8 @@ export default function Home ({allPostsData}) {
                     </h1>
 
                     <ul className='mt-4'>
-                        {allPostsData.map(({ id, date, title }) => (
-                            <li key={id}>
-                                <Post
-                                    title={title}
-                                    date={date}
-                                    id={id}
-                                />
-                            </li>
+                        {posts.map((post) => (
+                            <Post key={post.id} post={post}/>
                         ))}
                     </ul>
                 </div>
@@ -81,12 +75,13 @@ export default function Home ({allPostsData}) {
 
 
 export async function getStaticProps() {
-    const allPostsData = getSortedPostsData()
+    const posts = await getSortedPostsData();
     return {
       props: {
-        allPostsData
+        posts: JSON.parse(JSON.stringify(posts))
       }
     }
-};
+  
+}
 
 // #202124

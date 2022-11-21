@@ -1,22 +1,24 @@
 import Link from 'next/link';
 import Date from './Date';
 
-const Post = ({date,title,id}) => {
+
+const Post = ({ post }) => {
+
     return (
         <>
             <div className="flex justify-between">
-                <Link href={`/posts/${id}`}>
+                <Link href={`/posts/${post.id}`}>
                     <a 
                         className=" font-bold font-nunito 
                          text-blue-700 text-lg lg:text-xl">
-                        {title}
+                        {post.title}
                     </a>
                 </Link>
                 <small 
                     className="mt-1 font-nunito text-gray-700 text-sm 
                         lg:text-base"
                 >
-                    <Date dateString={date}/>
+                    <Date dateString={post.date}/>
                 </small>
             </div>
         </>
