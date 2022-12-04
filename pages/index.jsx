@@ -62,10 +62,7 @@ export default function Home ({posts}) {
                             <Post key={post.id} post={post}/>
                         ))}
                     </ul>
-                </div>
-
-
-            
+                </div>            
             </main>
 
             <Footer/>
