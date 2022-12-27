@@ -2,7 +2,9 @@
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 import Head from 'next/head';
+import Date from '../components/Date';
 
+  
 export default function Layout({ children, meta }) {
 
   return (
@@ -25,6 +27,8 @@ export default function Layout({ children, meta }) {
                   `https://alefram.github.io/posts/${meta.title}`
               } 
           />
+
+
       </Head>
       <Navbar />
       <main className="container mx-auto px-5 lg:max-w-screen-md mt-10">
@@ -47,3 +51,5 @@ export default function Layout({ children, meta }) {
     </>
   )
 }
+
+

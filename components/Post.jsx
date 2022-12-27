@@ -3,7 +3,6 @@ import Date from './Date';
 
 
 const Post = ({ post }) => {
-
     return (
         <>
             <div className="flex justify-between">
