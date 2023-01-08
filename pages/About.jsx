@@ -51,16 +51,16 @@ const About = () => {
                         and Software Developer from Venezuela 🇻🇪.
                     </p>
                     <p className="font-Roboto  text-gray-600 mt-2">
-                         I&apos;m very interested in Robot Learning and the hardware
-                        for robotics, so I decided to create this blog to share
+                        I&apos;m very interested in Robotics and AI,  
+                        so I decided to create this blog to share
                         my projects and learning notes in these fields.
                     </p>
                     <p className='mt-2 font-Roboto text-gray-600'>
-                    I&apos;m currently working on &rdquo;TEG&rdquo;, which is a set of reinforcement
-                    learning environments and tools for develop smart controllers 
-                    for robot manipulators, it started as my bachelor thesis but 
-                    now, I want to convert it in a open source project for the 
-                    community.
+                        I&apos;m currently working on &rdquo;TEG&rdquo;, which is a 
+                        set of reinforcement learning environments and tools for 
+                        develop smart controllers for robot manipulators, it 
+                        started as my bachelor thesis but now, I want to convert it 
+                        in a open source project for the community.
                     </p>
                     <p className="font-Roboto text-gray-600 mt-2">
                         Some others things and interests that I enjoy are sports
