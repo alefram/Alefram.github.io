@@ -48,8 +48,7 @@ export default function Home ({allPostsData}) {
                 </div>
                 <p className='font-Roboto text-gray-700 px-3 md:p-0'>
                     Hi, I am Alexis, I create this blog for share my learning notes 
-                    and projects about Machine learning applied to Robotics, 
-                    Electronics and Music.
+                    and projects about Machine learning, Robotics and music.
                 </p>
                 <div className="flex justify-center mt-20">
                     <p 
