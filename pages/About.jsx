@@ -44,27 +44,27 @@ const About = () => {
                     </h1>
                     <p className='text-4xl md:text-3xl py-2'>&#128075;</p>
                 </div>
-                <div className="max-w-screen-md mx-4">
 
+                <div className="max-w-screen-md mx-4">
                     <p className="mt-2 font-Roboto  text-gray-600">
                         My name is Alexis Fraudita, I&apos;m Electrical Engineer
                         and Software Developer from Venezuela 🇻🇪.
                     </p>
                     <p className="font-Roboto  text-gray-600 mt-2">
-                        I&apos;m very interested in Robotics and AI,  
-                        so I decided to create this blog to share
-                        my projects and learning notes in these fields.
+                        I&apos;m very interested in AI and its 
+                        applications in Control systems like Robots and music 
+                        generation so I decided to create this blog to share my 
+                        learning notes and projects in these fields.
                     </p>
                     <p className='mt-2 font-Roboto text-gray-600'>
-                        I&apos;m currently working on &rdquo;TEG&rdquo;, which is a 
-                        set of reinforcement learning environments and tools for 
-                        develop smart controllers for robot manipulators, it 
-                        started as my bachelor thesis but now, I want to convert it 
-                        in a open source project for the community.
+                        Outside of my learning time, I&apos;m currently working 
+                        as a Software developer in PHP/Laravel applications and 
+                        Assistant profesor of Digital Systems Lab and Microprocesors Lab at 
+                        Central University of Venezuela. 
                     </p>
                     <p className="font-Roboto text-gray-600 mt-2">
                         Some others things and interests that I enjoy are sports
-                        like table tennis, compose music, videogames  and watch 
+                        like table tennis, music production, videogames  and watch 
                         movies that for me is a source of inspiration.
                     </p>
                 </div>
