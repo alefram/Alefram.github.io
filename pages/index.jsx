@@ -51,7 +51,7 @@ export default function Home ({posts}) {
                     and projects about AI, robotics and music.
                 </p>
                 <div className="mt-20">
-                    <h1 className='text-center font-bold text-gray-500 text-4xl'>Stay Soon</h1>
+                    <h1 className='text-center font-bold text-gray-500 text-4xl'>hola genesis</h1>
 {/* 
                     <h1 className='font-bold font-sans text-zinc-800 text-lg lg:text-2xl'>
                         Blog
@@ -62,7 +62,7 @@ export default function Home ({posts}) {
                             <Post key={post.id} post={post}/>
                         ))}
                     </ul> */}
-                </div>            
+                </div>
             </main>
 
             <Footer/>
@@ -78,5 +78,4 @@ export async function getStaticProps() {
         posts: JSON.parse(JSON.stringify(posts))
       }
     }
-  
 }
