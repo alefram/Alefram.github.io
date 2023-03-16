@@ -64,7 +64,7 @@ const About = () => {
                     </p>
                     <p className="font-Roboto text-gray-600 mt-2">
                         Some others things and interests that I enjoy are sports
-                        like table tennis, music production, videogames  and watch 
+                        like table tennis, music production, videogames and watch 
                         movies that for me is a source of inspiration.
                     </p>
                 </div>

@@ -51,8 +51,7 @@ export default function Home ({posts}) {
                     and projects about AI, robotics and music.
                 </p>
                 <div className="mt-20">
-                    <h1 className='text-center font-bold text-gray-500 text-4xl'>hola genesis</h1>
-{/* 
+
                     <h1 className='font-bold font-sans text-zinc-800 text-lg lg:text-2xl'>
                         Blog
                     </h1>
@@ -61,7 +60,7 @@ export default function Home ({posts}) {
                         {posts.map((post) => (
                             <Post key={post.id} post={post}/>
                         ))}
-                    </ul> */}
+                    </ul>
                 </div>
             </main>
 
