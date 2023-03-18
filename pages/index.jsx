@@ -43,7 +43,7 @@ export default function Home ({posts}) {
                     <h1 className="text-gray-900 font-bold font-nunito
                      py-3 pr-2 ml-3 text-2xl md:ml-0 md:text-4xl">
                         Welcome
-                    </h1>
+                    </h1> 
                     <p className='text-2xl md:text-3xl py-3'>&#128075;</p>
                 </div>
                 <p className='font-Roboto text-gray-700 px-3 md:p-0'>
