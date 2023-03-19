@@ -2,10 +2,10 @@ import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { getSortedPostsData } from '../lib/posts';
-// import Post from '../components/Post';
+import Post from '../components/Post';
 
-export default function Home ({allPostsData}) {
-
+export default function Home ({posts}) {
+  
     return (
         <div>
             <Head>
@@ -41,35 +41,27 @@ export default function Home ({allPostsData}) {
             <main className="mx-auto md:px-8 lg:max-w-screen-md pt-10">
                 <div className="flex pt-5 w-full">
                     <h1 className="text-gray-900 font-bold font-nunito
-                     py-3 pr-2 ml-3 text-2xl md:ml-0 md:text-3xl">
+                     py-3 pr-2 ml-3 text-2xl md:ml-0 md:text-4xl">
                         Welcome
-                    </h1>
+                    </h1> 
                     <p className='text-2xl md:text-3xl py-3'>&#128075;</p>
                 </div>
                 <p className='font-Roboto text-gray-700 px-3 md:p-0'>
                     Hi, I am Alexis, I create this blog for share my learning notes 
-                    and projects about Machine learning, Robotics and music.
+                    and projects about AI, robotics and music.
                 </p>
-                <div className="flex justify-center mt-20">
-                    <p 
-                        className="text-gray-600 font-bold text-5xl">
-                        Stay soon
-                    </p>
+                <div className="mt-20">
+
+                    <h1 className='font-bold font-sans text-zinc-800 text-lg lg:text-2xl'>
+                        Blog
+                    </h1>
+
+                    <ul className='mt-4'>
+                        {posts.map((post) => (
+                            <Post key={post.id} post={post}/>
+                        ))}
+                    </ul>
                 </div>
-
-                {/* <ul>
-                    {allPostsData.map(({ id, date, title }) => (
-                        <li key={id}>
-                            <Post
-                                title={title}
-                                date={date}
-                                id={id}
-                            />
-                        </li>
-                    ))}
-                </ul> */}
-
-            
             </main>
 
             <Footer/>
@@ -79,12 +71,10 @@ export default function Home ({allPostsData}) {
 
 
 export async function getStaticProps() {
-    const allPostsData = getSortedPostsData()
+    const posts = await getSortedPostsData();
     return {
       props: {
-        allPostsData
+        posts: JSON.parse(JSON.stringify(posts))
       }
     }
-};
-
-// #202124
+}

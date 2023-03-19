@@ -44,33 +44,45 @@ const About = () => {
                     </h1>
                     <p className='text-4xl md:text-3xl py-2'>&#128075;</p>
                 </div>
+
                 <div className="max-w-screen-md mx-4">
-
-                    <p className="mt-2 font-Roboto  text-gray-600">
+                    <p className="mt-3 font-Roboto  text-gray-900">
                         My name is Alexis Fraudita, I&apos;m Electrical Engineer
-                        and Software Developer from Venezuela 🇻🇪.
+                        and Software Developer.
                     </p>
-                    <p className="font-Roboto  text-gray-600 mt-2">
-                         I&apos;m very interested in AI and its applications
-                         specially in Robotics, so I decided to create this blog to 
-                         share my learning notes and projects in these fields.
+                    
+                    <p className="mt-3 font-Roboto  text-gray-900">
+                        I wrote my bachelor&apos;s thesis on developing a reinforcement
+                        learning environment to train a robot arm for manipulation.
+                        This experience has made me very interested in applying AI
+                        to small but powerfull computers. That&apos;s 
+                        why I created this blog to share my notes and experiments on 
+                        what I've learned.
                     </p>
-                    <p className='mt-2 font-Roboto text-gray-600'>
-                    I&apos;m currently working as a Web developer in PHP/Laravel 
-                    applications and Assistant profesor of Digital Systems Lab and Microprocesors Lab at 
-                    Central University of Venezuela. 
 
+                    <p className="mt-3 font-Roboto text-gray-900">
+                        One question that really fascinates me is how to deploy an 
+                        AI agent in a robot on Mars, similar to "Space Baymax". 
+
+                    <p className='mt-3 font-Roboto text-gray-900'>
+                        Besides my learning and experimentation, I work as a 
+                        web application developer
+                        (check <a className="text-blue-600" href="https://moonguard.dev"> this</a>).
+                        Previously, I was an assistant professor in the Digital 
+                        Systems and Microprocessors Lab at the Central University 
+                        of Venezuela 
                     </p>
-                    <p className="font-Roboto text-gray-600 mt-2">
+
+                    <p className="mt-3 font-Roboto text-gray-900">
                         Some others things and interests that I enjoy are sports
-                        like table tennis, compose music, videogames  and watch 
+                        like table tennis, music production, videogames and watch 
                         movies that for me is a source of inspiration.
                     </p>
                 </div>
 
                 <div className="p-4 mt-5">
                     <h1 
-                        className=" text-supertext text-2xl font-bold 
+                        className=" text-blue-700 text-2xl font-bold 
                         text-center font-nunito">
                         Also you can Find me On
                     </h1>
