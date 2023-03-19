@@ -63,7 +63,7 @@ const About = () => {
                     <p className="mt-3 font-Roboto text-gray-900">
                         One question that really fascinates me is how to deploy an 
                         AI agent in a robot on Mars, similar to "Space Baymax". 
-
+                    </p>
                     <p className='mt-3 font-Roboto text-gray-900'>
                         Besides my learning and experimentation, I work as a 
                         web application developer
