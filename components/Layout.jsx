@@ -34,8 +34,7 @@ export default function Layout({ children, meta }) {
       <main className="container mx-auto px-5 lg:max-w-screen-md mt-10">
         <div>
             <h1 
-                className=" text-lg font-sans font-bold text-background
-    md:text-2xl lg:text-4xl">
+                className=" text-3xl font-sans font-bold text-background lg:text-4xl">
                 {meta.title}
             </h1>
             <small className="mt-1 text-gray-500 md:text-lg">

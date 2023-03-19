@@ -39,7 +39,7 @@ const About = () => {
             <main className="mx-auto md:px-8 lg:max-w-screen-md pt-10">
                 <div className="flex pt-5 w-full">
                     <h1 className="text-gray-900 font-bold font-Roboto
-                     ml-3 py-3 pr-3  md:text-3xl">
+                     ml-3 py-3 pr-3 text-2xl md:text-3xl">
                         Hi 
                     </h1>
                     <p className='text-4xl md:text-3xl py-2'>&#128075;</p>
@@ -57,12 +57,12 @@ const About = () => {
                         This experience has made me very interested in applying AI
                         to small but powerfull computers. That&apos;s 
                         why I created this blog to share my notes and experiments on 
-                        what I've learned.
+                        what I&apos;ve learned.
                     </p>
 
                     <p className="mt-3 font-Roboto text-gray-900">
                         One question that really fascinates me is how to deploy an 
-                        AI agent in a robot on Mars, similar to "Space Baymax". 
+                        AI agent in a robot on Mars, similar to &quot;Space Baymax&quot;. 
                     </p>
                     <p className='mt-3 font-Roboto text-gray-900'>
                         Besides my learning and experimentation, I work as a 

@@ -50,8 +50,7 @@ export default function Home ({posts}) {
                     Hi, I am Alexis, I create this blog for share my learning notes 
                     and projects about AI, robotics and music.
                 </p>
-                <div className="mt-20">
-
+                <div className="mt-20  px-3 md:p-0">
                     <h1 className='font-bold font-sans text-zinc-800 text-lg lg:text-2xl'>
                         Blog
                     </h1>
