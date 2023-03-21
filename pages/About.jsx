@@ -8,29 +8,29 @@ const About = () => {
         <div>
             <Head>
                 <title>About | Alexis Fraudita</title>
-                <meta name="description" content="Hey I'm Alexis Fraudita, I'm 
+                <meta name="description" content="Hey I'm Alexis Fraudita, I'm
                 software developer and I will share with you everything that i'm
-                 learning about machine learning, electronics and more." 
+                 learning about machine learning, electronics and more."
                  />
                 <meta name="author" content="Alexis Fraudita"/>
-                <meta name="keywords" content="Machine Learning, Robotics, 
-                Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, 
+                <meta name="keywords" content="Machine Learning, Robotics,
+                Electronics, Reinforcement Learning, Blog, Portfolio, Alexis,
                 Fraudita, Alexis Fraudita, Python, Pytorch"
                 />
                 <meta property="og:title" content="Alexis Fraudita" />
-                <meta property="og:description" content="Hey I'm Alexis Fraudita, 
-                I'm software developer and I will share with you everything that 
-                i'm learning about machine learning, electronics and more." 
+                <meta property="og:description" content="Hey I'm Alexis Fraudita,
+                I'm software developer and I will share with you everything that
+                i'm learning about machine learning, electronics and more."
                 />
-                <meta 
-                    property="og:image" 
-                    content="https://alefram.github.io/images/me.jpeg" 
+                <meta
+                    property="og:image"
+                    content="https://alefram.github.io/images/me.jpeg"
                 />
                 <meta property="og:url" content="https://alefram.github.io/" />
                 <meta property="og:type" content="website" />
                 <meta 
-                    name="viewport" content="initial-scale=1.0, 
-                    width=device-width" key="viewport" 
+                    name="viewport" content="initial-scale=1.0,
+                    width=device-width" key="viewport"
                 />
             </Head>
 
@@ -40,7 +40,7 @@ const About = () => {
                 <div className="flex pt-5 w-full">
                     <h1 className="text-gray-900 font-bold font-Roboto
                      ml-3 py-3 pr-3 text-2xl md:text-3xl">
-                        Hi 
+                        Hi
                     </h1>
                     <p className='text-4xl md:text-3xl py-2'>&#128075;</p>
                 </div>
@@ -50,81 +50,80 @@ const About = () => {
                         My name is Alexis Fraudita, I&apos;m Electrical Engineer
                         and Software Developer.
                     </p>
-                    
                     <p className="mt-3 font-Roboto  text-gray-900">
                         I wrote my bachelor&apos;s thesis on developing a reinforcement
                         learning environment to train a robot arm for manipulation.
                         This experience has made me very interested in applying AI
-                        to small but powerfull computers. That&apos;s 
-                        why I created this blog to share my notes and experiments on 
+                        to small but powerfull computers. That&apos;s
+                        why I created this blog to share my notes and experiments on
                         what I&apos;ve learned.
                     </p>
 
                     <p className="mt-3 font-Roboto text-gray-900">
-                        One question that really fascinates me is how to deploy an 
-                        AI agent in a robot on Mars, similar to &quot;Space Baymax&quot;. 
+                        One question that really fascinates me is how to deploy an
+                        AI agent in a robot on Mars, similar to &quot;Space Baymax&quot;.
                     </p>
                     <p className='mt-3 font-Roboto text-gray-900'>
-                        Besides my learning and experimentation, I work as a 
+                        Besides my learning and experimentation, I work as a
                         web application developer
                         (check <a className="text-blue-600" href="https://moonguard.dev"> this</a>).
-                        Previously, I was an assistant professor in the Digital 
-                        Systems and Microprocessors Lab at the Central University 
-                        of Venezuela 
+                        Previously, I was an assistant professor in the Digital
+                        Systems and Microprocessors Lab at the Central University
+                        of Venezuela
                     </p>
 
                     <p className="mt-3 font-Roboto text-gray-900">
                         Some others things and interests that I enjoy are sports
-                        like table tennis, music production, videogames and watch 
+                        like table tennis, music production, videogames and watch
                         movies that for me is a source of inspiration.
                     </p>
                 </div>
 
                 <div className="p-4 mt-5">
-                    <h1 
-                        className=" text-blue-700 text-2xl font-bold 
+                    <h1
+                        className=" text-blue-700 text-2xl font-bold
                         text-center font-nunito">
                         Also you can Find me On
                     </h1>
                     <div className="p-4 flex flex-row justify-center space-x-4">
                         <div>
-                            <Link 
-                                href="https://github.com/alefram" 
+                            <Link
+                                href="https://github.com/alefram"
                                 passHref={true}
                             >
                                 <a>
-                                    <img 
-                                        alt="github" 
-                                        src="/images/github.svg" 
+                                    <img
+                                        alt="github"
+                                        src="/images/github.svg"
                                         className="w-8"
                                     />
                                 </a>
                             </Link>
                         </div>
                         <div>
-                            <Link 
-                                href="https://www.linkedin.com/in/alexis-fraudita/" 
+                            <Link
+                                href="https://www.linkedin.com/in/alexis-fraudita/"
                                 passHref={true}
                             >
                                 <a>
-                                    <img 
-                                        alt="linkedin" 
-                                        src="/images/linkedin.svg" 
+                                    <img
+                                        alt="linkedin"
+                                        src="/images/linkedin.svg"
                                         className="w-8"
                                     />
                                 </a>
                             </Link>
                         </div>
                         <div>
-                            <Link 
-                                href="https://twitter.com/FrauditaAlexis" 
+                            <Link
+                                href="https://twitter.com/FrauditaAlexis"
                                 passHref={true}
                             >
                                 <a>
-                                    <img 
-                                        alt="twitter" 
-                                        src="/images/twitter.svg" 
-                                        className="w-8" 
+                                    <img
+                                        alt="twitter"
+                                        src="/images/twitter.svg"
+                                        className="w-8"
                                     />
                                 </a>
                             </Link>
