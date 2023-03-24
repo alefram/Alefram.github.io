@@ -53,8 +53,8 @@ const About = () => {
                     <p className="mt-3 font-Roboto  text-gray-900">
                         I wrote my bachelor&apos;s thesis on developing a reinforcement
                         learning environment to train a robot arm for manipulation.
-                        This experience has made me very interested in applying AI
-                        to small but powerfull computers. That&apos;s
+                        This experience has made me very interested in robotics
+                        applications and AI. That&apos;s
                         why I created this blog to share my notes and experiments on
                         what I&apos;ve learned.
                     </p>
