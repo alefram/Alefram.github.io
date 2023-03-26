@@ -1,11 +1,15 @@
 import Layout from '../../components/Layout';
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
 
 export const meta = {
-  title: 'How to build a PID in Python',
-  date: '2023-03-25'
+    title: 'How to build a PID in Python',
+    date: '2023-03-25'
 }
 
-akdlflasjf
+<div style={{ display: 'block', margin: 'auto', width: '60%' }}>
+    <InlineMath math="u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t)"/>
+</div>
 
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
