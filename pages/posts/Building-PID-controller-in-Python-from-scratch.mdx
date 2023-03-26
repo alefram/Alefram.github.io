@@ -1,0 +1,30 @@
+import Layout from '../../components/Layout';
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+
+export const meta = {
+    title: 'Building a PID controller in Python from scratch',
+    date: '2023-03-25'
+}
+
+The PID controller is an essential tool used in multiple industries, enabling 
+the maintenance of the desired setpoint and ensuring control and stability.By 
+mastering the PID controller, you can optimize a range of projects and 
+applications, achieving excellent control over your system. Building a PID 
+controller from scratch in Python is not only a valuable skill but also a step 
+towards taking full advantage of this powerful control mechanism.
+
+
+
+<div style={{ display: 'block', margin: 'auto', width: '60%' }}>
+    <InlineMath math="u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t)"/>
+</div>
+
+
+
+{/* The PID controller, works by using a feedback loop to continuously adjust inputs 
+and outputs, while the Proportional, Integral, and Derivative components 
+calculate the necessary corrections. */}
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+
