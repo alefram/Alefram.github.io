@@ -8,17 +8,38 @@ export const meta = {
 }
 
 The PID controller is an essential tool used in multiple industries, enabling 
-the maintenance of the desired setpoint and ensuring control and stability.By 
+the maintenance of the desired setpoint and ensuring control and stability. By 
 mastering the PID controller, you can optimize a range of projects and 
 applications, achieving excellent control over your system. Building a PID 
 controller from scratch in Python is not only a valuable skill but also a step 
 towards taking full advantage of this powerful control mechanism.
 
+First I will show you a basic control diagram using the PID controller:
 
+{/* TODO: add the pid controller diagram */}
+
+
+
+The following formula represents the PID controller in time, which we will use
+to program our PID.
 
 <div style={{ display: 'block', margin: 'auto', width: '60%' }}>
     <InlineMath math="u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t)"/>
 </div>
+
+{/* TODO: explain the components of the formula */}
+Where:
+
+* <InlineMath math="K_p"/>: represents
+
+* <InlineMath math="k_i"/>: represents
+
+* <InlineMath math="k_d"/>: represents
+
+* <InlineMath math="e(t)"/>: represents
+
+* <InlineMath math="u(t)"/>: represents
+
 
 
 
