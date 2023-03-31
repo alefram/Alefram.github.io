@@ -4,9 +4,6 @@ on:
   push:
     branches: [main]
 
-env:
-  GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,6 +23,8 @@ jobs:
         run: npm ci
       - name: Build project
         run: npm run build
+        env:
+          GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
       - name: Export static files
         run: npm run export
       - name: Add .nojekyll file
