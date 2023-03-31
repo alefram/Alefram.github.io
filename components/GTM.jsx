@@ -25,3 +25,17 @@ export const GTMnoscript = () => (
     }}
   />
 );
+
+export const GoogleScript = () => (
+    <>
+        <Script id='google-tag' strategy='afterInteractive'>
+            {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', ${process.env.GOOGLEANALYTICS});
+            `}
+        </Script>
+    </>
+)
