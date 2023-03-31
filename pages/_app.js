@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import '../styles/code.css';
-import { GoogleScript, GTMscript } from '../components/GTM';
+import { GoogleScript } from '../components/GTM';
 
 
 function MyApp({ Component, pageProps }) {
@@ -8,7 +8,6 @@ function MyApp({ Component, pageProps }) {
     <>
       <GoogleScript/>
       <Component {...pageProps} />
-      <GTMscript/>
     </>
   )
 };

@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { GTMnoscript } from "../components/GTM";
 
 export default function Document() {
     return (
@@ -17,7 +16,6 @@ export default function Document() {
                 {/* <link rel="stylesheet" href="https://unpkg.com/ghcolors/dist/css/prism-ghcolors.css"/> */}
             </Head>
             <body className="">
-                <GTMnoscript/>
                 <Main/>
                 <NextScript/>
             </body>
