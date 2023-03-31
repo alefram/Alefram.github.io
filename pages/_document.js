@@ -15,16 +15,6 @@ export default function Document() {
                 <meta name="google-site-verification" content="MpnKrcQvKDGeW2EIhtOow24kp2VahB-vL2hYzqGNC54" />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLEANALYTICS}"></script>
                 {/* <link rel="stylesheet" href="https://unpkg.com/ghcolors/dist/css/prism-ghcolors.css"/> */}
-                <script
-                    async
-                    dangerouslySetInnerHTML={{
-                    __html: `window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    
-                    gtag('config', ${process.env.GOOGLEANALYTICS});`
-                    }}
-                />
             </Head>
             <body className="">
                 <GTMnoscript/>
