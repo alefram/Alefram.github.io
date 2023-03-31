@@ -1,11 +1,12 @@
 import '../styles/globals.css'
 import '../styles/code.css';
-import { GTMscript } from '../components/GTM';
+import { GoogleScript, GTMscript } from '../components/GTM';
 
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <GoogleScript/>
       <Component {...pageProps} />
       <GTMscript/>
     </>

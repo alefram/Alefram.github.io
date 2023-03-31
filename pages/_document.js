@@ -16,7 +16,6 @@ export default function Document() {
                 <script async src="https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLEANALYTICS}"></script>
                 {/* <link rel="stylesheet" href="https://unpkg.com/ghcolors/dist/css/prism-ghcolors.css"/> */}
             </Head>
-            <GoogleScript/>
             <body className="">
                 <GTMnoscript/>
                 <Main/>

@@ -28,7 +28,9 @@ export const GTMnoscript = () => (
 
 export const GoogleScript = () => (
     <>
-        <Script id='google-tag' strategy='afterInteractive'>
+        <Script strategy='afterInteractive' src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLEANALYTICS}`}></Script>
+
+        <Script id='google-analytics' strategy='afterInteractive'>
             {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -38,4 +40,4 @@ export const GoogleScript = () => (
             `}
         </Script>
     </>
-)
+);
