@@ -2,7 +2,7 @@ import Script from 'next/script';
 
 export const GTMscript = () => (
   <>
-    <Script>{`window.dataLayer = window.dataLayer || [];`}</Script>
+    <Script id='gtm-script'>{`window.dataLayer = window.dataLayer || [];`}</Script>
     <Script id="google-tag-manager" strategy="afterInteractive">
       {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
