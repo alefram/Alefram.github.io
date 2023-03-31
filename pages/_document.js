@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { GTMnoscript } from "../components/GTM";
 
 export default function Document() {
     return (
@@ -26,6 +27,7 @@ export default function Document() {
                 />
             </Head>
             <body className="">
+                <GTMnoscript/>
                 <Main/>
                 <NextScript/>
             </body>
