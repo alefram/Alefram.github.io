@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { GoogleScript, GTMnoscript } from "../components/GTM";
+import { GTMnoscript } from "../components/GTM";
 
 export default function Document() {
     return (
