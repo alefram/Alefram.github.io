@@ -9,7 +9,7 @@ const Post = ({ post }) => {
                 <Link href={`/posts/${post.id}`}>
                     <a 
                         className=" font-bold font-nunito 
-                     text-blue-800 text-opacity-90 text-lg lg:text-xl">
+                     text-blue-900 text-opacity-90 text-lg lg:text-xl">
                         {post.title}
                     </a>
                 </Link>

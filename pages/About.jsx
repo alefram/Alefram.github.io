@@ -7,7 +7,7 @@ const About = () => {
     return (
         <div>
             <Head>
-                <title>About | Alexis Fraudita</title>
+                <title>About | Ale Blog</title>
                 <meta name="description" content="Hey I'm Alexis Fraudita, I'm
                 software developer and I will share with you everything that i'm
                  learning about machine learning, electronics and more."

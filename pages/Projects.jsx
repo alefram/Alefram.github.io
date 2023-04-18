@@ -9,7 +9,7 @@ export default function Projects({allProjectsData}) {
     return (
         <div> 
             <Head>
-                <title>Projects | Alexis Fraudita</title>
+                <title>Projects | Ale Blog</title>
                 <meta 
                     name="description" 
                     content="Here There are my projects about Machine Learning, 
@@ -20,7 +20,7 @@ export default function Projects({allProjectsData}) {
                     name="keywords" 
                     content="Machine Learning, Robotics, Electronics, 
                     Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, 
-                    Alexis Fraudita, Python, Pytorch"
+                    Python, Pytorch"
                 />
                 <meta 
                     property="og:title" 
