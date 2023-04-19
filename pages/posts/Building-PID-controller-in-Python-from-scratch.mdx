@@ -1,6 +1,7 @@
 import Layout from '../../components/Layout';
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
+import { Mermaid } from 'mdx-mermaid/Mermaid';
 
 export const meta = {
     title: 'Building a PID controller in Python from scratch',
@@ -19,6 +20,15 @@ towards taking full advantage of this powerful control mechanism.
 A basic diagram of a PID controller looks like this:
 
 {/* TODO: add the pid controller diagram */}
+
+<Mermaid chart={`
+graph TD;
+    input ---|Error| PID;
+    setpoint ---|Setpoint| PID;
+    PID ---|Control Output| plant;
+    plant ---|Process Variable| feedback;
+    feedback ---|Error| PID;
+`} />
 
 e(t) is known as the error signal, which is the difference between a desired 
 process value or setpoint r(t) and a measured process variable y(t) from the 
