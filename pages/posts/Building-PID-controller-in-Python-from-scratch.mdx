@@ -20,15 +20,36 @@ towards taking full advantage of this powerful control mechanism.
 A basic diagram of a PID controller looks like this:
 
 {/* TODO: add the pid controller diagram */}
+{/* <img src="/images/pid.png"/> */}
 
 <Mermaid chart={`
-graph TD;
-    input ---|Error| PID;
-    setpoint ---|Setpoint| PID;
-    PID ---|Control Output| plant;
-    plant ---|Process Variable| feedback;
-    feedback ---|Error| PID;
-`} />
+flowchart LR 
+
+    input(("r(t)")) --> sum1((Σ))
+    sum1 --- node(("e(t)"))
+    node --> P("P Kp e(t)")
+    node --> I("I Ki ∫e(t)")
+    node --> D("D Kd de(t)/dt")
+    P --> sum2((Σ))
+    I --> sum2((Σ))
+    D --> sum2((Σ))
+    sum2 --- u(("u(t)"))
+    u --> plant("plant \n process") 
+    plant --> node2((" "))
+    node2 --> out(("y(t)"))
+    node2  -->|"-y(t)"| sum1
+    
+
+    style node fill:#ffffff, stroke-width:0px
+    style u fill:#ffffff, height:100px, stroke-width:0px
+    style node2 fill:#333, height:100px, stroke-width:0px
+    style sum1 stroke-width:0px
+    style sum2 stroke-width:0px
+    style input fill:#ffffff, stroke-width:0px
+    style out fill:#ffffff, stroke-width:0px
+`} /> 
+
+
 
 e(t) is known as the error signal, which is the difference between a desired 
 process value or setpoint r(t) and a measured process variable y(t) from the 
