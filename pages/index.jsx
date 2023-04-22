@@ -5,7 +5,7 @@ import { getSortedPostsData } from '../lib/posts';
 import Post from '../components/Post';
 
 export default function Home ({posts}) {
-  
+
     return (
         <div>
             <Head>

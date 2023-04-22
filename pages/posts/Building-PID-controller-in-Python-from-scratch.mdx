@@ -1,12 +1,13 @@
 import Layout from '../../components/Layout';
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
-import { Mermaid } from 'mdx-mermaid/Mermaid';
 
 export const meta = {
     title: 'Building a PID controller in Python from scratch',
     date: '2023-03-25'
 }
+
+{/* TODO: corregir lo escrito y agregar detalles y revisar que el codigo funciona */}
 
 The PID controller is an essential tool used in multiple industries, enabling 
 the maintenance of the desired setpoint and ensuring control and stability. By 
@@ -19,82 +20,134 @@ towards taking full advantage of this powerful control mechanism.
 
 A basic diagram of a PID controller looks like this:
 
-{/* TODO: add the pid controller diagram */}
-{/* <img src="/images/pid.png"/> */}
-
-<Mermaid chart={`
-flowchart LR 
-
-    input(("r(t)")) --> sum1((Σ))
-    sum1 --- node(("e(t)"))
-    node --> P("P Kp e(t)")
-    node --> I("I Ki ∫e(t)")
-    node --> D("D Kd de(t)/dt")
-    P --> sum2((Σ))
-    I --> sum2((Σ))
-    D --> sum2((Σ))
-    sum2 --- u(("u(t)"))
-    u --> plant("plant \n process") 
-    plant --> node2((" "))
-    node2 --> out(("y(t)"))
-    node2  -->|"-y(t)"| sum1
-    
-
-    style node fill:#ffffff, stroke-width:0px
-    style u fill:#ffffff, height:100px, stroke-width:0px
-    style node2 fill:#333, height:100px, stroke-width:0px
-    style sum1 stroke-width:0px
-    style sum2 stroke-width:0px
-    style input fill:#ffffff, stroke-width:0px
-    style out fill:#ffffff, stroke-width:0px
-`} /> 
-
+![pid](/images/pid.drawio.svg)
 
 
 e(t) is known as the error signal, which is the difference between a desired 
 process value or setpoint r(t) and a measured process variable y(t) from the 
-system that we want to control. u(t) is the output of the PID controller known 
-as the control signal that will attempts to minimize the error e(t) over time. 
+system that we want to control called "plant". u(t) is the output of the PID 
+controller known as the control signal that will attempts to minimize the error 
+e(t) over time. 
 
+The PID controller, consists in 3 different parts: the Proportional part, 
+the integral part and the derivative part.
 
-The PID controller, consists in 3 different parts: the 
+The proportional part helps to maintain the desired output of the control 
+system by working to reduce the difference between the desired output and the 
+actual output of the system. For example, the cruise control that keeps you at 
+the right speed when you're driving on a flat road. If you start going too slow, 
+the proportional part tells the car to go a little faster so you get back to the 
+right speed. If you start going too fast, it tells the car to go slower.
 
+The integral part, keeps track of how much the system has been off from the 
+desired output in the past and makes adjustments to help reduce that difference 
+over time. It's like a person who remembers that they were too hot or too cold 
+in a room yesterday and adjusts the thermostat today to make sure they're more 
+comfortable.
 
-From this diagram, we can write the equation of the PID like this:
+The derivative part of a PID controller is like a watchdog that watches how 
+things are changing over time. It looks for how fast things are changing and 
+makes adjustments based on that. Imagine you're going downhill in your car and 
+you start going faster, the derivative part of a cruise control system would 
+sense this change in speed and make adjustments to slow you down.
+
+Mathematly the PID controller looks like this:
 
 <div style={{ display: 'block', margin: 'auto', width: '60%' }}>
     <InlineMath math="u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t)"/>
 </div>
 
-
-
-{/* TODO: explain the components of the formula */}
 Where:
 
-* <InlineMath math="K_p"/>: represents
+* <InlineMath math="K_p"/>: represents how much the output of the controller 
+changes in response to a difference between the desired output and the actual 
+output of the system.
 
-* <InlineMath math="k_i"/>: represents
+* <InlineMath math="k_i"/>: represents how much the output of the controller 
+changes in response to the accumulated difference between the desired and actual
+outputs of the system over time.
 
-* <InlineMath math="k_d"/>: represents
+* <InlineMath math="k_d"/>: represents how much the output of the controller 
+changes in response to the rate of change of the difference between the desired 
+and actual outputs of the system.
 
-* <InlineMath math="e(t)"/>: represents
+* <InlineMath math="e(t)"/>: represents the error signal.
 
-* <InlineMath math="u(t)"/>: represents
+* <InlineMath math="u(t)"/>: represents control signal.
+
+After designing the PID controller, the next step is to implement it in Python. 
 
 ## Implementing the PID in Python
 
+We will first create a PID class with the proportional, integral, and derivative
+gains as instance variables. The class will have a compute method that takes the
+current error and returns the control output. The compute method will implement 
+the PID control equation by calculating the proportional, integral, and 
+derivative components and summing them to generate the control output.
+
+```python
+class PID:
+    def __init__(self, Kp, Ki, Kd):
+        self.Kp = Kp
+        self.Ki = Ki
+        self.Kd = Kd
+        self.integral = 0
+        self.previous_error = 0
+
+    def compute(self, error):
+        self.integral += error
+        derivative = error - self.previous_error
+        output = self.Kp * error + self.Ki * self.integral + self.Kd * derivative
+        self.previous_error = error
+        return output
+```
+In the compute method, we first update the integral term by adding the current 
+error value. We then calculate the derivative term by subtracting the previous 
+error from the current error. Finally, we calculate the control output by 
+summing the proportional, integral, and derivative terms and return the output.
+
 ## Testing the PID
 
+To test the PID controller, we will simulate a system with a known transfer 
+function and apply the PID controller to the system. We will plot the response 
+of the system to a step input and tune the gains of the PID controller to 
+provide the desired response.
 
-{/* concluciones */}
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+def system(x):
+    return 1 / (1 + x)
+
+pid = PID(0.5, 0.1, 0.1)
+dt = 0.01
+t = np.arange(0, 5, dt)
+setpoint = np.ones_like(t)
+
+output = np.zeros_like(t)
+for i in range(len(t)):
+    error = setpoint[i] - system(output[i-1])
+    output[i] = output[i-1] + pid.compute(error) * dt
+
+plt.plot(t, setpoint, 'r--', label='setpoint')
+plt.plot(t, output, 'b-', label='output')
+plt.legend()
+plt.xlabel('Time (s)')
+plt.ylabel('Output')
+plt.show()
+```
+
+In the code above, we define a system with a transfer function of <InlineMath math="\frac{1}{1 + x}"/>. 
+We then create a PID controller with gains of 0.5, 0.1, and 0.1 for the 
+proportional, integral, and derivative components, respectively. We simulate 
+the system by applying a step input to the system and using the PID controller 
+to generate the control output. We then plot the response of the system to the 
+step input.
+
 
 ## Reference
 
-
-
-{/* The PID controller, works by using a feedback loop to continuously adjust inputs 
-and outputs, while the Proportional, Integral, and Derivative components 
-calculate the necessary corrections. */}
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
 
