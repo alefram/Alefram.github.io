@@ -116,7 +116,7 @@ const About = () => {
                         </div>
                         <div>
                             <Link
-                                href="https://twitter.com/FrauditaAlexis"
+                                href="https://twitter.com/_Alefram_"
                                 passHref={true}
                             >
                                 <a>
