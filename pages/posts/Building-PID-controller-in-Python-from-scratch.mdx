@@ -8,8 +8,8 @@ export const meta = {
     date: '2023-03-25'
 }
 
-When I was in the university, my control system classes was dictated using MATLAB
-, MATLAB is a powerfull tool to design and test control systems. But, one of the
+When I was in the university, my control system classes was dictated using MATLAB,
+MATLAB is a powerfull tool to design and test control systems. But, one of the
 things that overwhelms me about Matlab, is that it is a very heavy program with 
 different types of packages for different uses and a large number of tools and 
 I like a simple minimalist coding style stuff for create or design stuff. 
@@ -20,7 +20,7 @@ system such as a PID controller, applying the theory I learned in university.
 
 So here is what I learned.
 
-## Designing the PID controller
+## What is a PID controller?
 
 A basic diagram of a PID controller looks like this:
 
@@ -54,7 +54,7 @@ makes adjustments based on that. Imagine you're going downhill in your car and
 you start going faster, the derivative part of a cruise control system would 
 sense this change in speed and make adjustments to slow you down.
 
-Mathematly the PID controller looks like this:
+Mathematly, in time domain the PID controller looks like this:
 
 <div style={{ display: 'block', margin: 'auto', width: '60%' }}>
     <InlineMath math="u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t)"/>
@@ -78,10 +78,9 @@ and actual outputs of the system.
 
 * <InlineMath math="u(t)"/>: represents control signal.
 
-Now the next step is to implement it in Python. 
+Next, we'll use Sympy and Numpy to design a PID controller and plot it using Matplotlib.
 
-
-## Implementing the PID in Python
+## Desiging the PID controller
 
 We will first create a PID class with the proportional, integral, and derivative
 gains as instance variables. The class will have a compute method that takes the
