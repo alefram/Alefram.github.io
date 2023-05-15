@@ -82,71 +82,13 @@ Next, we'll use Sympy and Numpy to design a PID controller and plot it using Mat
 
 ## Desiging the PID controller
 
-We will first create a PID class with the proportional, integral, and derivative
-gains as instance variables. The class will have a compute method that takes the
-current error and returns the control output. The compute method will implement 
-the PID control equation by calculating the proportional, integral, and 
-derivative components and summing them to generate the control output.
+First, we can have to approach, using symbolic math with sympy or using scipy which
+is more similar to MATLAB.
 
-```python
-class PID:
-    def __init__(self, Kp, Ki, Kd):
-        self.Kp = Kp
-        self.Ki = Ki
-        self.Kd = Kd
-        self.integral = 0
-        self.previous_error = 0
 
-    def compute(self, error):
-        self.integral += error
-        derivative = error - self.previous_error
-        output = self.Kp * error + self.Ki * self.integral + self.Kd * derivative
-        self.previous_error = error
-        return output
-```
-In the compute method, we first update the integral term by adding the current 
-error value. We then calculate the derivative term by subtracting the previous 
-error from the current error. Finally, we calculate the control output by 
-summing the proportional, integral, and derivative terms and return the output.
 
 ## Testing the PID
 
-To test the PID controller, we will simulate a system with a known transfer 
-function and apply the PID controller to the system. We will plot the response 
-of the system to a step input and tune the gains of the PID controller to 
-provide the desired response.
-
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-
-def system(x):
-    return 1 / (1 + x)
-
-pid = PID(0.5, 0.1, 0.1)
-dt = 0.01
-t = np.arange(0, 5, dt)
-setpoint = np.ones_like(t)
-
-output = np.zeros_like(t)
-for i in range(len(t)):
-    error = setpoint[i] - system(output[i-1])
-    output[i] = output[i-1] + pid.compute(error) * dt
-
-plt.plot(t, setpoint, 'r--', label='setpoint')
-plt.plot(t, output, 'b-', label='output')
-plt.legend()
-plt.xlabel('Time (s)')
-plt.ylabel('Output')
-plt.show()
-```
-
-In the code above, we define a system with a transfer function of <InlineMath math="\frac{1}{1 + x}"/>. 
-We then create a PID controller with gains of 0.5, 0.1, and 0.1 for the 
-proportional, integral, and derivative components, respectively. We simulate 
-the system by applying a step input to the system and using the PID controller 
-to generate the control output. We then plot the response of the system to the 
-step input.
 
 ## Reference
 
