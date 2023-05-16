@@ -81,10 +81,47 @@ Next, we'll use Sympy and Numpy to design a PID controller and plot it using Mat
 
 ## Desiging the PID controller
 
-First, we can have to approach, using symbolic math with sympy or using scipy which
-is more similar to MATLAB.
+First, we need a system to control before create our PID controller. We have two
+ways for create the system also called "plant" in python, a symbolic approach
+using sympy or a similar approach to MATLAB using scipy.
 
+We can use this model system as example.
 
+<div style={{display: 'block', margin: 'auto', width: '20%'}}>
+    <InlineMath math="\frac{1}{s(s+1)(s+5)}"/>
+</div>
+
+You may be wondering why s?, it's because the Laplace domain. It is used instead
+of time domain because it allows for analysis of the transfer functions of linear 
+time-invariant systems(LTI) in a simpler and more efficient manner.
+
+Using simpy, we can create our LTI system like this:
+
+```python
+# symbolic
+s = sympy.symbols('s')
+system = 1/(s*(s+1)*(s+5))
+```
+
+For create our LTI system, we need to know what are the poles and zeros of our 
+system. We can expand our previous symbolic equation to get that.
+
+```python
+expanded_system = sympy.expand(system)
+
+#result
+1/(s**3 + 6*s**2 + 5*s)
+```
+
+Then we know that our poles are [1, 6, 5, 0], so now we can create our LTI system
+like this.
+
+```python
+#scipy
+num = [1]
+den = [1, 6, 5, 0]
+system = signal.lti(num,den)
+```
 
 ## Testing the PID
 
