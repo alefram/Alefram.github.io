@@ -81,6 +81,8 @@ Next, we'll use Sympy and Numpy to design a PID controller and plot it using Mat
 
 ## Desiging the PID controller
 
+### Creating the model system
+
 First, we need a system to control before create our PID controller. We have two
 ways for create the system also called "plant" in python, a symbolic approach
 using sympy or a similar approach to MATLAB using scipy.
@@ -122,6 +124,32 @@ num = [1]
 den = [1, 6, 5, 0]
 system = signal.lti(num,den)
 ```
+
+### Creating the PID
+
+Lets create our PID in Laplace domain.
+
+<div style={{display: 'block', margin: 'auto', width: '40%'}}>
+    <InlineMath math="G_{c}(s) = K_{p}(1 + \frac{1}{T_{i}s} + T_{d}s)"/>
+</div>
+
+Where:
+
+* <InlineMath math="K_{p}"/>: represents how much the output of the controller 
+changes in response to a difference between the desired output and the actual 
+output of the system.
+
+* <InlineMath math="T_{i}"/>: represents  the integral time.
+
+* <InlineMath math="T_{d}"/>: represents the derivative time.
+
+Now, our objective is to Tune the values of (Kp, Ti, Td) base on some parameters.
+To find these values, 
+{/* TODO: decidir metodo de tunear PID */}
+
+### Tuning the PID
+
+
 
 ## Testing the PID
 
