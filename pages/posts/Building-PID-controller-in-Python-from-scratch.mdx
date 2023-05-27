@@ -77,16 +77,16 @@ and actual outputs of the system.
 
 * <InlineMath math="u(t)"/>: represents control signal.
 
-Next, we'll use python-control to design a PID controller and plot it using Matplotlib.
+Next, we'll use python-control, sympy and scipy to design a PID controller and 
+plot it using Matplotlib.
 
 ## Desiging the PID controller
 
 
 ### Creating the model system
 
-First, we need a system to control before create our PID controller. We have two
-ways for create the system also called "plant" in python, a symbolic approach
-using sympy or a similar approach to MATLAB using scipy.
+First, we need a system to control before create our PID controller. We can do
+this using the python-control package.
 
 We can use this model system as example.
 
@@ -98,32 +98,15 @@ You may be wondering why s?, it's because the Laplace domain. It is used instead
 of time domain because it allows for analysis of the transfer functions of linear 
 time-invariant systems(LTI) in a simpler and more efficient manner.
 
-Using simpy, we can create our LTI system like this:
+So we create our model transfer function system like this.
 
 ```python
-# symbolic
-s = sympy.symbols('s')
+import control
+
+s = control.TransferFunction.s
+
 system = 1/(s*(s+1)*(s+5))
-```
 
-For create our LTI system, we need to know what are the poles and zeros of our 
-system. We can expand our previous symbolic equation to get that.
-
-```python
-expanded_system = sympy.expand(system)
-
-#result
-1/(s**3 + 6*s**2 + 5*s)
-```
-
-Then we know that our poles are [1, 6, 5, 0], so now we can create our LTI system
-like this.
-
-```python
-#scipy
-num = [1]
-den = [1, 6, 5, 0]
-system = signal.lti(num,den)
 ```
 
 ### Creating the PID
@@ -144,11 +127,51 @@ output of the system.
 
 * <InlineMath math="T_{d}"/>: represents the derivative time.
 
-Now, our objective is to Tune the values of (Kp, Ti, Td) base on some parameters.
-To find these values, 
-{/* TODO: decidir metodo de tunear PID */}
+Now, our objective is to Tune the values of <InlineMath math="K_{p}"/>, 
+<InlineMath math="T_{i}"/> and <InlineMath math="T_{d}"/>.
+To find these values, we will use the Ziegler–Nichols tuning rule.
 
-### Tuning the PID
+since the system plant have an integrator (<InlineMath manth="1/s"/>), we will
+use the second method of Ziegler–Nichols which consist in setting <InlineMath math="T_{i}=\infty"/>
+and <InlineMath math="T_{d}=0"/> to obtain the closed-loop transfer function.
+
+Because we get the transfer function of the system plant using python-control, 
+we can also use the feedback method to get the closed loop transfer function. 
+We will add arbitrary value to <InlineMath math="K_{p}"/> to do the calculation,
+0 to <InlineMath math="T_{d}"/> and a big number to <InlineMath math="T_{i}"/> 
+to get the closed loop transfer function.
+
+```python
+import control
+
+s = control.TransferFunction.s
+
+system = 1/(s*(s+1)*(s+5))
+
+Kp = 17
+Ti = 10000000000
+Td = 0
+pid = Kp*(1 + 1/Ti*s + Td*s)
+
+feedback = control.feedback(system*pid)
+print(feedback)
+
+#result
+#    1.7e-08 s + 17
+#----------------------
+#s^3 + 6 s^2 + 5 s + 17
+```
+
+So we know that our closed loop transfer function will be like this:
+
+<div style={{display: 'block', margin: 'auto', width: '40%'}}>
+    <InlineMath math="\frac{G(s)}{R(s)} = \frac{K_{p}}{s^{3} + 6s^{2} + 5s + K_{p}}"/>
+</div>
+
+Where <InlineMath math="s^{3} + 6s^{2} + 5s + K_{p} = 0"/> will be our charateristic 
+equation.
+
+
 
 
 
