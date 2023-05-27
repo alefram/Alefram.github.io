@@ -10,7 +10,7 @@ export const GoogleScript = () => (
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
           
-            gtag('config', G-PHJRD3DMEN);
+            gtag('config', 'G-PHJRD3DMEN');
             `}
         </Script>
     </>
