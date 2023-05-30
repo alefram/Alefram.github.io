@@ -55,9 +55,7 @@ sense this change in speed and make adjustments to slow you down.
 
 Mathematly, in time domain the PID controller looks like this:
 
-<div style={{ display: 'block', margin: 'auto', width: '60%' }}>
-    <InlineMath math="u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t)"/>
-</div>
+<BlockMath math="u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t)"/>
 
 Where:
 
@@ -90,9 +88,7 @@ this using the python-control package.
 
 We can use this model system as example.
 
-<div style={{display: 'block', margin: 'auto', width: '20%'}}>
-    <InlineMath math="\frac{1}{s(s+1)(s+5)}"/>
-</div>
+<BlockMath math="\frac{1}{s(s+1)(s+5)}"/>
 
 You may be wondering why s?, it's because the Laplace domain. It is used instead
 of time domain because it allows for analysis of the transfer functions of linear 
@@ -113,9 +109,7 @@ system = 1/(s*(s+1)*(s+5))
 
 Lets create our PID in Laplace domain.
 
-<div style={{display: 'block', margin: 'auto', width: '40%'}}>
-    <InlineMath math="G_{c}(s) = K_{p}(1 + \frac{1}{T_{i}s} + T_{d}s)"/>
-</div>
+<BlockMath math="G_{c}(s) = K_{p}(1 + \frac{1}{T_{i}s} + T_{d}s)"/>
 
 Where:
 
@@ -131,9 +125,10 @@ Now, our objective is to Tune the values of <InlineMath math="K_{p}"/>,
 <InlineMath math="T_{i}"/> and <InlineMath math="T_{d}"/>.
 To find these values, we will use the Ziegler–Nichols tuning rule.
 
-since the system plant have an integrator (<InlineMath manth="1/s"/>), we will
-use the second method of Ziegler–Nichols which consist in setting <InlineMath math="T_{i}=\infty"/>
-and <InlineMath math="T_{d}=0"/> to obtain the closed-loop transfer function.
+Since the system plant have an integrator (<InlineMath manth="1/s"/>), we will
+use the second method of Ziegler–Nichols which consist in setting 
+<InlineMath math="T_{i}=\infty"/> and <InlineMath math="T_{d}=0"/> to obtain the 
+closed-loop transfer function.
 
 Because we get the transfer function of the system plant using python-control, 
 we can also use the feedback method to get the closed loop transfer function. 
@@ -153,7 +148,7 @@ Ti = 10000000000
 Td = 0
 pid = Kp*(1 + 1/Ti*s + Td*s)
 
-feedback = control.feedback(system*pid)
+feedback = control.feedback(system*pid) 
 print(feedback)
 
 #result
@@ -164,18 +159,171 @@ print(feedback)
 
 So we know that our closed loop transfer function will be like this:
 
-<div style={{display: 'block', margin: 'auto', width: '40%'}}>
-    <InlineMath math="\frac{G(s)}{R(s)} = \frac{K_{p}}{s^{3} + 6s^{2} + 5s + K_{p}}"/>
-</div>
+<BlockMath math="\frac{G(s)}{R(s)} = \frac{K_{p}}{s^{3} + 6s^{2} + 5s + K_{p}}"/>
 
 Where <InlineMath math="s^{3} + 6s^{2} + 5s + K_{p} = 0"/> will be our charateristic 
 equation.
 
 
+Next, we need to get the a <InlineMath math="K_{p}"/> value that makes the system
+marginally stable so that sustained oscillation, this can be get it using the 
+**Routh's stability criterion**. To do this in python, I use the method from the 
+[tbcontrol library](https://github.com/alchemyst/Dynamics-and-Control/blob/master/tbcontrol/symbolic.py).
+
+```python
+def routh(p):
+    coefficients = p.all_coeffs()
+    N = len(coefficients)
+    M = sympy.zeros(N, (N+1)//2 + 1)
+
+    r1 = coefficients[0::2]
+    r2 = coefficients[1::2]
+    M[0, :len(r1)] = [r1]
+    M[1, :len(r2)] = [r2]
+    for i in range(2, N):
+        for j in range(N//2):
+            S = M[[i-2, i-1], [0, j+1]]
+            M[i, j] = sympy.simplify(-S.det()/M[i-1,0])
+    return M[:, :-1]
+```
+
+Then we can implement it like this
+
+```python
+Kp = sympy.Symbol('Kp')
+s = sympy.Symbol('s')
+
+ce = s**3 + 6*s**2 + 5*s + Kp #charateristic equation
+
+A = routh(sympy.Poly(ce,s))
+A
+```
+
+It will give us.
+
+<BlockMath math="\begin{bmatrix}
+1 & 5\\
+6 & K_{p}\\
+5-\frac{K_{p}}{6} & 0\\
+K_{p} & 0
+\end{bmatrix}"/>
+
+To check the stability limits we can use sympy like this.
+
+```python
+sympy.solve([e > 0 for e in A[:,0]], Kp)
+```
+
+Resulting
+
+<BlockMath math="0< K_{p} \wedge K_{p}<30"/>
+
+So we know that 30 is the critical <InlineMath math="K_{p}"/>, thus the critical
+gain would be <InlineMath math="K_{cr} = 30"/>. With gain set in 30, the charateristic
+equation becomes.
+
+<BlockMath math="s^{3} + 6s^{2} + 5s + 30 = 0"/>
+
+To find the frequency of the sustained oscillation, we replace <InlineMath math="s=jw"/>
+getting.
+
+<BlockMath math="(j\omega)^{3} + 6(j\omega)^{2} + 5(j\omega) + 30 = 0"/>
+
+or 
+
+<BlockMath math="6(5-\omega^{2}) + j\omega(5-\omega^{2}) = 0"/>
+
+where the frequency of the sustained oscillation will be 
+<InlineMath math="\omega^{2} = 5 => \omega = \sqrt{5}"/>
+
+We can also solve this directly using sympy like this.
+
+```python
+s = sympy.Symbol('s')
+ce = s**3 + 6*s**2 + 5*s + 30
+
+roots = sympy.solve(ce,s)
+roots
+```
+
+<BlockMath math="[-6, -\sqrt{5}i, \sqrt{5}i]"/>
 
 
+Finally using the Ziegler–Nichols, we get the values of <InlineMath math="K_{p}, T_{i}, T_{d}"/>
+
+<BlockMath math="\begin{gather*} 
+K_{p} = 0.6K_{cr} \\ 
+T_{i} = 0.5P_{cr} \\
+T_{d} = 0.125P_{cr}
+\end{gather*}"/>
+
+Where <InlineMath math="P_{cr} = \frac{2\pi}{\omega}"/>
+
+
+```python
+w = np.sqrt(5)
+Pcr = (2*np.pi)/w
+Kcr = 30
+
+Kp = 0.6*Kcr
+Ti = 0.5*Pcr
+Td = 0.125*Pcr
+
+print("Kp:", Kp)
+print("Ti:", Ti)
+print("Td:", Td)
+
+#result
+#Kp: 18.0
+#Ti: 1.40496...
+#Td: 0.3512...
+```
 
 ## Testing the PID
+
+We tuning our PID controller now we can check the behaviour of the system, to do this
+we can plot the step response using the python-control library like this.
+
+```python
+s = control.TransferFunction.s
+
+system = (1/(s*(s+1)*(s+5)))
+
+Kp = 18
+Ti = 1.405
+Td = 0.351
+pid = (Kp*(1 + 1/(Ti*s) + Td*s))
+
+feedback = control.feedback(system*pid)
+print(feedback)
+
+#result
+#           8.877 s^2 + 25.29 s + 18
+#----------------------------------------------
+#1.405 s^4 + 8.43 s^3 + 15.9 s^2 + 25.29 s + 18
+
+t = np.linspace(0,17)
+T, y = control.step_response(feedback, t)
+
+# plot
+plt.plot(T, y)
+plt.xlabel('Time (seconds)')
+plt.ylabel('Output')
+plt.title('Step Response')
+plt.grid()
+plt.show()
+```
+
+And we get.
+
+![pidplot](/images/pidplot.png)
+
+From here, you can start to play with the PID like move the zeros to get the 
+correct value and solve for a specific behaviour like reduce the overshoot or speed 
+response.
+
+
+
 
 
 ## Reference
