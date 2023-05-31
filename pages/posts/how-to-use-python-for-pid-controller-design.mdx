@@ -3,8 +3,8 @@ import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
 
 export const meta = {
-    title: 'Building a PID controller in Python from scratch',
-    date: '2023-03-25'
+    title: 'How to use Python for PID controller design',
+    date: '2023-05-30'
 }
 
 When I was in the university, my control system classes was dictated using MATLAB,
@@ -21,6 +21,10 @@ So here is what I learned.
 
 ## What is a PID controller?
 
+A PID controller is a "brain" for machines that helps them stay on track. It 
+takes in sensory input, compares it to a target, and adjusts as needed to 
+achieve the desired outcome.
+
 A basic diagram of a PID controller looks like this:
 
 ![pid](/images/pid.drawio.svg)
@@ -31,23 +35,23 @@ system that we want to control called "plant". u(t) is the output of the PID
 controller known as the control signal that will attempts to minimize the error 
 e(t) over time. 
 
-The PID controller, consists in 3 different parts: the Proportional part, 
-the integral part and the derivative part.
+The PID controller, consists in 3 different parts: **the Proportional part**, 
+**the integral part** and **the derivative part**.
 
-The proportional part helps to maintain the desired output of the control 
+**The proportional part** helps to maintain the desired output of the control 
 system by working to reduce the difference between the desired output and the 
 actual output of the system. For example, the cruise control that keeps you at 
 the right speed when you're driving on a flat road. If you start going too slow, 
 the proportional part tells the car to go a little faster so you get back to the 
 right speed. If you start going too fast, it tells the car to go slower.
 
-The integral part, keeps track of how much the system has been off from the 
+**The integral part**, keeps track of how much the system has been off from the 
 desired output in the past and makes adjustments to help reduce that difference 
 over time. It's like a person who remembers that they were too hot or too cold 
 in a room yesterday and adjusts the thermostat today to make sure they're more 
 comfortable.
 
-The derivative part of a PID controller is like a watchdog that watches how 
+**The derivative part** of a PID controller is like a watchdog that watches how 
 things are changing over time. It looks for how fast things are changing and 
 makes adjustments based on that. Imagine you're going downhill in your car and 
 you start going faster, the derivative part of a cruise control system would 
@@ -75,10 +79,13 @@ and actual outputs of the system.
 
 * <InlineMath math="u(t)"/>: represents control signal.
 
-Next, we'll use python-control, sympy and scipy to design a PID controller and 
-plot it using Matplotlib.
 
 ## Desiging the PID controller
+
+
+
+Next, we'll use python-control, sympy and scipy to design a PID controller and 
+plot it using Matplotlib.
 
 
 ### Creating the model system
