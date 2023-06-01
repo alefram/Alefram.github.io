@@ -4,8 +4,8 @@ const Navbar = () => {
   return (
     <>
 		<nav>
-			<div className="flex flex-col md:flex-row p-4 container mx-auto 
-				lg:max-w-screen-md justify-between md:items-center"
+			<div className="flex flex-col md:flex-row p-2 container mx-auto 
+				lg:max-w-screen-lg justify-between md:items-center"
 			>
 				<div className="mt-1">
 					<Link href="/">

@@ -7,7 +7,7 @@ const About = () => {
     return (
         <div>
             <Head>
-                <title>About | Alexis Fraudita</title>
+                <title>About | Ale Blog</title>
                 <meta name="description" content="Hey I'm Alexis Fraudita, I'm
                 software developer and I will share with you everything that i'm
                  learning about machine learning, electronics and more."
@@ -66,7 +66,7 @@ const About = () => {
                     <p className='mt-3 font-Roboto text-gray-900'>
                         Besides my learning and experimentation, I work as a
                         web application developer
-                        (check <a className="text-blue-600" href="https://moonguard.dev"> this</a>).
+                        (check <a className="text-blue-800 text-opacity-90 font-bold" href="https://moonguard.dev"> this</a>).
                         Previously, I was an assistant professor in the Digital
                         Systems and Microprocessors Lab at the Central University
                         of Venezuela
@@ -81,7 +81,7 @@ const About = () => {
 
                 <div className="p-4 mt-5">
                     <h1
-                        className=" text-blue-700 text-2xl font-bold
+                        className=" text-blue-800 text-opacity-90 text-2xl font-bold
                         text-center font-nunito">
                         Also you can Find me On
                     </h1>
