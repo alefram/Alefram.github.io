@@ -21,7 +21,7 @@ So here is what I learned.
 
 ## What is a PID controller?
 
-A PID controller is a "brain" for machines that helps them stay on track. It 
+A PID controller is a "**brain**" for machines that helps them stay on track. It 
 takes in sensory input, compares it to a target, and adjusts as needed to 
 achieve the desired outcome.
 
@@ -82,24 +82,23 @@ and actual outputs of the system.
 
 ## Desiging the PID controller
 
+We will be using example 8-1 (found on page 572) from the book 
+['Modern Control Engineering'](https://www.amazon.com/Modern-Control-Engineering-Katsuhiko-Ogata/dp/0136156738)
+by Katushiko Ogata to create our PID controller. 
+Additionally, we will utilize the python-control library, as well as sympy and 
+numpy for mathematical operations, and Matplotlib for visualizing the 
+controller's responses.
 
+### Creating the Plant model
 
-Next, we'll use python-control, sympy and scipy to design a PID controller and 
-plot it using Matplotlib.
-
-
-### Creating the model system
-
-First, we need a system to control before create our PID controller. We can do
-this using the python-control package.
-
-We can use this model system as example.
+We need a system plant to control before creating our PID controller. To do 
+this, we can utilize the python-control package.
 
 <BlockMath math="\frac{1}{s(s+1)(s+5)}"/>
 
-You may be wondering why s?, it's because the Laplace domain. It is used instead
-of time domain because it allows for analysis of the transfer functions of linear 
-time-invariant systems(LTI) in a simpler and more efficient manner.
+You might be curious as to why 's' is used instead of time in the Laplace domain.
+The reason is that the Laplace domain enables analysis of transfer functions in 
+a simpler and more efficient manner for linear time-invariant systems (LTI)
 
 So we create our model transfer function system like this.
 
@@ -108,13 +107,13 @@ import control
 
 s = control.TransferFunction.s
 
-system = 1/(s*(s+1)*(s+5))
+plant = 1/(s*(s+1)*(s+5))
 
 ```
 
-### Creating the PID
+### Creating the PID model
 
-Lets create our PID in Laplace domain.
+Let's create our PID in Laplace domain.
 
 <BlockMath math="G_{c}(s) = K_{p}(1 + \frac{1}{T_{i}s} + T_{d}s)"/>
 
@@ -128,34 +127,33 @@ output of the system.
 
 * <InlineMath math="T_{d}"/>: represents the derivative time.
 
-Now, our objective is to Tune the values of <InlineMath math="K_{p}"/>, 
-<InlineMath math="T_{i}"/> and <InlineMath math="T_{d}"/>.
-To find these values, we will use the Ziegler–Nichols tuning rule.
+Our goal now is to adjust the values of <InlineMath math="K_{p}"/>, <InlineMath math="T_{i}"/>,
+and <InlineMath math="T_{d}"/> for optimal performance. We will utilize the 
+Ziegler-Nichols tuning rule to determine these values.
 
-Since the system plant have an integrator (<InlineMath manth="1/s"/>), we will
-use the second method of Ziegler–Nichols which consist in setting 
-<InlineMath math="T_{i}=\infty"/> and <InlineMath math="T_{d}=0"/> to obtain the 
-closed-loop transfer function.
+Since our plant contains an integrator (<InlineMath math="1/s"/>), we 
+will utilize the second method of the Ziegler-Nichols tuning rule. This involves 
+setting <InlineMath math="Ti = \infty"/> cancelling it's effect and <InlineMath math="Td = 0"/> in 
+order to obtain the closed-loop transfer function.
 
-Because we get the transfer function of the system plant using python-control, 
-we can also use the feedback method to get the closed loop transfer function. 
-We will add arbitrary value to <InlineMath math="K_{p}"/> to do the calculation,
-0 to <InlineMath math="T_{d}"/> and a big number to <InlineMath math="T_{i}"/> 
-to get the closed loop transfer function.
+Having obtained the transfer function of our plant using python-control, 
+we can employ the feedback method to determine the closed-loop transfer function. 
+To calculate this, we will add an arbitrary value to <InlineMath math="K_{p}"/>, 
+set <InlineMath math="T_{d}"/> to 0, and assign a large value to <InlineMath math="T_{i}"/>.
 
 ```python
 import control
 
 s = control.TransferFunction.s
 
-system = 1/(s*(s+1)*(s+5))
+plant = 1/(s*(s+1)*(s+5))
 
 Kp = 17
 Ti = 10000000000
 Td = 0
 pid = Kp*(1 + 1/Ti*s + Td*s)
 
-feedback = control.feedback(system*pid) 
+feedback = control.feedback(plant*pid) 
 print(feedback)
 
 #result
@@ -164,18 +162,22 @@ print(feedback)
 #s^3 + 6 s^2 + 5 s + 17
 ```
 
-So we know that our closed loop transfer function will be like this:
+If you look at the numerator, you will notice it has a term of 
+<InlineMath math="1.7e-08s + 17"/>. The value 17 corresponds to our parameter
+<InlineMath math="K_{p}"/>, while the value <InlineMath math="1.7e-08s"/> is 
+practically negligible. As a result, we can consider our closed-loop transfer 
+function to be:
 
 <BlockMath math="\frac{G(s)}{R(s)} = \frac{K_{p}}{s^{3} + 6s^{2} + 5s + K_{p}}"/>
 
 Where <InlineMath math="s^{3} + 6s^{2} + 5s + K_{p} = 0"/> will be our charateristic 
 equation.
 
-
-Next, we need to get the a <InlineMath math="K_{p}"/> value that makes the system
-marginally stable so that sustained oscillation, this can be get it using the 
-**Routh's stability criterion**. To do this in python, I use the method from the 
-[tbcontrol library](https://github.com/alchemyst/Dynamics-and-Control/blob/master/tbcontrol/symbolic.py).
+Our next step involves determining a value for <InlineMath math="K_{p}"/> that 
+will render the plant marginally stable, thereby promoting sustained oscillation.
+This can be achieved using **Routh's stability criterion**. In Python, we can 
+leverage the method outlined in the [tbcontrol library](https://github.com/alchemyst/Dynamics-and-Control/blob/master/tbcontrol/symbolic.py)
+to accomplish this.
 
 ```python
 def routh(p):
@@ -194,9 +196,11 @@ def routh(p):
     return M[:, :-1]
 ```
 
-Then we can implement it like this
+Then we can implement it like this:
 
 ```python
+import sympy
+
 Kp = sympy.Symbol('Kp')
 s = sympy.Symbol('s')
 
@@ -220,14 +224,14 @@ To check the stability limits we can use sympy like this.
 ```python
 sympy.solve([e > 0 for e in A[:,0]], Kp)
 ```
-
 Resulting
 
 <BlockMath math="0< K_{p} \wedge K_{p}<30"/>
 
-So we know that 30 is the critical <InlineMath math="K_{p}"/>, thus the critical
-gain would be <InlineMath math="K_{cr} = 30"/>. With gain set in 30, the charateristic
-equation becomes.
+We have determined that the critical <InlineMath math="K_{p}"/> value is 30, which
+represents the threshold for **sustaining oscillation**. Accordingly, the 
+critical gain can be expressed as <InlineMath math="K_{cr} = 30"/>. With this 
+value in place, the characteristic equation takes on the following form:
 
 <BlockMath math="s^{3} + 6s^{2} + 5s + 30 = 0"/>
 
@@ -256,7 +260,8 @@ roots
 <BlockMath math="[-6, -\sqrt{5}i, \sqrt{5}i]"/>
 
 
-Finally using the Ziegler–Nichols, we get the values of <InlineMath math="K_{p}, T_{i}, T_{d}"/>
+Finally, using the [Ziegler–Nichols Rule](https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method),
+we determine the values of <InlineMath math="K_{p}, T_{i}, T_{d}"/>
 
 <BlockMath math="\begin{gather*} 
 K_{p} = 0.6K_{cr} \\ 
@@ -266,8 +271,9 @@ T_{d} = 0.125P_{cr}
 
 Where <InlineMath math="P_{cr} = \frac{2\pi}{\omega}"/>
 
-
 ```python
+import numpy as np
+
 w = np.sqrt(5)
 Pcr = (2*np.pi)/w
 Kcr = 30
@@ -287,9 +293,9 @@ print("Td:", Td)
 ```
 
 ## Testing the PID
-
-We tuning our PID controller now we can check the behaviour of the system, to do this
-we can plot the step response using the python-control library like this.
+Now that we've tuned our PID controller, the next step is to evaluate the 
+**system's behavior**. One way to accomplish this is by plotting the step response 
+using the python-control library. This can be achieved as follows:
 
 ```python
 s = control.TransferFunction.s
@@ -321,14 +327,34 @@ plt.grid()
 plt.show()
 ```
 
-And we get.
-
 ![pidplot](/images/pidplot.png)
 
-From here, you can start to play with the PID like move the zeros to get the 
-correct value and solve for a specific behaviour like reduce the overshoot or speed 
-response.
 
+You can also get specific information using the **step_info** method of python-control
+like the overshoot or RiseTime. etc.
+
+```python
+info = control.step_info(feedback)
+print("feedback info")
+print("-------------")
+print("RiseTime:",info["RiseTime"])
+print("Overshoot:", info["Overshoot"])
+
+#result
+#feedback info
+#-------------
+#RiseTime: 0.5058786385507097
+#Overshoot: 93.70305071110504
+```
+
+So that's all for now! You've seen how Python can be used to design a simple PID
+controller, using the Ziegler-Nichols method as one of many techniques to
+determine the PID parameters. Keep in mind that this approach may not always 
+produce optimal values for your specific needs. From here, you can start 
+experimenting with different techniques to fine-tune your controller using 
+the libraries that we use. 
+
+I hope this has been helpful, and I'll see you soon!
 
 ## References
 
@@ -343,9 +369,7 @@ Prentice Hall.
 
 * [5] Sympy Developer Team. [Sympy Documentation](https://docs.sympy.org/latest/index.html).
 
-
-
-
+* [6] PID Controller [wikipedia](https://en.wikipedia.org/wiki/PID_controller).
 
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
