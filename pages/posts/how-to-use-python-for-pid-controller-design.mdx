@@ -35,8 +35,8 @@ system that we want to control called "plant". u(t) is the output of the PID
 controller known as the control signal that will attempts to minimize the error 
 e(t) over time. 
 
-The PID controller, consists in 3 different parts: **the Proportional part**, 
-**the integral part** and **the derivative part**.
+The PID controller is made up of three distinct parts: **the proportional component**,
+**the integral component**, and **the derivative component**.
 
 **The proportional part** helps to maintain the desired output of the control 
 system by working to reduce the difference between the desired output and the 
@@ -67,11 +67,11 @@ Where:
 changes in response to a difference between the desired output and the actual 
 output of the system.
 
-* <InlineMath math="k_i"/>: represents how much the output of the controller 
+* <InlineMath math="K_i"/>: represents how much the output of the controller 
 changes in response to the accumulated difference between the desired and actual
 outputs of the system over time.
 
-* <InlineMath math="k_d"/>: represents how much the output of the controller 
+* <InlineMath math="K_d"/>: represents how much the output of the controller 
 changes in response to the rate of change of the difference between the desired 
 and actual outputs of the system.
 
@@ -168,7 +168,7 @@ If you look at the numerator, you will notice it has a term of
 practically negligible. As a result, we can consider our closed-loop transfer 
 function to be:
 
-<BlockMath math="\frac{G(s)}{R(s)} = \frac{K_{p}}{s^{3} + 6s^{2} + 5s + K_{p}}"/>
+<BlockMath math="\frac{Y(s)}{R(s)} = \frac{K_{p}}{s^{3} + 6s^{2} + 5s + K_{p}}"/>
 
 Where <InlineMath math="s^{3} + 6s^{2} + 5s + K_{p} = 0"/> will be our charateristic 
 equation.
