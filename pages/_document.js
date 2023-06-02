@@ -13,7 +13,19 @@ export default function Document() {
                 <link rel="manifest" href="/site.webmanifest"></link>
                 <meta name="google-site-verification" content="MpnKrcQvKDGeW2EIhtOow24kp2VahB-vL2hYzqGNC54" />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHJRD3DMEN"></script>
-                {/* <link rel="stylesheet" href="https://unpkg.com/ghcolors/dist/css/prism-ghcolors.css"/> */}
+                <script
+                    dangerouslySetInnerHTML={{
+                    __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-PHJRD3DMEN', {
+                        page_path: window.location.pathname
+                        });
+                    `,
+                    }}
+                />
+            {/* <link rel="stylesheet" href="https://unpkg.com/ghcolors/dist/css/prism-ghcolors.css"/> */}
             </Head>
             <body className="">
                 <Main/>
