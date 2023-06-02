@@ -2,8 +2,6 @@ import '../styles/globals.css'
 import '../styles/code.css';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-// import { GoogleScript } from '../components/GTM';
-
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -20,7 +18,6 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
   return (
     <>
-      {/* <GoogleScript/> */}
       <Component {...pageProps} />
     </>
   )
