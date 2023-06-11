@@ -35,5 +35,3 @@ export default function Document() {
         </Html> 
     )
 }
-
-{/* <a href="https://www.flaticon.com/free-icons/gaming" title="gaming icons">Gaming icons created by Smashicons - Flaticon</a> */}

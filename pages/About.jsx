@@ -8,30 +8,21 @@ const About = () => {
         <div>
             <Head>
                 <title>About | Ale Blog</title>
-                <meta name="description" content="Hey I'm Alexis Fraudita, I'm
-                software developer and I will share with you everything that i'm
-                 learning about machine learning, electronics and more."
+                <meta name="description" content="Who I am?"
                  />
                 <meta name="author" content="Alexis Fraudita"/>
-                <meta name="keywords" content="Machine Learning, Robotics,
-                Electronics, Reinforcement Learning, Blog, Portfolio, Alexis,
-                Fraudita, Alexis Fraudita, Python, Pytorch"
+                <meta name="keywords" content="Machine Learning, Robotics, Electronics, 
+                    Reinforcement Learning, Blog, Portfolio, Alexis Fraudita, 
+                    Python, AI, control systems"
                 />
-                <meta property="og:title" content="Alexis Fraudita" />
-                <meta property="og:description" content="Hey I'm Alexis Fraudita,
-                I'm software developer and I will share with you everything that
-                i'm learning about machine learning, electronics and more."
-                />
-                <meta
-                    property="og:image"
-                    content="https://alefram.github.io/images/me.jpeg"
-                />
-                <meta property="og:url" content="https://alefram.github.io/" />
-                <meta property="og:type" content="website" />
+                <meta property="title" content="About | Ale Blog" />
+                <meta property="url" content="https://alefram.github.io/About" />
+                <meta property="type" content="website" />
                 <meta 
                     name="viewport" content="initial-scale=1.0,
                     width=device-width" key="viewport"
                 />
+                <meta name="robots" content="index, follow"/>
             </Head>
 
             <Navbar/>

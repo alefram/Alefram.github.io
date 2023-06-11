@@ -10,30 +10,23 @@ export default function Home ({posts}) {
         <div>
             <Head>
                 <title>Ale Blog</title>
-                <meta name="description" content="Hey I'm Alexis Fraudita, I'm 
-                Electrical Engineer and I will share with you everything that I'm
-                learning about Machine Learning, Electronics and more." 
+                <meta name="description" content="Hey I'm Alex, and I will share 
+                my learning notes and projects about AI and Control systems with you" 
                  />
                 <meta name="author" content="Alexis Fraudita"/>
-                <meta name="keywords" content="Machine Learning, Robotics, 
-                Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, 
-                Fraudita, Alexis Fraudita, Python, Pytorch"
+                <meta name="keywords" content="Machine Learning, Robotics, Electronics, 
+                    Reinforcement Learning, Blog, Portfolio, Alexis Fraudita, 
+                    Python, AI, control systems"
                 />
-                <meta property="og:title" content="Alexis Fraudita" />
-                <meta property="og:description" content="Hey I'm Alexis Fraudita, 
-                I'm Electrical Engineer and I will share with you everything that 
-                I'm learning about Machine Learning, Electronics and more." 
-                />
-                <meta 
-                    property="og:image" 
-                    content="https://alefram.github.io/images/me.jpeg" 
-                />
-                <meta property="og:url" content="https://alefram.github.io/" />
-                <meta property="og:type" content="website" />
+                <meta property="title" content="Ale Blog" />
+                <meta property="url" content="https://alefram.github.io/" />
+                <meta property="type" content="website" />
                 <meta 
                     name="viewport" content="initial-scale=1.0, 
-                    width=device-width" key="viewport" 
+                    widt
+                    h=device-width" key="viewport" 
                 />
+                <meta name="robots" content="index, follow"/>
             </Head>
 
             <Navbar/>

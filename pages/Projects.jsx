@@ -12,35 +12,30 @@ export default function Projects({allProjectsData}) {
                 <title>Projects | Ale Blog</title>
                 <meta 
                     name="description" 
-                    content="Here There are my projects about Machine Learning, 
-                    Robotics and Electronics that are my personal portfolio" 
+                    content="My projects about AI and control systems" 
                 />
                 <meta name="author" content="Alexis Fraudita"/>
                 <meta 
                     name="keywords" 
                     content="Machine Learning, Robotics, Electronics, 
-                    Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, 
-                    Python, Pytorch"
+                    Reinforcement Learning, Blog, Portfolio, Alexis Fraudita, 
+                    Python, Pytorch, AI, control systems"
                 />
                 <meta 
-                    property="og:title" 
-                    content="Projects | Alexis Fraudita" 
+                    property="title" 
+                    content="Projects | Ale Blog" 
                 />
                 <meta 
-                    property="og:description" 
-                    content="Here There are my projects about Machine Learning, 
-                    Robotics and Electronics that are my personal portfolio" 
-                />
-                <meta 
-                    property="og:url" 
+                    property="url" 
                     content="https://alefram.github.io/Projects" 
                 />
-                <meta property="og:type" content="website" />
+                <meta property="type" content="website" />
                 <meta 
                     name="viewport" 
                     content="initial-scale=1.0, width=device-width" 
                     key="viewport" 
                 />
+                <meta name="robots" content="index, follow"/>
             </Head>
 
             <Navbar/>     
