@@ -14,4 +14,13 @@ const withMDX = require('@next/mdx')({
 module.exports = withMDX({
   // Append the default value with md extensions
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  async redirects() {
+    return [
+      {
+        source: '/About',
+        destination: '/',
+        permanent: true, // triggers 308
+      },
+    ];
+  },
 })
