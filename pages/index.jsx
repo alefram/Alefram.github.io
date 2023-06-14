@@ -11,7 +11,7 @@ export default function Home ({posts}) {
             <Head>
                 <title>Ale Blog</title>
                 <meta name="description" content="Hey I'm Alex, and I will share
-                with you, my learning notes and projects about AI and Control and electronics" 
+                with you, my learning notes and projects about AI, Control and electronics" 
                  />
                 <meta name="author" content="Alexis Fraudita"/>
                 <meta name="keywords" content="Machine Learning, Robotics, Electronics, 
@@ -32,7 +32,7 @@ export default function Home ({posts}) {
                 <meta property="og:type" content="website"/>
                 <meta property="og:title" content="Ale Blog"/>
                 <meta property="og:description" content="Hey I'm Alex, and I will share
-                with you, my learning notes and projects about AI and Control and electronics"/>
+                with you, my learning notes and projects about AI, Control and electronics"/>
                 <meta property="og:image" content="🏓"/>
 
                 {/* <!-- Twitter Meta Tags --> */}
@@ -41,7 +41,7 @@ export default function Home ({posts}) {
                 <meta property="twitter:url" content="https://alefram.github.io/"/>
                 <meta name="twitter:title" content="Ale Blog"/>
                 <meta name="twitter:description" content="Hey I'm Alex, and I will share
-                with you, my learning notes and projects about AI and Control and electronics"/>
+                with you, my learning notes and projects about AI, Control and electronics"/>
                 <meta name="twitter:image" content="🏓"/> 
             </Head>
 
