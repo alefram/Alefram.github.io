@@ -7,23 +7,32 @@ const Post = ({projectData}) => {
 	return (
 		<div>
 			<Head>
-				<title>Project | {projectData.title}</title>
+				<title>{projectData.title}</title>
+				<meta name="description" content={projectData.description}/>
 				<meta name="author" content="Alexis Fraudita"/>
-				<meta 
-					name="keywords" 
-					content="Machine Learning, Robotics, Electronics, 
-					Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, 
-					Alexis Fraudita, Python, Pytorch"
-				/>
-				<meta property="og:title" content={projectData.title} />
-				<meta property="og:description" content={projectData.description}/>
-				<meta property="og:type" content="article"/>
-				<meta 
-					property="og:url" 
-					content={
-					`https://alefram.github.io/projects/${projectData.title}`
-					} 
-				/>
+				<meta name="keywords" content={projectData.keywords}/>
+				<meta property="title" content={projectData.title} />
+                <meta property="url" content={`https://alefram.github.io/projects/${projectData.title}`} />
+                <meta property="type" content="website" />
+                <meta 
+                    name="viewport" content="initial-scale=1.0, 
+                    widt
+                    h=device-width" key="viewport" 
+                />
+                <meta name="robots" content="index, follow"/>
+                {/* <!-- Facebook Meta Tags --> */}
+                <meta property="og:url" content={`https://alefram.github.io/projects/${projectData.title}`}/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:title" content={projectData.title}/>
+                <meta property="og:description" content={projectData.description}/>
+                <meta property="og:image" content="🏓"/>
+                {/* <!-- Twitter Meta Tags --> */}
+                <meta name="twitter:card" content="summary_short_image"/>
+                <meta property="twitter:domain" content="alefram.github.io"/>
+                <meta property="twitter:url" content={`https://alefram.github.io/projects/${projectData.title}`}/>
+                <meta name="twitter:title" content={projectData.title}/>
+                <meta name="twitter:description" content={projectData.description}/>
+                <meta name="twitter:image" content="🏓"/> 
 			</Head>
 
 			<Navbar/> 

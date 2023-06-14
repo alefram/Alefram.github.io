@@ -3,6 +3,7 @@ title: 'TEG'
 description: 'A set of tools for the develop of AI agents in robot manipulation'
 image: 'images/projects/TEG.png'
 altImage: 'TEG'
+keywords: 'Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch'
 ---
 
 TEG is a set of Reinforcement Learning enviroments, Robot Models and tools for training AI agents. This project started as my Bachelor thesis in Electrical Engineer but I have the intention of continue it and add more features that I hope would be usefull for Developers and Researchers.

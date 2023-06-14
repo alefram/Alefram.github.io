@@ -11,24 +11,32 @@ export default function Layout({ children, meta }) {
     <>
       <Head>
         <title>{meta.title}</title>
+        <meta name="description" content={meta.description}/>
         <meta name="author" content="Alexis Fraudita" />
-        <meta
-          name="keywords"
-          content="Machine Learning, Robotics, Electronics, 
-              Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, 
-              Alexis Fraudita, Python, Pytorch"
-        />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content={
-            `https://alefram.github.io/posts/${meta.title}`
-          }
-        />
+        <meta name="keywords" content={meta.keywords}/>
 
-
+				<meta property="title" content={meta.title} />
+        <meta property="url" content={`https://alefram.github.io/posts/${meta.title}`} />
+        <meta property="type" content="website" />
+        <meta 
+          name="viewport" 
+          content="initial-scale=1.0, width=device-width" 
+          key="viewport" 
+        />
+        <meta name="robots" content="index, follow"/>
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content={`https://alefram.github.io/posts/${meta.title}`}/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content={meta.title}/>
+        <meta property="og:description" content={meta.description}/>
+        <meta property="og:image" content="🏓"/>
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_short_image"/>
+        <meta property="twitter:domain" content="alefram.github.io"/>
+        <meta property="twitter:url" content={`https://alefram.github.io/posts/${meta.title}`}/>
+        <meta name="twitter:title" content={meta.title}/>
+        <meta name="twitter:description" content={meta.description}/>
+        <meta name="twitter:image" content="🏓"/> 
       </Head>
       <Navbar />
       <main className="container mx-auto px-2 lg:px-0 lg:max-w-screen-md mt-10 content-center">

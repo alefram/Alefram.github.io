@@ -12,7 +12,8 @@ export default function Projects({allProjectsData}) {
                 <title>Projects | Ale Blog</title>
                 <meta 
                     name="description" 
-                    content="My projects about AI and control systems" 
+                    content="Here are a few projects I've worked on."
+                    key="desc" 
                 />
                 <meta name="author" content="Alexis Fraudita"/>
                 <meta 
@@ -36,6 +37,21 @@ export default function Projects({allProjectsData}) {
                     key="viewport" 
                 />
                 <meta name="robots" content="index, follow"/>
+
+                {/* <!-- Facebook Meta Tags --> */}
+                <meta property="og:url" content="https://alefram.github.io/Projects"/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:title" content="Projects | Ale Blog"/>
+                <meta property="og:description" content="Here are a few projects I've worked on."/>
+                <meta property="og:image" content="🏓"/>
+
+                {/* <!-- Twitter Meta Tags --> */}
+                <meta name="twitter:card" content="summary_short_image"/>
+                <meta property="twitter:domain" content="alefram.github.io"/>
+                <meta property="twitter:url" content="https://alefram.github.io/Projects"/>
+                <meta name="twitter:title" content="Projects | Ale Blog"/>
+                <meta name="twitter:description" content="Here are a few projects I've worked on."/>
+                <meta name="twitter:image" content="🏓"/>        
             </Head>
 
             <Navbar/>     

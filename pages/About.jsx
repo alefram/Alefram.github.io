@@ -23,6 +23,20 @@ const About = () => {
                     width=device-width" key="viewport"
                 />
                 <meta name="robots" content="index, follow"/>
+                {/* <!-- Facebook Meta Tags --> */}
+                <meta property="og:url" content="https://alefram.github.io/About"/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:title" content="About | Ale Blog"/>
+                <meta property="og:description" content="Who I am?"/>
+                <meta property="og:image" content="🏓"/>
+
+                {/* <!-- Twitter Meta Tags --> */}
+                <meta name="twitter:card" content="summary_short_image"/>
+                <meta property="twitter:domain" content="alefram.github.io"/>
+                <meta property="twitter:url" content="https://alefram.github.io/About"/>
+                <meta name="twitter:title" content="About | Ale Blog"/>
+                <meta name="twitter:description" content="Who I am?"/>
+                <meta name="twitter:image" content="🏓"/> 
             </Head>
 
             <Navbar/>

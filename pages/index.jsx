@@ -10,8 +10,8 @@ export default function Home ({posts}) {
         <div>
             <Head>
                 <title>Ale Blog</title>
-                <meta name="description" content="Hey I'm Alex, and I will share 
-                my learning notes and projects about AI and Control systems with you" 
+                <meta name="description" content="Hey I'm Alex, and I will share
+                with you, my learning notes and projects about AI and Control and electronics" 
                  />
                 <meta name="author" content="Alexis Fraudita"/>
                 <meta name="keywords" content="Machine Learning, Robotics, Electronics, 
@@ -27,6 +27,22 @@ export default function Home ({posts}) {
                     h=device-width" key="viewport" 
                 />
                 <meta name="robots" content="index, follow"/>
+                {/* <!-- Facebook Meta Tags --> */}
+                <meta property="og:url" content="https://alefram.github.io/"/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:title" content="Ale Blog"/>
+                <meta property="og:description" content="Hey I'm Alex, and I will share
+                with you, my learning notes and projects about AI and Control and electronics"/>
+                <meta property="og:image" content="🏓"/>
+
+                {/* <!-- Twitter Meta Tags --> */}
+                <meta name="twitter:card" content="summary_short_image"/>
+                <meta property="twitter:domain" content="alefram.github.io"/>
+                <meta property="twitter:url" content="https://alefram.github.io/"/>
+                <meta name="twitter:title" content="Ale Blog"/>
+                <meta name="twitter:description" content="Hey I'm Alex, and I will share
+                with you, my learning notes and projects about AI and Control and electronics"/>
+                <meta name="twitter:image" content="🏓"/> 
             </Head>
 
             <Navbar/>
