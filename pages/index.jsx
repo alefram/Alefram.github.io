@@ -11,7 +11,7 @@ export default function Home ({posts}) {
             <Head>
                 <title>Ale Blog</title>
                 <meta name="description" content="Hey I'm Alex, and I will share
-                with you, my learning notes and projects about AI, Control and electronics" 
+                with you, my learning notes and projects about control and robotics" 
                  />
                 <meta name="author" content="Alexis Fraudita"/>
                 <meta name="keywords" content="Machine Learning, Robotics, Electronics, 
@@ -32,7 +32,7 @@ export default function Home ({posts}) {
                 <meta property="og:type" content="website"/>
                 <meta property="og:title" content="Ale Blog"/>
                 <meta property="og:description" content="Hey I'm Alex, and I will share
-                with you, my learning notes and projects about AI, Control and electronics"/>
+                with you, my learning notes and projects about control and robotics"/>
                 <meta property="og:image" content="🏓"/>
 
                 {/* <!-- Twitter Meta Tags --> */}
@@ -41,7 +41,7 @@ export default function Home ({posts}) {
                 <meta property="twitter:url" content="https://alefram.github.io/"/>
                 <meta name="twitter:title" content="Ale Blog"/>
                 <meta name="twitter:description" content="Hey I'm Alex, and I will share
-                with you, my learning notes and projects about AI, Control and electronics"/>
+                with you, my learning notes and projects about control and robotics"/>
                 <meta name="twitter:image" content="🏓"/> 
             </Head>
 
@@ -58,8 +58,8 @@ export default function Home ({posts}) {
                 </div>
 
                 <p className='font-Roboto text-gray-700 px-3 md:p-0'>
-                    Hey I'm Alex, and I will share with you, my learning notes 
-                    and projects about AI, Control and electronics.
+                    Hey I&apos;m Alex, and I will share with you my learning notes
+                    and projects about control and robotics.
                 </p>
 
                 <div className="mt-20  px-3 md:p-0">
