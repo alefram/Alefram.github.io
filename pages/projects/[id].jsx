@@ -3,7 +3,7 @@ import { getAllProjectsIds, getProjectsData } from '../../lib/projects';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
-const Post = ({projectData}) => {
+const Project = ({projectData}) => {
 	return (
 		<div>
 			<Head>
@@ -75,4 +75,4 @@ export async function getStaticProps({ params }) {
 	}
 };
 
-export default Post;
+export default Project;

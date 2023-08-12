@@ -36,4 +36,12 @@ Some of the resources that I have used to create this project are:
 If you want to know more about this project check my [*GitHub*](https://github.com/alefram/SCADA-SolarSystem)
 
 
+```python
+def test():
+    return test
+```
+
+$$
+    v_{test} = \frac{1}{2}
+$$
 
