@@ -40,18 +40,19 @@ const Project = ({projectData}) => {
 
 			<Navbar/> 
 			<main className="mt-10 px-4 md:px-2 ">
-					<div className='text-center'>
-						<h1 className="text-4xl text-stone-900 font-bold font-nunito">
+
+					<div className='mx-auto max-w-2xl'>
+						<h1 className="text-2xl md:text-4xl text-background font-bold font-nunito">
 							{projectData.title}
 						</h1>
+                        <article 
+                            className="text-base max-w-2xl mt-10 font-Roboto markdown prose 
+                             prose-blue text-background " 
+                            dangerouslySetInnerHTML={{ 
+                                __html: projectData.contentHtml 
+                            }} 
+                        />
 					</div>
-					<article 
-						className="text-justify mx-auto mt-4 font-Roboto markdown prose 
-						 prose-blue text-background text-base" 
-						dangerouslySetInnerHTML={{ 
-							__html: projectData.contentHtml 
-						}} 
-					/>
 			</main>
 			<Footer/>
 		</div>  
