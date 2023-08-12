@@ -3,8 +3,7 @@ title: 'SCADA Solar System'
 description: 'Solar system SCADA in Mango Automation and AngularJS'
 image: 'images/projects/SCADA_main.png'
 altImage: 'SCADA'
-keywords: 'Automation, SCADA, Javascript, Alexis Fraudita, solar system, Electrical
-engineering'
+keywords: 'Automation, SCADA, Javascript, Alexis Fraudita, solar system, Electrical, engineering'
 ---
 
 During my internship, I worked on a project called SCADA solar system. It 
@@ -35,4 +34,6 @@ Some of the resources that I have used to create this project are:
 
 
 If you want to know more about this project check my [*GitHub*](https://github.com/alefram/SCADA-SolarSystem)
+
+
 

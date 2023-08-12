@@ -33,6 +33,9 @@ const Post = ({projectData}) => {
                 <meta name="twitter:title" content={projectData.title}/>
                 <meta name="twitter:description" content={projectData.description}/>
                 <meta name="twitter:image" content="🏓"/> 
+
+                <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 			</Head>
 
 			<Navbar/> 
