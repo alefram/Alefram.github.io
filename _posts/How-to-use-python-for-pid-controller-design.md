@@ -1,15 +1,9 @@
-import Layout from '../../components/Layout';
-import 'katex/dist/katex.min.css';
-import { InlineMath, BlockMath } from 'react-katex';
-
-export const meta = {
-    title: 'How to use Python for PID controller design',
-    date: '2023-05-30',
-    description: `When I was in the university, my control system classes was dictated 
-    using MATLAB, MATLAB is a powerfull tool to design and test control systems. But...`,
-    keywords: `Machine Learning, Robotics, Electronics, Reinforcement Learning, 
-    Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch`,
-}
+---
+title: 'How to use Python for PID controller design'
+date: '2023-05-30'
+description: 'When I was in the university, my control system classes was dictated using MATLAB, MATLAB is a powerfull tool to design and test control systems.'
+keywords: 'Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch'
+---
 
 When I was in the university, my control system classes was dictated using MATLAB,
 MATLAB is a powerfull tool to design and test control systems. But, one of the
@@ -63,25 +57,29 @@ sense this change in speed and make adjustments to slow you down.
 
 Mathematically, in time domain the PID controller looks like this:
 
-<BlockMath math="u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t)"/>
+$$
+\begin{align}
+    u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t)
+\end{align}
+$$
 
 Where:
 
-* <InlineMath math="K_p"/>: represents how much the output of the controller 
+* $K_p$: represents how much the output of the controller 
 changes in response to a difference between the desired output and the actual 
 output of the system.
 
-* <InlineMath math="K_i"/>: represents how much the output of the controller 
+* $K_i$: represents how much the output of the controller 
 changes in response to the accumulated difference between the desired and actual
 outputs of the system over time.
 
-* <InlineMath math="K_d"/>: represents how much the output of the controller 
+* $K_d$: represents how much the output of the controller 
 changes in response to the rate of change of the difference between the desired 
 and actual outputs of the system.
 
-* <InlineMath math="e(t)"/>: represents the error signal.
+* $e(t)$: represents the error signal.
 
-* <InlineMath math="u(t)"/>: represents control signal.
+* $u(t)$: represents control signal.
 
 
 ## Desiging the PID controller
@@ -98,7 +96,13 @@ controller's responses.
 We need a system plant to control before creating our PID controller. To do 
 this, we can utilize the python-control package.
 
-<BlockMath math="\frac{1}{s(s+1)(s+5)}"/>
+
+$$
+\begin{align}
+    \frac{1}{s(s+1)(s+5)}
+\end{align}
+$$
+
 
 You might be curious as to why 's' is used instead of time in the Laplace domain.
 The reason is that the Laplace domain enables analysis of transfer functions in 
@@ -112,38 +116,41 @@ import control
 s = control.TransferFunction.s
 
 plant = 1/(s*(s+1)*(s+5))
-
 ```
 
 ### Creating the PID model
 
 Let's create our PID in Laplace domain.
 
-<BlockMath math="G_{c}(s) = K_{p}(1 + \frac{1}{T_{i}s} + T_{d}s)"/>
+$$
+\begin{align}
+    G_{c}(s) = K_{p}(1 + \frac{1}{T_{i}s} + T_{d}s)
+\end{align}
+$$
 
 Where:
 
-* <InlineMath math="K_{p}"/>: represents how much the output of the controller 
+* $K_{p}$: represents how much the output of the controller 
 changes in response to a difference between the desired output and the actual 
 output of the system.
 
-* <InlineMath math="T_{i}"/>: represents  the integral time.
+* $T_{i}$: represents  the integral time.
 
-* <InlineMath math="T_{d}"/>: represents the derivative time.
+* $T_{d}$: represents the derivative time.
 
-Our goal now is to adjust the values of <InlineMath math="K_{p}"/>, <InlineMath math="T_{i}"/>,
-and <InlineMath math="T_{d}"/> for optimal performance. We will utilize the 
+Our goal now is to adjust the values of $K_{p}$, $T_{i}$,
+and $T_{d}$ for optimal performance. We will utilize the 
 Ziegler-Nichols tuning rule to determine these values.
 
-Since our plant contains an integrator (<InlineMath math="1/s"/>), we 
+Since our plant contains an integrator ($\frac{1}{s}$), we 
 will utilize the second method of the Ziegler-Nichols tuning rule. This involves 
-setting <InlineMath math="Ti = \infty"/> cancelling it's effect and <InlineMath math="Td = 0"/> in 
+setting $Ti = \infty$ cancelling it's effect and $Td = 0$ in 
 order to obtain the closed-loop transfer function.
 
 Having obtained the transfer function of our plant using python-control, 
 we can employ the feedback method to determine the closed-loop transfer function. 
-To calculate this, we will add an arbitrary value to <InlineMath math="K_{p}"/>, 
-set <InlineMath math="T_{d}"/> to 0, and assign a large value to <InlineMath math="T_{i}"/>.
+To calculate this, we will add an arbitrary value to $K_{p}$, 
+set $T_{d}$ to 0, and assign a large value to $T_{i}$.
 
 ```python
 import control
@@ -167,17 +174,21 @@ print(feedback)
 ```
 
 If you look at the numerator, you will notice it has a term of 
-<InlineMath math="1.7e-08s + 17"/>. The value 17 corresponds to our parameter
-<InlineMath math="K_{p}"/>, while the value <InlineMath math="1.7e-08s"/> is 
+$1.7e-08s + 17$. The value 17 corresponds to our parameter
+$K_{p}$, while the value $1.7e-08s$ is 
 practically negligible. As a result, we can consider our closed-loop transfer 
 function to be:
 
-<BlockMath math="\frac{Y(s)}{R(s)} = \frac{K_{p}}{s^{3} + 6s^{2} + 5s + K_{p}}"/>
+$$
+\begin{align}
+    \frac{Y(s)}{R(s)} = \frac{K_{p}}{s^{3} + 6s^{2} + 5s + K_{p}}
+\end{align}
+$$
 
-Where <InlineMath math="s^{3} + 6s^{2} + 5s + K_{p} = 0"/> will be our charateristic 
+Where $s^{3} + 6s^{2} + 5s + K_{p} = 0$ will be our charateristic 
 equation.
 
-Our next step involves determining a value for <InlineMath math="K_{p}"/> that 
+Our next step involves determining a value for $K_{p}$ that 
 will render the plant marginally stable, thereby promoting sustained oscillation.
 This can be achieved using **Routh's stability criterion**. In Python, we can 
 leverage the method outlined in the [tbcontrol library](https://github.com/alchemyst/Dynamics-and-Control/blob/master/tbcontrol/symbolic.py)
@@ -216,12 +227,14 @@ A
 
 It will give us.
 
-<BlockMath math="\begin{bmatrix}
-1 & 5\\
-6 & K_{p}\\
-5-\frac{K_{p}}{6} & 0\\
-K_{p} & 0
-\end{bmatrix}"/>
+$$
+\begin{bmatrix}
+    1 & 5\\
+    6 & K_{p}\\
+    5-\frac{K_{p}}{6} & 0\\
+    K_{p} & 0
+\end{bmatrix}
+$$
 
 To check the stability limits we can use sympy like this.
 
@@ -230,26 +243,41 @@ sympy.solve([e > 0 for e in A[:,0]], Kp)
 ```
 Resulting
 
-<BlockMath math="0< K_{p} \wedge K_{p}<30"/>
+$$
+\begin{align}
+    0< K_{p} \wedge K_{p}<30
+\end{align}
+$$
 
-We have determined that the critical <InlineMath math="K_{p}"/> value is 30, which
+We have determined that the critical $K_{p}$ value is 30, which
 represents the threshold for **sustaining oscillation**. Accordingly, the 
-critical gain can be expressed as <InlineMath math="K_{cr} = 30"/>. With this 
+critical gain can be expressed as $K_{cr} = 30$. With this 
 value in place, the characteristic equation takes on the following form:
 
-<BlockMath math="s^{3} + 6s^{2} + 5s + 30 = 0"/>
+$$
+\begin{align}
+    s^{3} + 6s^{2} + 5s + 30 = 0
+\end{align}
+$$
 
-To find the frequency of the sustained oscillation, we replace <InlineMath math="s=jw"/>
+To find the frequency of the sustained oscillation, we replace $s=jw$
 getting.
 
-<BlockMath math="(j\omega)^{3} + 6(j\omega)^{2} + 5(j\omega) + 30 = 0"/>
+$$
+\begin{align}
+    (j\omega)^{3} + 6(j\omega)^{2} + 5(j\omega) + 30 = 0
+\end{align}
+$$
 
 or 
 
-<BlockMath math="6(5-\omega^{2}) + j\omega(5-\omega^{2}) = 0"/>
+$$
+\begin{align}
+    6(5-\omega^{2}) + j\omega(5-\omega^{2}) = 0
+\end{align}
+$$
 
-where the frequency of the sustained oscillation will be 
-<InlineMath math="\omega^{2} = 5 => \omega = \sqrt{5}"/>
+where the frequency of the sustained oscillation will be $\omega^{2} = 5 => \omega = \sqrt{5}$
 
 We can also solve this directly using sympy like this.
 
@@ -261,19 +289,25 @@ roots = sympy.solve(ce,s)
 roots
 ```
 
-<BlockMath math="[-6, -\sqrt{5}i, \sqrt{5}i]"/>
+$$
+\begin{align}
+    [-6, -\sqrt{5}i, \sqrt{5}i]
+\end{align}
+$$
 
 
 Finally, using the [Ziegler–Nichols Rule](https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method),
-we determine the values of <InlineMath math="K_{p}, T_{i}, T_{d}"/>
+we determine the values of $K_{p}, T_{i}, T_{d}$
 
-<BlockMath math="\begin{gather*} 
-K_{p} = 0.6K_{cr} \\ 
-T_{i} = 0.5P_{cr} \\
-T_{d} = 0.125P_{cr}
-\end{gather*}"/>
+$$
+\begin{gather*} 
+    K_{p} = 0.6K_{cr} \\ 
+    T_{i} = 0.5P_{cr} \\
+    T_{d} = 0.125P_{cr}
+\end{gather*}
+$$
 
-Where <InlineMath math="P_{cr} = \frac{2\pi}{\omega}"/>
+Where $P_{cr} = \frac{2\pi}{\omega}$
 
 ```python
 import numpy as np
@@ -377,7 +411,3 @@ Prentice Hall.
 * [5] Sympy Developer Team. [Sympy Documentation](https://docs.sympy.org/latest/index.html).
 
 * [6] PID Controller [wikipedia](https://en.wikipedia.org/wiki/PID_controller).
-
-
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
-

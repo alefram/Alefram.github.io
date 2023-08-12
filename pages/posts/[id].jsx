@@ -1,18 +1,18 @@
 import Head from 'next/head';
-import { getAllProjectsIds, getProjectsData } from '../../lib/projects';
+import { getAllPostsIds, getPostsData } from '../../lib/posts';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
-const Project = ({projectData}) => {
+const Post = ({postData}) => {
 	return (
 		<div>
 			<Head>
-				<title>{projectData.title}</title>
-				<meta name="description" content={projectData.description}/>
+				<title>{postData.title}</title>
+				<meta name="description" content={postData.description}/>
 				<meta name="author" content="Alexis Fraudita"/>
-				<meta name="keywords" content={projectData.keywords}/>
-				<meta property="title" content={projectData.title} />
-                <meta property="url" content={`https://alefram.github.io/projects/${projectData.title}`} />
+				<meta name="keywords" content={postData.keywords}/>
+				<meta property="title" content={postData.title} />
+                <meta property="url" content={`https://alefram.github.io/posts/${postData.title}`} />
                 <meta property="type" content="website" />
                 <meta 
                     name="viewport" content="initial-scale=1.0, 
@@ -21,35 +21,37 @@ const Project = ({projectData}) => {
                 />
                 <meta name="robots" content="index, follow"/>
                 {/* <!-- Facebook Meta Tags --> */}
-                <meta property="og:url" content={`https://alefram.github.io/projects/${projectData.title}`}/>
+                <meta property="og:url" content={`https://alefram.github.io/posts/${postData.title}`}/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:title" content={projectData.title}/>
-                <meta property="og:description" content={projectData.description}/>
+                <meta property="og:title" content={postData.title}/>
+                <meta property="og:description" content={postData.description}/>
                 <meta property="og:image" content="🏓"/>
                 {/* <!-- Twitter Meta Tags --> */}
                 <meta name="twitter:card" content="summary_short_image"/>
                 <meta property="twitter:domain" content="alefram.github.io"/>
-                <meta property="twitter:url" content={`https://alefram.github.io/projects/${projectData.title}`}/>
-                <meta name="twitter:title" content={projectData.title}/>
-                <meta name="twitter:description" content={projectData.description}/>
+                <meta property="twitter:url" content={`https://alefram.github.io/posts/${postData.title}`}/>
+                <meta name="twitter:title" content={postData.title}/>
+                <meta name="twitter:description" content={postData.description}/>
                 <meta name="twitter:image" content="🏓"/> 
-
-                <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
+                <link
+                  rel="stylesheet"
+                  href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
+                  integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
+                  crossOrigin="anonymous"
+                />
 			</Head>
 
 			<Navbar/> 
-			<main className="mt-10 px-4 md:px-2 ">
-
+			<main className="mt-10 px-4">
 					<div className='mx-auto max-w-2xl'>
 						<h1 className="text-2xl md:text-4xl text-background font-bold font-nunito">
-							{projectData.title}
+							{postData.title}
 						</h1>
                         <article 
                             className="text-base max-w-2xl mt-10 font-Roboto markdown prose 
                              prose-blue text-background " 
                             dangerouslySetInnerHTML={{ 
-                                __html: projectData.contentHtml 
+                                __html: postData.contentHtml 
                             }} 
                         />
 					</div>
@@ -60,7 +62,7 @@ const Project = ({projectData}) => {
 };
 
 export async function getStaticPaths() {
-	const paths = getAllProjectsIds()
+	const paths = getAllPostsIds()
 	return {
 		paths,
 		fallback: false
@@ -68,12 +70,12 @@ export async function getStaticPaths() {
 };
 
 export async function getStaticProps({ params }) {
-	const projectData = await getProjectsData(params.id)
+	const postData = await getPostsData(params.id)
 	return {
 		props: {
-			projectData
+			postData
 		}
 	}
 };
 
-export default Project;
+export default Post;

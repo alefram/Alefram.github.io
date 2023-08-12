@@ -82,10 +82,10 @@ export default function Home ({posts}) {
 
 
 export async function getStaticProps() {
-    const posts = await getSortedPostsData();
+    const posts = getSortedPostsData();
     return {
         props: {
-            posts: JSON.parse(JSON.stringify(posts))
+            posts
         }
     }
 }

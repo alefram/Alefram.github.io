@@ -1,14 +1,9 @@
-import Layout from '../../components/Layout';
-
-export const meta = {
-  title: 'Hello World',
-  date: '2023-03-15',
-  description: `Welcome to my blog! In this first post, I&apos;d like to share 
-  some of the resources that have helped me learn. I hope they can be helpful for
-  you too.`,
-  keywords: `Machine Learning, Robotics, Electronics, Reinforcement Learning, 
-  Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch`,
-}
+---
+  title: 'Hello World'
+  date: '2023-03-15'
+  description: 'Welcome to my blog! In this first post, I&apos;d like to share some of the resources that have helped me learn. I hope they can be helpful for you too'
+  keywords: 'Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch'
+---
 
 Welcome to my blog! In this first post, I&apos;d like to share some of the resources 
 that have helped me learn. I hope they can be helpful for you too. If you know 
@@ -64,9 +59,3 @@ the bible of RL.
 - [The AI Epiphany](https://www.youtube.com/@TheAIEpiphany) Aleksa Gordic youtube channel.
 - [Steve Brunton youtube channel](https://www.youtube.com/@Eigensteve).
 - [3blue1brown youtube channel](https://www.youtube.com/c/3blue1brown?app=desktop)
-
-
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
-
-
- 
