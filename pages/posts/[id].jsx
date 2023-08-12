@@ -37,12 +37,12 @@ const Post = ({postData}) => {
 
 			<Navbar/> 
 			<main className="mt-10 px-4">
-					<div className='mx-auto max-w-3xl'>
+					<div className='mx-auto max-w-2xl'>
 						<h1 className="text-2xl md:text-4xl text-background font-bold font-nunito">
 							{postData.title}
 						</h1>
                         <article 
-                            className="text-base max-w-2xl text-justify mt-10 font-Roboto markdown prose 
+                            className="text-base max-w-2xl mt-10 font-Roboto markdown prose 
                              prose-blue text-background " 
                             dangerouslySetInnerHTML={{ 
                                 __html: postData.contentHtml 
