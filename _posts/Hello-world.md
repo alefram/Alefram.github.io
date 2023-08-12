@@ -1,6 +1,6 @@
 ---
   title: 'Hello World'
-  date: '2023-03-15'
+  date: '05-03-2023'
   description: 'Welcome to my blog! In this first post, I&apos;d like to share some of the resources that have helped me learn. I hope they can be helpful for you too'
   keywords: 'Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch'
 ---

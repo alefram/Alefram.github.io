@@ -1,6 +1,6 @@
 ---
 title: 'How to use Python for PID controller design'
-date: '2023-05-30'
+date: '30-05-2023'
 description: 'When I was in the university, my control system classes was dictated using MATLAB, MATLAB is a powerfull tool to design and test control systems.'
 keywords: 'Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch'
 ---

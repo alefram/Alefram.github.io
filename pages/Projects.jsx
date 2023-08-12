@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Project from '../components/Project';
 import { getSortedProjectsData } from '../lib/projects';
 
-export default function Projects({allProjectsData}) {
+export default function Projects({projects}) {
 
     return (
         <div> 
@@ -67,7 +67,7 @@ export default function Projects({allProjectsData}) {
                 </div>
                 <div>
                     <ul>
-                        {allProjectsData.map(({ 
+                        {projects.map(({ 
                             id, 
                             title, 
                             description, 
@@ -94,10 +94,10 @@ export default function Projects({allProjectsData}) {
 }
 
 export async function getStaticProps() {
-    const allProjectsData = getSortedProjectsData()
+    const projects = getSortedProjectsData()
     return {
       props: {
-        allProjectsData
+        projects
       }
     }
 };
