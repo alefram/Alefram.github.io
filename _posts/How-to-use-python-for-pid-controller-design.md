@@ -57,7 +57,11 @@ sense this change in speed and make adjustments to slow you down.
 
 Mathematically, in time domain the PID controller looks like this:
 
-$$u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t)$$
+$$
+\begin{align}
+    u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t)
+\end{align}
+$$
 
 Where:
 
@@ -92,7 +96,12 @@ controller's responses.
 We need a system plant to control before creating our PID controller. To do 
 this, we can utilize the python-control package.
 
-$$\frac{1}{s(s+1)(s+5)}$$
+
+$$
+\begin{align}
+    \frac{1}{s(s+1)(s+5)}
+\end{align}
+$$
 
 
 You might be curious as to why 's' is used instead of time in the Laplace domain.
@@ -113,7 +122,11 @@ plant = 1/(s*(s+1)*(s+5))
 
 Let's create our PID in Laplace domain.
 
-$$G_{c}(s) = K_{p}(1 + \frac{1}{T_{i}s} + T_{d}s)$$
+$$
+\begin{align}
+    G_{c}(s) = K_{p}(1 + \frac{1}{T_{i}s} + T_{d}s)
+\end{align}
+$$
 
 Where:
 
@@ -166,7 +179,11 @@ $K_{p}$, while the value $1.7e-08s$ is
 practically negligible. As a result, we can consider our closed-loop transfer 
 function to be:
 
-$$\frac{Y(s)}{R(s)} = \frac{K_{p}}{s^{3} + 6s^{2} + 5s + K_{p}}$$
+$$
+\begin{align}
+    \frac{Y(s)}{R(s)} = \frac{K_{p}}{s^{3} + 6s^{2} + 5s + K_{p}}
+\end{align}
+$$
 
 Where $s^{3} + 6s^{2} + 5s + K_{p} = 0$ will be our charateristic 
 equation.
@@ -226,23 +243,39 @@ sympy.solve([e > 0 for e in A[:,0]], Kp)
 ```
 Resulting
 
-$$0< K_{p} \wedge K_{p}<30$$
+$$
+\begin{align}
+    0< K_{p} \wedge K_{p}<30
+\end{align}
+$$
 
 We have determined that the critical $K_{p}$ value is 30, which
 represents the threshold for **sustaining oscillation**. Accordingly, the 
 critical gain can be expressed as $K_{cr} = 30$. With this 
 value in place, the characteristic equation takes on the following form:
 
-$$s^{3} + 6s^{2} + 5s + 30 = 0$$
+$$
+\begin{align}
+    s^{3} + 6s^{2} + 5s + 30 = 0
+\end{align}
+$$
 
 To find the frequency of the sustained oscillation, we replace $s=jw$
 getting.
 
-$$(j\omega)^{3} + 6(j\omega)^{2} + 5(j\omega) + 30 = 0$$
+$$
+\begin{align}
+    (j\omega)^{3} + 6(j\omega)^{2} + 5(j\omega) + 30 = 0
+\end{align}
+$$
 
 or 
 
-$$6(5-\omega^{2}) + j\omega(5-\omega^{2}) = 0$$
+$$
+\begin{align}
+    6(5-\omega^{2}) + j\omega(5-\omega^{2}) = 0
+\end{align}
+$$
 
 where the frequency of the sustained oscillation will be $\omega^{2} = 5 => \omega = \sqrt{5}$
 
@@ -256,7 +289,11 @@ roots = sympy.solve(ce,s)
 roots
 ```
 
-$$[-6, -\sqrt{5}i, \sqrt{5}i]$$
+$$
+\begin{align}
+    [-6, -\sqrt{5}i, \sqrt{5}i]
+\end{align}
+$$
 
 
 Finally, using the [Ziegler–Nichols Rule](https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method),
