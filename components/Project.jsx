@@ -11,7 +11,7 @@ export default function Project({id, title, description, image, altImage}) {
                 <img 
                     src={image} 
                     alt={altImage} 
-                    className='rounded-xl md:w-40 md:rounded-xl h-28' 
+                    className='rounded-xl md:w-40 md:rounded-xl md:h-28' 
                 />
                 <div className=" flex flex-col">
                     <Link href={`/projects/${id}`}>
