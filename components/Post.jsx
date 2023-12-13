@@ -7,12 +7,8 @@ const Post = ({ post }) => {
         <>
             <div className="flex justify-between">
                 <div>
-                    <Link href={`/posts/${post.id}`}>
-                        <a 
-                            className="font-bold font-nunito 
-                        text-blue-900 text-opacity-90 text-lg lg:text-xl">
-                            {post.title}
-                        </a>
+                    <Link href={`/posts/${post.id}`} className="font-bold font-nunito text-blue-900 text-opacity-90 text-lg lg:text-xl">
+                        {post.title}
                     </Link>
                 </div>
                 <div className='justify-end whitespace-nowrap'>

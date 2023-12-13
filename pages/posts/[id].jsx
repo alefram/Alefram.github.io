@@ -49,7 +49,7 @@ const Post = ({postData}) => {
 						</h1>
                         <article 
                             className="text-base max-w-2xl mt-10 font-Roboto markdown prose 
-                             prose-blue text-background " 
+                             prose-blue text-background dark:prose-invert" 
                             dangerouslySetInnerHTML={{ 
                                 __html: postData.contentHtml 
                             }} 

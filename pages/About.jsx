@@ -96,13 +96,11 @@ const About = () => {
                                 href="https://github.com/alefram"
                                 passHref={true}
                             >
-                                <a>
-                                    <img
-                                        alt="github"
-                                        src="/images/github.svg"
-                                        className="w-8"
-                                    />
-                                </a>
+                                <img
+                                    alt="github"
+                                    src="/images/github.svg"
+                                    className="w-8"
+                                />
                             </Link>
                         </div>
                         <div>
@@ -110,13 +108,11 @@ const About = () => {
                                 href="https://www.linkedin.com/in/alexis-fraudita/"
                                 passHref={true}
                             >
-                                <a>
-                                    <img
-                                        alt="linkedin"
-                                        src="/images/linkedin.svg"
-                                        className="w-8"
-                                    />
-                                </a>
+                                <img
+                                    alt="linkedin"
+                                    src="/images/linkedin.svg"
+                                    className="w-8"
+                                />
                             </Link>
                         </div>
                         <div>
@@ -124,13 +120,11 @@ const About = () => {
                                 href="https://twitter.com/_Alefram_"
                                 passHref={true}
                             >
-                                <a>
-                                    <img
-                                        alt="twitter"
-                                        src="/images/twitter.svg"
-                                        className="w-8"
-                                    />
-                                </a>
+                                <img
+                                    alt="twitter"
+                                    src="/images/twitter.svg"
+                                    className="w-8"
+                                />
                             </Link>
                         </div>
                     </div>

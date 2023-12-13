@@ -14,13 +14,8 @@ export default function Project({id, title, description, image, altImage}) {
                     className='rounded-xl md:w-40 md:rounded-xl md:h-28' 
                 />
                 <div className=" flex flex-col">
-                    <Link href={`/projects/${id}`}>
-                        <a 
-                            className="mt-2 md:mt-0 font-bold text-background 
-                            text-lg lg:text-2xl font-nunito"
-                        >
-                            {title}
-                        </a>
+                    <Link href={`/projects/${id}`} className="mt-2 md:mt-0 font-bold text-background text-lg lg:text-2xl font-nunito">
+                        {title}
                     </Link>
                     <small 
                         className="mt-1 font-Roboto text-gray-600 text-base"
