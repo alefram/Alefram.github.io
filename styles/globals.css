@@ -9,8 +9,8 @@
     }
 }
 
-/*@layer base {*/
-    /*body {*/
-        /*@apply dark:bg-gray-800 bg-white*/
-    /*}*/
-/*}*/
+@layer base {
+    body {
+        @apply dark:bg-neutral-950 bg-gray-100
+    }
+}

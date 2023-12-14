@@ -22,7 +22,7 @@ const Footer = () => {
                         />                    
                     </Link>
                 </div>
-                <div className="text-center text-lg text-background">
+                <div className="text-center text-lg text-neutral-950 dark:text-gray-100">
                     <small>
                         Make with &#128153; &copy;{currentYear} All rights 
                         reserved
