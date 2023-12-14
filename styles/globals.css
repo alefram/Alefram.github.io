@@ -11,6 +11,6 @@
 
 @layer base {
     body {
-        @apply dark:bg-neutral-950 bg-gray-100
+        @apply dark:bg-neutral-950 bg-neutral-100
     }
 }

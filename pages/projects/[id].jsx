@@ -46,12 +46,12 @@ const Project = ({projectData}) => {
 			<main className="mt-10 px-4 md:px-2 ">
 
 					<div className='mx-auto max-w-2xl'>
-						<h1 className="text-2xl md:text-4xl text-background font-bold font-nunito">
+						<h1 className="text-2xl md:text-4xl text-neutral-900  dark:text-neutral-100 font-bold font-nunito">
 							{projectData.title}
 						</h1>
                         <article 
                             className="text-base max-w-2xl mt-10 font-Roboto markdown prose 
-                             prose-blue text-background " 
+                             prose-blue text-neutral-800 dark:text-neutral-400 dark:prose-invert" 
                             dangerouslySetInnerHTML={{ 
                                 __html: projectData.contentHtml 
                             }} 

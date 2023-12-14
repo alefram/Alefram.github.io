@@ -43,7 +43,7 @@ const About = () => {
 
             <main className="mx-auto md:px-8 lg:max-w-screen-md pt-10">
                 <div className="flex pt-5 w-full">
-                    <h1 className="text-gray-900 font-bold font-Roboto
+                    <h1 className="text-neutral-900 dark:text-neutral-100 font-bold font-Roboto
                      ml-3 py-3 pr-3 text-2xl md:text-3xl">
                         Hi
                     </h1>
@@ -51,11 +51,11 @@ const About = () => {
                 </div>
 
                 <div className="max-w-screen-md mx-4">
-                    <p className="mt-3 font-Roboto  text-gray-900">
+                    <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
                         My name is Alexis Fraudita, I&apos;m Electrical Engineer
                         and Software Developer.
                     </p>
-                    <p className="mt-3 font-Roboto  text-gray-900">
+                    <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
                         I wrote my bachelor&apos;s thesis on developing a reinforcement
                         learning environment to train a robot arm for manipulation.
                         This experience has made me very interested in AI agents and robotics
@@ -64,20 +64,20 @@ const About = () => {
                         what I&apos;ve learned.
                     </p>
 
-                    <p className="mt-3 font-Roboto text-gray-900">
+                    <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
                         One question that really fascinates me is how to deploy an
                         AI agent in a robot on Mars, similar to &quot;Space Baymax&quot;.
                     </p>
-                    <p className='mt-3 font-Roboto text-gray-900'>
+                    <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
                         Besides my learning and experimentation, I work as a
                         web application developer
-                        (check <a className="text-blue-800 text-opacity-90 font-bold" href="https://moonguard.dev"> this</a>).
+                        (check <a className="text-blue-600 dark:text-blue-300 text-opacity-90 font-bold" href="https://moonguard.dev"> this</a>).
                         Previously, I was an assistant professor in the Digital
                         Systems and Microprocessors Lab at the Central University
                         of Venezuela
                     </p>
 
-                    <p className="mt-3 font-Roboto text-gray-900">
+                    <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
                         Some others things and interests that I enjoy are sports
                         like table tennis, music production, videogames and watch
                         movies that for me is a source of inspiration.
@@ -86,7 +86,7 @@ const About = () => {
 
                 <div className="p-4 mt-5">
                     <h1
-                        className=" text-blue-800 text-opacity-90 text-2xl font-bold
+                        className=" text-blue-600 dark:text-blue-300 text-opacity-90 text-2xl font-bold
                         text-center font-nunito">
                         Also you can Find me On
                     </h1>

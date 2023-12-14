@@ -59,7 +59,7 @@ export default function Projects({projects}) {
             <main className="mx-auto px-5 lg:max-w-screen-md">
                 <div className="m-2 p-4 mt-10">   
                     <h1 
-                        className="text-4xl text-center text-background 
+                        className="text-4xl text-center text-neutral-900 dark:text-neutral-100
                         font-bold font-nunito"
                     >
                         Projects
