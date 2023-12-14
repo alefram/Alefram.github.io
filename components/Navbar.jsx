@@ -13,7 +13,7 @@ const Navbar = () => {
                 >
                     <div className="mt-1 flex space-x-2">
                         <Link href="/" className="text-neutral-900 dark:text-neutral-100 font-bold text-4xl font-square-peg">
-                            AleBlog
+                        🏓 AleBlog
                         </Link>
                         <button onClick={() => theme == 'dark' ? setTheme('light') : setTheme('dark')}>
                             {theme == 'dark' ? (

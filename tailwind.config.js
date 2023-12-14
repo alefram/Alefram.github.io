@@ -11,10 +11,6 @@ module.exports = {
         'nunito': ['Nunito Sans', 'sans-serif'],
         'square-peg': ['Square Peg', 'cursive']
       },
-      colors: {
-        'background': '#202124',
-        'supertext': '#f05454',
-      },
     },
   },
   plugins: [
