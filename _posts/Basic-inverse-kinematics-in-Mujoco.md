@@ -21,8 +21,6 @@ specific coordinates that the joints required to pose the end-effector in your d
 That's the question that inverse kinematics answer. Inverse kinematics is the mapping
 of end-effector pose to joint coordinates.
 
-<!-- TODO: agregar una imagen explicativa de IK -->
-
 ![ik-diagram](/images/ik-diagram.svg)
 
 Giving that there's two ways to solve inverse kinematics, the analytical 
@@ -30,18 +28,28 @@ approach and the numerical approach. The analytical approach, consist in use the
 mathematical model...
 
 
-In this article I will focus on the numerical approach.
+In this article I will focus on the numerical approaches that I found.
 
 ## Inverse Kinematics algorithms
 
-Searching for the most commun ways 
+Searching for the most commun ways of compute the inverse kinematics, I found the
+master thesis of Anton Larsson and Oskar Grönlund called "Comparative Analysis of 
+the Inverse Kinematics of a 6-DOF Manipulator". In this thesis they talked about
+the way to describe the relation approximately between joint angles and desire 
+position using the Jacobian, where they explain 3 methods: **Gradient Descent**, **Gauss-Newton**
+and **Levenberg-Marquardt**.
+
+Seeing that they provide the algorithm pseudocode of each, I have the idea of trying 
+to re implement this tecniques in mujoco for practice so let me explain how I do it.
 
 
 ### Gauss-Newton 
 
 ### Gradient Descent
 
-### otro que no me acuerdo
+### Levenberg-Marquardt 
+
+
 
 ## Reference
 
