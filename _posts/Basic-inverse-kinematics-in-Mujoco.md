@@ -45,11 +45,61 @@ to re implement this tecniques in mujoco for practice so let me explain how I do
 
 ### Gauss-Newton 
 
+```latex
+goal_pose = y
+q = current joint angles
+step_size = desired step size
+tolerance = set tolerance
+e = goal_pose - current_pose
+while norm(e) >= tolerance do
+    J = Jacobian(q)
+    J_T = J.transpose()
+    J_pinv = (J_T * J).inv() * J_T
+    delta_q = J_pinv * e
+    q += step_size * delta_q
+    q = check_joint_limits(q)
+    e = goal_pose - ForwardKinematics(q)
+end while
+```
+
 ### Gradient Descent
+```latex
+goal_pose = y
+q = current joint angles
+step_size = desired step size
+tolerance = set tolerance
+e = goal_pose - current_pose
+while norm(e) >= tolerance do
+    J = Jacobian(q)
+    J_T = J.transpose()
+    gradient = alpha * J_T * e
+    q += step_size * gradient
+    q = check_joint_limits(q)
+    e = goal_pose - ForwardKinematics(q)
+end while
+```
+
 
 ### Levenberg-Marquardt 
 
+```latex
+goal_pose = y
+q = current joint angles
+step_size = desired step size
+tolerance = set tolerance
+e = goal_pose - current_pose
+lambda = damping factor
 
+while norm(e) >= tolerance do
+    J = Jacobian(q)
+    J_T = Jacobian.transpose()
+    J_inv = (J_T * J + lambda * I).inv() * J_T
+    delta_q = J_inv * e
+    q += step_size * delta_q
+    q = check_joint_limits(q)
+    e = goal_pose - ForwardKinematics(q)
+end while
+```
 
 ## Reference
 
