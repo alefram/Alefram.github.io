@@ -45,6 +45,9 @@ to re implement this tecniques in mujoco for practice so let me explain how I do
 
 ### Gauss-Newton 
 
+The Gauss-Newton algorithm is a extension of a Newton's method for finding a 
+minimum of a non-lineaf function. 
+
 ```latex
 goal_pose = y
 q = current joint angles
@@ -63,6 +66,7 @@ end while
 ```
 
 ### Gradient Descent
+
 ```latex
 goal_pose = y
 q = current joint angles
@@ -78,7 +82,6 @@ while norm(e) >= tolerance do
     e = goal_pose - ForwardKinematics(q)
 end while
 ```
-
 
 ### Levenberg-Marquardt 
 
