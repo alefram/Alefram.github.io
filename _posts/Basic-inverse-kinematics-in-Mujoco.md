@@ -178,6 +178,10 @@ while norm(e) >= tolerance do
     e = goal_pose - ForwardKinematics(q)
 end while
 ```
+## implementation
+
+Ok stop theory lets get into practice.
+
 
 
 ## Reference
