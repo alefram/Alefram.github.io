@@ -46,7 +46,44 @@ to re implement this tecniques in mujoco for practice so let me explain how I do
 ### Gauss-Newton 
 
 The Gauss-Newton algorithm is a extension of a Newton's method for finding a 
-minimum of a non-lineaf function. 
+minimum of a non-linear function [1]. It starts by defining an initial guess $x_{n}$
+and estimate the next best optimal value denote by $x_{n+1}$ using the equation (1)
+
+$$
+\begin{align}
+    x_{n+1} = x_{n} - \frac{f^{\prime}(x_{n})}{f^{\prime\prime}(x_{n})}
+\end{align}
+$$
+
+Where $f^{\prime}(x_{n})$ is the gradient of the cost function at the current point 
+$x_{n}$, and $f^{\prime\prime}(x_{n})$ is the second derivative of the cost function 
+at the same point called **Hessian matrix** that measure how the gradient changes as 
+the parameters change. This equation updates the current point $x_{n}$ by moving 
+in the direction that minimizes the cost function, taking into account both the 
+gradient and the curvature of the cost function at the current point. We are not 
+falling deep in this tecnique if you want to know more please check the Anton 
+and Oskar thesis[2].
+
+The Gauss-Newton method aproximate the  **Hessian matrix** using the Jacobian matrix
+to get the relationship between joints and end-effector position, but in Anton 
+and Oskar thesis use the pseudo inverse of the Jacobian matrix seen in the equation (2) 
+instead of the original version.[2]
+
+$$
+\begin{align}
+    J^{†} = (J^{T}J)^{-1}J^{T}
+\end{align}
+$$
+
+Then the equation (1) turns to.
+
+$$
+\begin{align}
+    x_{n+1} = x_{n} - H^{-1}\nabla f(x_{n}) = x_{n} - J^{†}r(x)
+\end{align}
+$$
+
+Finally in the thesis provides a pseudocode to use.
 
 ```latex
 goal_pose = y
@@ -67,6 +104,29 @@ end while
 
 ### Gradient Descent
 
+The gradient descent method also called **Jacobian transpose method**, is another
+numerical approach to solve the inverse kinematics optimization problem. This
+method solve this problem by iteratively adjusting the angles of the joinst to 
+decrease the error between the desired and actual end-effector position.
+
+To get the joint angles, this method makes use of the transpose of the Jacobian matrix
+to map the error between actual and desired end-effector position into the 
+angles of the joints [2] which means calculate the gradient. 
+This is doing by the equation (3)
+
+$$
+\begin{align}
+    x_{n+1} = x_{x} - \alpha \nabla f(x_{n}) = x_{n} - \alpha J^{T}r(x)
+\end{align}
+$$
+
+where $\alpha$ is the learning rate that define the size of the step taken into 
+the direction of the steepest descent during each iteraction [2]. Also is commun
+to define this parameter by trial and error.
+
+As Gauss-Newton method, the Anto and Oskar thesis provide with the pseudocode to
+use more lately.
+
 ```latex
 goal_pose = y
 q = current joint angles
@@ -84,6 +144,21 @@ end while
 ```
 
 ### Levenberg-Marquardt 
+
+The Levenberg-Marquardt method, is a combination of Gauss-Newton and gradient descent
+using the following equation.
+
+$$
+\begin{align}
+    x_{n+1} = x_{n} + (J^{T}J + \lambda I)^{-1}J^{T}r(x_{n})
+\end{align}
+$$
+
+Where $x_{n}$ is a actual x at the n-th iteraction, $J$ the Jacobian matrix of the
+$f(x)$ function, $r(x_{n})$ is the residual vector at $x_{n}$, \lambda is a **damping** 
+to control the step size and $I$ is the identity matrix.
+
+As \alpha, \lambda also is take it by trial and error.
 
 ```latex
 goal_pose = y
@@ -104,6 +179,11 @@ while norm(e) >= tolerance do
 end while
 ```
 
+
 ## Reference
 
+* [1] Gauss–Newton algorithm [wikipedia](https://en.wikipedia.org/wiki/Gauss%E2%80%93Newton_algorithm#:~:text=The%20Gauss%E2%80%93Newton%20algorithm%20is,of%20a%20non%2Dlinear%20function.)
+* [2] Anton Larsson and Oskar Grönlund [Comparative Analysis of the Inverse](https://www.diva-portal.org/smash/get/diva2:1774792/FULLTEXT01.pdf)
+* [3] Levenberg-Marquardt algorithm [wikipedia](https://en.wikipedia.org/wiki/Levenberg%E2%80%93Marquardt_algorithm)
 
+Kinematics of a 6-DOF Manipulator]
