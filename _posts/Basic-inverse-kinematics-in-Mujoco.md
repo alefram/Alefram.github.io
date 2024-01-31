@@ -178,16 +178,81 @@ while norm(e) >= tolerance do
     e = goal_pose - ForwardKinematics(q)
 end while
 ```
-## implementation
+## Implementation
 
-Ok stop theory lets get into practice.
+Ok stop theory lets get into practice. 
 
+First you have to install the necessary libraries for program, in this case I decide
+use the python bindings of [MuJoCo library](https://mujoco.readthedocs.io/en/stable/python.html)
+
+```python
+import numpy as np
+import mujoco
+import mujoco.viewer as viewer
+import mediapy as media
+```
+
+Then, load a MuJoCo model to test our inverse kinematics. In this
+case I decide to use the UR5e robot arm from the **mujoco_menangerie**
+[library](https://github.com/google-deepmind/mujoco_menagerie/blob/main/universal_robots_ur5e/README.md)
+
+```python
+xml = "<path>/mujoco_menagerie/universal_robots_ur5e/scene.xml" # add your path
+model = mujoco.MjModel.from_xml_path(xml)
+data = mujoco.MjData(model)
+renderer = mujoco.Renderer(model)
+```
+
+Also I create a new camera to get a better view of the robot.
+
+```python
+camera = mujoco.MjvCamera()
+mujoco.mjv_defaultFreeCamera(model, camera)
+camera.distance = 1
+```
+
+One important thing is to have a "test coordinate" to prove if the algorithm is correct,
+to do that I put a position of the joints that give me a good visualization by
+trial and error and use the "**wrist 3**" link (which is the last piece of the 
+robot model) of the robot as a **end-effector** 
+
+```python
+#put a position of the joints to get a test point
+pi = np.pi
+data.qpos = [3*pi/2, -pi/2, pi/2, 3*pi/2, 3*pi/2, 0]
+
+# inititial joint position
+qpos0 = data.qpos.copy()
+
+# Step the simulation.
+mujoco.mj_forward(model, data)
+
+# use the last piece as an "end effector" to get a test point in cartesian variables
+target = data.body('wrist_3_link').xpos
+print("Target =>",target)
+
+#plot robot
+renderer.update_scene(data, camera)
+media.show_image(renderer.render())
+```
+
+And this is what I got 
+
+![test coordinate](/images/robot1.png)
+
+
+Now lets create the algorithms. 
+
+As you can see in the pseudocode there is something similar which is that they 
+all use the **Jacobian**. Fortunaly, MuJoCo provide with a method that allow 
+us to calculate the jacobian without to do it manually which is [mj_jac](https://mujoco.readthedocs.io/en/stable/APIreference/APIfunctions.html?highlight=mj_jac#mj-jac)
+it can be a big help to create this algorithms. 
 
 
 ## Reference
 
 * [1] Gauss–Newton algorithm [wikipedia](https://en.wikipedia.org/wiki/Gauss%E2%80%93Newton_algorithm#:~:text=The%20Gauss%E2%80%93Newton%20algorithm%20is,of%20a%20non%2Dlinear%20function.)
-* [2] Anton Larsson and Oskar Grönlund [Comparative Analysis of the Inverse](https://www.diva-portal.org/smash/get/diva2:1774792/FULLTEXT01.pdf)
+* [2] Anton Larsson and Oskar Grönlund [Comparative Analysis of the Inverse Kinematics of a 6-DOF Manipulator](https://www.diva-portal.org/smash/get/diva2:1774792/FULLTEXT01.pdf)
 * [3] Levenberg-Marquardt algorithm [wikipedia](https://en.wikipedia.org/wiki/Levenberg%E2%80%93Marquardt_algorithm)
-
-Kinematics of a 6-DOF Manipulator]
+* [4] MuJoCo Python Bindings docs [Docs](https://mujoco.readthedocs.io/en/stable/python.html)
+* [5] mujoco_menagerie [UR5e](https://github.com/google-deepmind/mujoco_menagerie/blob/main/universal_robots_ur5e/README.md)
