@@ -232,13 +232,33 @@ target = data.body('wrist_3_link').xpos
 print("Target =>",target)
 
 #plot robot
+print("Results")
+mujoco.mj_resetDataKeyframe(model, data, 1)
+mujoco.mj_forward(model, data)
+init_point = data.body('wrist_3_link').xpos.copy()
 renderer.update_scene(data, camera)
-media.show_image(renderer.render())
+target_plot = renderer.render()
+
+data.qpos = qpos0
+mujoco.mj_forward(model, data)
+result_point = data.body('wrist_3_link').xpos.copy()
+renderer.update_scene(data, camera)
+result_plot = renderer.render()
+
+print("initial point =>", init_point)
+print("Desire point =>", result_point, "\n")
+
+images = {
+    'Initial position': target_plot,
+    ' Desire end effector position': result_plot,
+}
+
+media.show_images(images)
 ```
 
 And this is what I got 
 
-![test coordinate](/images/robot1.png)
+![test coordinate](/images/test_point.png)
 
 
 Now lets create the algorithms. 
@@ -320,24 +340,30 @@ ik.calculate(goal, init_q, body_id) # calculate the q angles
 
 result = data.qpos.copy()
 
-print("Manual")
+# plot results
+print("Results")
 data.qpos = qpos0
 mujoco.mj_forward(model, data)
-print("Desire point", target)
 renderer.update_scene(data, camera)
-media.show_image(renderer.render())
+target_plot = renderer.render()
 
-print("newton-gauss")
 data.qpos = result
 mujoco.mj_forward(model, data)
 result_point = data.body('wrist_3_link').xpos
-print('result point', result_point)
 renderer.update_scene(data, camera)
-media.show_image(renderer.render())
+result_plot = renderer.render()
 
+print("testing point =>", target)
+print("Gradient Descent result =>", result_point, "\n")
+
+images = {
+    'Testing point': target_plot,
+    'Gradient Descent result': result_plot,
+}
+
+media.show_images(images)
 ```
 
-![manual-render](/images/manual.png "Manual test point") 
 ![gd-result-render](/images/gdresult.png "Gradient Descent result")
 
 **Gauss-Newton**
@@ -409,23 +435,30 @@ ik.calculate(goal, init_q, body_id) # calculate the qpos
 
 result = data.qpos.copy()
 
-print("Manual")
+# plot results
+print("Results")
 data.qpos = qpos0
 mujoco.mj_forward(model, data)
-print("Desire point", target)
 renderer.update_scene(data, camera)
-media.show_image(renderer.render())
+target_plot = renderer.render()
 
-print("newton-gauss")
 data.qpos = result
 mujoco.mj_forward(model, data)
 result_point = data.body('wrist_3_link').xpos
-print('result point', result_point)
 renderer.update_scene(data, camera)
-media.show_image(renderer.render())
+result_plot = renderer.render()
+
+print("testing point =>", target)
+print("Gauss-Newton result =>", result_point, "\n")
+
+images = {
+    'Testing point': target_plot,
+    'Gauss-Newton result': result_plot,
+}
+
+media.show_images(images)
 ```
 
-![manual-render](/images/manual.png "Manual test point") 
 ![gn-result-render](/images/gnresult.png "Gradient Descent result")
 
 **Levenberg-Marquardt**
@@ -500,23 +533,30 @@ ik.calculate(goal, init_q, body_id) # calculate the qpos
 
 result = data.qpos.copy()
 
-print("Manual")
+# plot results
+print("Results")
 data.qpos = qpos0
 mujoco.mj_forward(model, data)
-print("Desire point", target)
 renderer.update_scene(data, camera)
-media.show_image(renderer.render())
+target_plot = renderer.render()
 
-print("newton-gauss")
 data.qpos = result
 mujoco.mj_forward(model, data)
 result_point = data.body('wrist_3_link').xpos
-print('result point', result_point)
 renderer.update_scene(data, camera)
-media.show_image(renderer.render())
+result_plot = renderer.render()
+
+print("testing point =>", target)
+print("Levenberg-Marquardt result =>", result_point, "\n")
+
+images = {
+    'Testing point': target_plot,
+    'Levenberg-Marquardt result': result_plot,
+}
+
+media.show_images(images)
 ```
 
-![manual-render](/images/manual.png "Manual test point") 
 ![lk-result-render](/images/lkresult.png "Gradient Descent result")
 
 So that's all for now! You've seen how MuJoCo can be used to implement simple Inverse
