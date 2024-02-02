@@ -33,12 +33,6 @@ const Post = ({postData}) => {
                 <meta name="twitter:title" content={postData.title}/>
                 <meta name="twitter:description" content={postData.description}/>
                 <meta name="twitter:image" content="🏓"/> 
-                <link
-                  rel="stylesheet"
-                  href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
-                  integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
-                  crossOrigin="anonymous"
-                />
 			</Head>
 
 			<Navbar/> 
