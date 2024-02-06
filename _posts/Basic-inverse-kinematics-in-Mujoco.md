@@ -6,48 +6,53 @@
   Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch'
 ---
 
-In my journey learning the basics of Robotics manipulation, I was wondering how
-to do simple inverse kinematics. I know that there is a lot of libraries that
-implement this stuff, but I want to practice on how to translate the math/pseudocode 
-to the implementation specially in MuJoCo which is my principal simulator for 
-implement my experiments right now. This what I learn.
+In my journey exploring the fundamentals of robot manipulation, I was curious 
+about how to perform simple inverse kinematics. I'm aware that numerous 
+libraries exist to handle this topic, but I'd like to practice translating the 
+math/pseudocode into actual implementation, particularly in MuJoCo, which 
+is my primary simulator for conducting experiments at the moment. Here's what 
+I discovered:
 
 ## What is inverse kinematics?
 
-Imagine that you have a robot of manipulator with 6 joints and one end-effector 
-(the tool that the robot use like a pinza), you wanna to move the end-effector
-to a specific point in a 3D space for some task. How do you know what are the 
-specific coordinates that the joints required to pose the end-effector in your desire point?,
-That's the question that inverse kinematics answer. Inverse kinematics is the mapping
-of end-effector pose to joint coordinates.
+Imagine you have a six-joint robot manipulator with an end-effector, like a 
+gripper, at its tip. You want to move this end-effector to a specific point in 
+3D space to perform a task. To achieve this, you need to determine the exact 
+joint coordinates required to position the end-effector at your desired point. 
+This is where inverse kinematics comes into play.
+
+Inverse kinematics is the process of mapping the end-effector's pose 
+(position and orientation) to the joint coordinates that will achieve that pose. 
+By using inverse kinematics, you can find the specific joint angles needed to 
+move the end-effector to your desired point in 3D space.
 
 ![ik-diagram](/images/ik-diagram.svg)
 
-Giving that there's two ways to solve inverse kinematics, the analytical 
-approach and the numerical approach. The analytical approach, consist in use the
-mathematical model...
-
+Given that there are two ways to solve inverse kinematics: the analytical 
+approach and the numerical approach. The analytical approach involves using the 
+mathematical model to solve for the joint angles required to achieve a desired 
+end-effector pose. On the other hand, the numerical approach involves using 
+iterative calculations to approximate the joint angles using an optimization 
+algorithm.
 
 In this article I will focus on the numerical approaches that I found.
 
 ## Inverse Kinematics algorithms
 
-Searching for the most commun ways of compute the inverse kinematics, I found the
-master thesis of Anton Larsson and Oskar Grönlund called "Comparative Analysis of 
-the Inverse Kinematics of a 6-DOF Manipulator". In this thesis they talked about
-the way to describe the relation approximately between joint angles and desire 
-position using the Jacobian, where they explain 3 methods: **Gradient Descent**, **Gauss-Newton**
+While searching for the most common ways to compute inverse kinematics, I 
+discovered the master thesis of **Anton Larsson** and **Oskar Grönlund** titled 
+"Comparative Analysis of the Inverse Kinematics of a 6-DOF Manipulator". In 
+this thesis, they discuss the use of the Jacobian to approximate the 
+relationship between joint angles and desired end-effector position. They 
+explain three methods for doing this: **Gradient Descent**, **Gauss-Newton**, 
 and **Levenberg-Marquardt**.
-
-Seeing that they provide the algorithm pseudocode of each, I have the idea of trying 
-to re implement this tecniques in mujoco for practice so let me explain how I do it.
-
 
 ### Gauss-Newton 
 
 The Gauss-Newton algorithm is a extension of a Newton's method for finding a 
-minimum of a non-linear function [1]. It starts by defining an initial guess $x_{n}$
-and estimate the next best optimal value denote by $x_{n+1}$ using the equation (1)
+minimum value of a non-linear function [1]. It starts by defining an initial 
+guess $x_{n}$ and estimate the next best optimal value denote by $x_{n+1}$ 
+using the equation (1).
 
 $$
 \begin{align}
@@ -55,19 +60,20 @@ $$
 \end{align}
 $$
 
-Where $f^{\prime}(x_{n})$ is the gradient of the cost function at the current point 
-$x_{n}$, and $f^{\prime\prime}(x_{n})$ is the second derivative of the cost function 
-at the same point called **Hessian matrix** that measure how the gradient changes as 
-the parameters change. This equation updates the current point $x_{n}$ by moving 
-in the direction that minimizes the cost function, taking into account both the 
-gradient and the curvature of the cost function at the current point. We are not 
-falling deep in this tecnique if you want to know more please check the Anton 
-and Oskar thesis[2].
+Where $f^{\prime}(x_{n})$ represents the gradient of the cost 
+function at the current point $x_{n}$, while $f^{\prime\prime}(x_{n})$ denotes 
+the second derivative of the cost function at the same point, known as the 
+"**Hessian matrix**". The Hessian matrix measures how the gradient changes as the 
+parameters change. This equation updates the current point $x_{n}$ by moving in 
+a direction that minimizes the cost function, considering both the gradient and 
+the curvature of the cost function at that point. If you'd like to explore this 
+technique further, I recommend referring to the thesis by Anton and Oskar for 
+more detailed information.
 
-The Gauss-Newton method aproximate the  **Hessian matrix** using the Jacobian matrix
-to get the relationship between joints and end-effector position, but in Anton 
-and Oskar thesis use the pseudo inverse of the Jacobian matrix seen in the equation (2) 
-instead of the original version.[2]
+The Gauss-Newton method approximates the **Hessian matrix** using the Jacobian 
+matrix to establish the relationship between joints and end-effector position. 
+However, in Anton and Oskar's thesis, they utilize the pseudo-inverse of the 
+Jacobian matrix, as seen in equation (2), instead of the original version.
 
 $$
 \begin{align}
@@ -83,7 +89,7 @@ $$
 \end{align}
 $$
 
-Finally in the thesis provides a pseudocode to use.
+In the thesis, they also provides a pseudocode to use.
 
 ```latex
 goal_pose = y
@@ -101,7 +107,7 @@ while norm(e) >= tolerance do
     e = goal_pose - ForwardKinematics(q)
 end while
 ```
-
+<!--TODO: continuar arreglando caligrafia-->
 ### Gradient Descent
 
 The gradient descent method also called **Jacobian transpose method**, is another
@@ -179,6 +185,10 @@ while norm(e) >= tolerance do
 end while
 ```
 ## Implementation
+
+Seeing that they provide the algorithm pseudocode of each, I have the idea of 
+trying to re implement this tecniques in mujoco for practice so let me explain 
+how I do it.
 
 Ok stop theory lets get into practice. 
 
