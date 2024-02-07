@@ -107,18 +107,18 @@ while norm(e) >= tolerance do
     e = goal_pose - ForwardKinematics(q)
 end while
 ```
-<!--TODO: continuar arreglando caligrafia-->
+
 ### Gradient Descent
 
-The gradient descent method also called **Jacobian transpose method**, is another
-numerical approach to solve the inverse kinematics optimization problem. This
-method solve this problem by iteratively adjusting the angles of the joinst to 
-decrease the error between the desired and actual end-effector position.
+The gradient descent method, also known as the **Jacobian transpose method**, is 
+another numerical approach to solving the inverse kinematics optimization 
+problem. This method solves the problem by iteratively adjusting the joint 
+angles to reduce the error between the desired and actual end-effector position.
 
-To get the joint angles, this method makes use of the transpose of the Jacobian matrix
-to map the error between actual and desired end-effector position into the 
-angles of the joints [2] which means calculate the gradient. 
-This is doing by the equation (3)
+In order to obtain the joint angles, the gradient descent method utilizes the 
+transpose of the Jacobian matrix to map the difference between the actual and 
+desired end-effector positions to the angles of the joints [2]. This is 
+achieved by calculating the gradient using equation (3)
 
 $$
 \begin{align}
@@ -126,12 +126,14 @@ $$
 \end{align}
 $$
 
-where $\alpha$ is the learning rate that define the size of the step taken into 
+Where $\alpha$ is the learning rate that define the size of the step taken into 
 the direction of the steepest descent during each iteraction [2]. Also is commun
 to define this parameter by trial and error.
 
-As Gauss-Newton method, the Anto and Oskar thesis provide with the pseudocode to
-use more lately.
+Where $\alpha$, is the learning reate that determines the size of the step 
+taken in the direction of the steepest descent during each iteration of the 
+gradient descent method [2]. It is common to define this parameter by trial and 
+error
 
 ```latex
 goal_pose = y
@@ -151,8 +153,8 @@ end while
 
 ### Levenberg-Marquardt 
 
-The Levenberg-Marquardt method, is a combination of Gauss-Newton and gradient descent
-using the following equation.
+The **Levenberg-Marquardt method**, is a combination of **Gauss-Newton** and 
+**gradient descent** using the following equation.
 
 $$
 \begin{align}
@@ -160,11 +162,13 @@ $$
 \end{align}
 $$
 
-Where $x_{n}$ is a actual x at the n-th iteraction, $J$ the Jacobian matrix of the
-$f(x)$ function, $r(x_{n})$ is the residual vector at $x_{n}$, \lambda is a **damping** 
-to control the step size and $I$ is the identity matrix.
+Where $x_{n}$ represents the current value of x at the n-th iteration, $J$ is 
+the Jacobian matrix of the $f(x)$ function, $r(x_{n})$ denotes the residual 
+vector at $x_{n}$, $\lambda$ is a **damping** factor used to control the step size, 
+and $I$ represents the identity matrix.
 
-As \alpha, \lambda also is take it by trial and error.
+Similar to $\alpha$, the parameter $\lambda$ is also determined through a 
+process of trial and error.
 
 ```latex
 goal_pose = y
@@ -186,14 +190,13 @@ end while
 ```
 ## Implementation
 
-Seeing that they provide the algorithm pseudocode of each, I have the idea of 
-trying to re implement this tecniques in mujoco for practice so let me explain 
-how I do it.
+Seeing that they provide the pseudocode for each algorithm, I have the idea of 
+trying to re-implement these techniques in **MuJoCo** for practice. Let me 
+explain how I do it.
 
-Ok stop theory lets get into practice. 
-
-First you have to install the necessary libraries for program, in this case I decide
-use the python bindings of [MuJoCo library](https://mujoco.readthedocs.io/en/stable/python.html)
+First, you need to install the necessary libraries for coding. In this case, 
+I decided to use the Python bindings of the 
+[MuJoCo library](https://mujoco.readthedocs.io/en/stable/python.xml).
 
 ```python
 import numpy as np
@@ -202,8 +205,8 @@ import mujoco.viewer as viewer
 import mediapy as media
 ```
 
-Then, load a MuJoCo model to test our inverse kinematics. In this
-case I decide to use the UR5e robot arm from the **mujoco_menangerie**
+Then, choose a MuJoCo robot arm model to test our inverse kinematics. In this 
+case I decided to use the UR5e robot arm from the **mujoco_menangerie** 
 [library](https://github.com/google-deepmind/mujoco_menagerie/blob/main/universal_robots_ur5e/README.md)
 
 ```python
@@ -213,6 +216,7 @@ data = mujoco.MjData(model)
 renderer = mujoco.Renderer(model)
 ```
 
+<!--TODO: continuar arreglando caligrafia-->
 Also I create a new camera to get a better view of the robot.
 
 ```python
