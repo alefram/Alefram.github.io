@@ -2,8 +2,7 @@
   title: 'Basic inverse kinematics in MuJoCo'
   date: '2023-12-14'
   description: 'Basic IK for Mujoco'
-  keywords: 'Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, 
-  Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch'
+  keywords: 'Robotics, Blog, Portfolio, inverse kinematics, Alexis Fraudita, Python'
 ---
 
 In my journey exploring the fundamentals of robot manipulation, I was curious 
@@ -216,8 +215,7 @@ data = mujoco.MjData(model)
 renderer = mujoco.Renderer(model)
 ```
 
-<!--TODO: continuar arreglando caligrafia-->
-Also I create a new camera to get a better view of the robot.
+I also created a new camera, to get a better view of the robot.
 
 ```python
 camera = mujoco.MjvCamera()
@@ -225,27 +223,28 @@ mujoco.mjv_defaultFreeCamera(model, camera)
 camera.distance = 1
 ```
 
-One important thing is to have a "test coordinate" to prove if the algorithm is correct,
-to do that I put a position of the joints that give me a good visualization by
-trial and error and use the "**wrist 3**" link (which is the last piece of the 
-robot model) of the robot as a **end-effector** 
+One important thing to ensure the correctness of an algorithm is to have a 
+"test coordinate." To do this, I choosed the position of the joints that give 
+a good visualization by trial and error and use the "**wrist 3**" link, which is 
+the last piece of the robot model, as an **end-effector**
 
 ```python
-#put a position of the joints to get a test point
+#Put a position of the joints to get a test point
 pi = np.pi
 data.qpos = [3*pi/2, -pi/2, pi/2, 3*pi/2, 3*pi/2, 0]
 
-# inititial joint position
+# Initial joint position
 qpos0 = data.qpos.copy()
 
 # Step the simulation.
 mujoco.mj_forward(model, data)
 
-# use the last piece as an "end effector" to get a test point in cartesian variables
+# Use the last piece as an "end effector" to get a test point in cartesian 
+# coordinates
 target = data.body('wrist_3_link').xpos
 print("Target =>",target)
 
-#plot robot
+#Plot results
 print("Results")
 mujoco.mj_resetDataKeyframe(model, data, 1)
 mujoco.mj_forward(model, data)
@@ -270,30 +269,31 @@ images = {
 media.show_images(images)
 ```
 
-And this is what I got 
+And this is what I've got.
 
 ![test coordinate](/images/test_point.png)
 
+Now let's create the algorithms.
 
-Now lets create the algorithms. 
+As you can see in the pseudocode, there is something similar among all of them, 
+which is that they all use the **Jacobian**. Fortunately, MuJoCo provides a method 
+that allows us to calculate the Jacobian without having to do it manually, 
+which is called [**mj_jac**](https://mujoco.readthedocs.io/en/stable/APIreference/APIfunctions.html?highlight=mj_jac#mj-jac). 
+It can be a big help in creating these algorithms.
 
-As you can see in the pseudocode there is something similar which is that they 
-all use the **Jacobian**. Fortunaly, MuJoCo provide with a method that allow 
-us to calculate the jacobian without to do it manually which is [mj_jac](https://mujoco.readthedocs.io/en/stable/APIreference/APIfunctions.html?highlight=mj_jac#mj-jac)
-it can be a big help to create this algorithms. 
+I created a class for the different algorithms to make their use simpler. In 
+this class, I defined the **check_joint_limits** method in the pseudocode and the 
+**calculate** method, where I implemented the algorithm using the MuJoCo library and 
+NumPy.
 
-I create a class for the different algorithms to use it more simply where 
-I define the **check_joint_limits** method in the pseudocode and the **calculate**
-method where I implement the algorithm using MuJoCo library and numpy.
+After implementing the algorithms, I initialized the variables for each one. 
+These values change a lot depending on the distance from the starting angles, 
+so I determined the values through the results of Anton&Oskar thesis and trial 
+and error to find what works best. However, if you want to experiment with the 
+parameters, feel free to do so. Finally, I rendered the model and checked if it 
+works.
 
-Once I have the algorithms implement it, I inicialize the variables for each 
-algorithm. These values change a lot depending of the distance from the starting
-angles, so I took the values by trial and error that works best in my case 
-but if you want to see futter, go ahead and play with the parameters. Finally
-I render de model and see if it works.
-
-
-**Gradient descent**
+### Gradient descent
 
 ```python
 # Gradient Descent method
@@ -311,8 +311,10 @@ class GradientDescentIK:
     def check_joint_limits(self, q):
         """Check if the joints is under or above its limits"""
         for i in range(len(q)):
-            q[i] = max(self.model.jnt_range[i][0], min(q[i], self.model.jnt_range[i][1]))
+            q[i] = max(self.model.jnt_range[i][0], 
+                       min(q[i], self.model.jnt_range[i][1]))
 
+    # Gradient Descent pseudocode implementation
     def calculate(self, goal, init_q, body_id):
         """Calculate the desire joints angles for goal"""
         self.data.qpos = init_q
@@ -322,21 +324,22 @@ class GradientDescentIK:
 
         while (np.linalg.norm(error) >= self.tol):
             #calculate jacobian
-            mujoco.mj_jac(self.model, self.data, self.jacp, self.jacr, goal, body_id)
+            mujoco.mj_jac(self.model, self.data, self.jacp, 
+                          self.jacr, goal, body_id)
             #calculate gradient
             grad = self.alpha * self.jacp.T @ error
-            # next step
+            #compute next step
             self.data.qpos += self.step_size * grad
-            # check joint limits
+            #check joint limits
             self.check_joint_limits(self.data.qpos)
             #compute forward kinematics
             mujoco.mj_forward(self.model, self.data) 
-            # calculate new error
+            #calculate new error
             error = np.subtract(goal, self.data.body(body_id).xpos)  
 ```
 
 ```python
-# Init variables.
+#Init variables.
 body_id = model.body('wrist_3_link').id
 jacp = np.zeros((3, model.nv)) # translation jacobian
 jacr = np.zeros((3, model.nv)) # rotational jacobian
@@ -348,13 +351,13 @@ init_q = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
 ik = GradientDescentIK(model, data, step_size, tol, alpha, jacp, jacr)
 
-# Get desire point
-mujoco.mj_resetDataKeyframe(model, data, 1) # Reset qpos to initial value
-ik.calculate(goal, init_q, body_id) # calculate the q angles
+#Get desire point
+mujoco.mj_resetDataKeyframe(model, data, 1) #reset qpos to initial value
+ik.calculate(goal, init_q, body_id) #calculate the q angles
 
 result = data.qpos.copy()
 
-# plot results
+#Plot results
 print("Results")
 data.qpos = qpos0
 mujoco.mj_forward(model, data)
@@ -380,7 +383,7 @@ media.show_images(images)
 
 ![gd-result-render](/images/gdresult.png "Gradient Descent result")
 
-**Gauss-Newton**
+### Gauss-Newton
 
 ```python
 # Gauss-Newton method
@@ -398,8 +401,10 @@ class GaussNewtonIK:
     def check_joint_limits(self, q):
         """Check if the joints is under or above its limits"""
         for i in range(len(q)):
-            q[i] = max(self.model.jnt_range[i][0], min(q[i], self.model.jnt_range[i][1]))
-
+            q[i] = max(self.model.jnt_range[i][0], 
+                       min(q[i], self.model.jnt_range[i][1]))
+    
+    # Gauss-Newton pseudocode implementation
     def calculate(self, goal, init_q, body_id):
         """Calculate the desire joints angles for goal"""
         self.data.qpos = init_q
@@ -409,7 +414,8 @@ class GaussNewtonIK:
 
         while (np.linalg.norm(error) >= self.tol):
             #calculate jacobian
-            mujoco.mj_jac(self.model, self.data, self.jacp, self.jacr, goal, body_id)
+            mujoco.mj_jac(self.model, self.data, self.jacp, 
+                          self.jacr, goal, body_id)
             #calculate delta of joint q
             product = self.jacp.T @ self.jacp
             
@@ -419,22 +425,22 @@ class GaussNewtonIK:
                 j_inv = np.linalg.inv(product) @ self.jacp.T
             
             delta_q = j_inv @ error
-            # next step
+            #compute next step
             self.data.qpos += self.step_size * delta_q
-            # check limits
+            #check limits
             self.check_joint_limits(self.data.qpos)
             #compute forward kinematics
             mujoco.mj_forward(self.model, self.data) 
-            # calculate new error
+            #calculate new error
             error = np.subtract(goal, self.data.body(body_id).xpos) 
 ```
 
 ```python
 
-# Init variables.
+#Init variables.
 body_id = model.body('wrist_3_link').id
-jacp = np.zeros((3, model.nv)) # translation jacobian
-jacr = np.zeros((3, model.nv)) # rotational jacobian
+jacp = np.zeros((3, model.nv)) #translation jacobian
+jacr = np.zeros((3, model.nv)) #rotational jacobian
 goal = [0.49, 0.13, 0.59]
 step_size = 0.5
 tol = 0.01
@@ -443,13 +449,13 @@ init_q = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
 ik = GaussNewtonIK(model, data, step_size, tol, alpha, jacp, jacr)
 
-# Get desire point
-mujoco.mj_resetDataKeyframe(model, data, 1) # Reset qpos to initial value
-ik.calculate(goal, init_q, body_id) # calculate the qpos
+#Get desire point
+mujoco.mj_resetDataKeyframe(model, data, 1) #reset qpos to initial value
+ik.calculate(goal, init_q, body_id) #calculate the qpos
 
 result = data.qpos.copy()
 
-# plot results
+#Plot results
 print("Results")
 data.qpos = qpos0
 mujoco.mj_forward(model, data)
@@ -475,7 +481,7 @@ media.show_images(images)
 
 ![gn-result-render](/images/gnresult.png "Gradient Descent result")
 
-**Levenberg-Marquardt**
+### Levenberg-Marquardt
 
 ```python
 # Levenberg-Marquardt method
@@ -494,8 +500,10 @@ class LevenbegMarquardtIK:
     def check_joint_limits(self, q):
         """Check if the joints is under or above its limits"""
         for i in range(len(q)):
-            q[i] = max(self.model.jnt_range[i][0], min(q[i], self.model.jnt_range[i][1]))
+            q[i] = max(self.model.jnt_range[i][0], 
+                       min(q[i], self.model.jnt_range[i][1]))
 
+    #Levenberg-Marquardt pseudocode implementation
     def calculate(self, goal, init_q, body_id):
         """Calculate the desire joints angles for goal"""
         self.data.qpos = init_q
@@ -517,7 +525,7 @@ class LevenbegMarquardtIK:
                 j_inv = np.linalg.inv(product) @ self.jacp.T
             
             delta_q = j_inv @ error
-            # next step
+            #compute next step
             self.data.qpos += self.step_size * delta_q
             # check limits
             self.check_joint_limits(self.data.qpos)
@@ -528,10 +536,10 @@ class LevenbegMarquardtIK:
 ```
 
 ```python
-# Init variables.
+#Init variables.
 body_id = model.body('wrist_3_link').id
-jacp = np.zeros((3, model.nv)) # translation jacobian
-jacr = np.zeros((3, model.nv)) # rotational jacobian
+jacp = np.zeros((3, model.nv)) #translation jacobian
+jacr = np.zeros((3, model.nv)) #rotational jacobian
 goal = [0.49, 0.13, 0.59]
 step_size = 0.5
 tol = 0.01
@@ -541,13 +549,13 @@ damping = 0.15
 
 ik = LevenbegMarquardtIK(model, data, step_size, tol, alpha, jacp, jacr, damping)
 
-# Get desire point
-mujoco.mj_resetDataKeyframe(model, data, 1) # Reset qpos to initial value
-ik.calculate(goal, init_q, body_id) # calculate the qpos
+#Get desire point
+mujoco.mj_resetDataKeyframe(model, data, 1) #reset qpos to initial value
+ik.calculate(goal, init_q, body_id) #calculate the qpos
 
 result = data.qpos.copy()
 
-# plot results
+#plot results
 print("Results")
 data.qpos = qpos0
 mujoco.mj_forward(model, data)
@@ -573,15 +581,16 @@ media.show_images(images)
 
 ![lk-result-render](/images/lkresult.png "Gradient Descent result")
 
-So that's all for now! You've seen how MuJoCo can be used to implement simple Inverse
-Kinematics. Keep in mind that this approach may not always 
-produce optimal values for your specific needs and not consider orientation. 
-From here, you can start experimenting with different techniques to fine-tune your 
-implementations by using the libraries that I use. 
+So that's all for now! You've seen how MuJoCo can be used to implement simple 
+Inverse Kinematics. Keep in mind that this approach may not always produce 
+optimal values for your specific needs and may not consider orientation. From 
+here, you can start experimenting with different techniques to fine-tune your 
+implementations using the libraries that I used.
 
 You can check the full code [here](https://github.com/alefram/notebooks/blob/master/inverse_kinematics.ipynb)
 
-I hope this has been helpful, and I'll see you soon!
+I hope this has been helpful, and don't forget to share it with anyone who 
+needs it.
 
 ## Reference
 
