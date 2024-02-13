@@ -17,7 +17,7 @@ const Footer = () => {
                     <Link href="https://twitter.com/FrauditaAlexis">
                         <img 
                             alt="twitterFooter" 
-                            src="/images/twitter.svg" 
+                            src="/images/x.svg" 
                             className="w-8"
                         />                    
                     </Link>

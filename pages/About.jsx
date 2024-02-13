@@ -58,27 +58,26 @@ const About = () => {
                     <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
                         I wrote my bachelor&apos;s thesis on developing a reinforcement
                         learning environment to train a robot arm for manipulation.
-                        This experience has made me very interested in AI agents and robotics
-                        applications. That&apos;s
-                        why I created this blog to share my notes and experiments on
-                        what I&apos;ve learned.
+                        This experience has made me very interested in Robotics 
+                        and AI applications. That&apos;s why I created this 
+                        blog to share my learning notes and projects on what 
+                        I&apos;ve learned.
                     </p>
-
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        One question that really fascinates me is how to deploy an
-                        AI agent in a robot on Mars, similar to &quot;Space Baymax&quot;.
+                        One question that really fascinates me is how to deploy 
+                        an AI agent in a space robot where there are not too 
+                        many computing resources(autonomous systems).
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
-                        Besides my learning and experimentation, I work as a
-                        web application developer
+                        Besides my learning, I work as a
+                        software developer developing tools for Laravel developers
                         (check <a className="text-blue-600 dark:text-blue-300 text-opacity-90 font-bold" href="https://moonguard.dev"> this</a>).
                         Previously, I was an assistant professor in the Digital
                         Systems and Microprocessors Lab at the Central University
                         of Venezuela
                     </p>
-
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        Some others things and interests that I enjoy are sports
+                        Some others interests that I enjoy are sports
                         like table tennis, music production, videogames and watch
                         movies that for me is a source of inspiration.
                     </p>
@@ -122,7 +121,7 @@ const About = () => {
                             >
                                 <img
                                     alt="twitter"
-                                    src="/images/twitter.svg"
+                                    src="/images/x.svg"
                                     className="w-8"
                                 />
                             </Link>
