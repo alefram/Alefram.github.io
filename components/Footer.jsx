@@ -8,25 +8,21 @@ const Footer = () => {
             <footer className="py-12">
                 <div className="flex justify-center space-x-4 mt-4">
                     <Link href="https://github.com/alefram">
-                        <a>
-                            <img 
-                                alt="githubFooter" 
-                                src="/images/github.svg" 
-                                className="w-8"
-                            />
-                        </a>
+                        <img 
+                            alt="githubFooter" 
+                            src="/images/github.svg" 
+                            className="w-8"
+                        />
                     </Link>
                     <Link href="https://twitter.com/FrauditaAlexis">
-                        <a>
-                            <img 
-                                alt="twitterFooter" 
-                                src="/images/twitter.svg" 
-                                className="w-8"
-                            />                    
-                        </a>
+                        <img 
+                            alt="twitterFooter" 
+                            src="/images/x.svg" 
+                            className="w-8"
+                        />                    
                     </Link>
                 </div>
-                <div className="text-center text-lg text-background">
+                <div className="text-center text-lg text-neutral-900 dark:text-neutral-100">
                     <small>
                         Make with &#128153; &copy;{currentYear} All rights 
                         reserved

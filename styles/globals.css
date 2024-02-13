@@ -7,4 +7,10 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-  }
+}
+
+@layer base {
+    body {
+        @apply dark:bg-neutral-950 bg-neutral-100
+    }
+}

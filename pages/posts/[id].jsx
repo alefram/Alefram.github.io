@@ -33,23 +33,17 @@ const Post = ({postData}) => {
                 <meta name="twitter:title" content={postData.title}/>
                 <meta name="twitter:description" content={postData.description}/>
                 <meta name="twitter:image" content="🏓"/> 
-                <link
-                  rel="stylesheet"
-                  href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
-                  integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
-                  crossOrigin="anonymous"
-                />
 			</Head>
 
 			<Navbar/> 
 			<main className="mt-10 px-4">
 					<div className='mx-auto max-w-2xl'>
-						<h1 className="text-2xl md:text-4xl text-background font-bold font-nunito">
+						<h1 className="text-2xl md:text-4xl text-neutral-900 dark:text-neutral-100 font-bold font-nunito">
 							{postData.title}
 						</h1>
                         <article 
                             className="text-base max-w-2xl mt-10 font-Roboto markdown prose 
-                             prose-blue text-background " 
+                             prose-blue text-neutral-800 dark:text-neutral-400 dark:prose-invert" 
                             dangerouslySetInnerHTML={{ 
                                 __html: postData.contentHtml 
                             }} 
