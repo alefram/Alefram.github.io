@@ -209,7 +209,8 @@ case I decided to use the UR5e robot arm from the **mujoco_menangerie**
 [library](https://github.com/google-deepmind/mujoco_menagerie/blob/main/universal_robots_ur5e/README.md)
 
 ```python
-xml = "<path>/mujoco_menagerie/universal_robots_ur5e/scene.xml" # add your path
+#add path
+xml = "<path>/mujoco_menagerie/universal_robots_ur5e/scene.xml"
 model = mujoco.MjModel.from_xml_path(xml)
 data = mujoco.MjData(model)
 renderer = mujoco.Renderer(model)
@@ -233,13 +234,13 @@ the last piece of the robot model, as an **end-effector**
 pi = np.pi
 data.qpos = [3*pi/2, -pi/2, pi/2, 3*pi/2, 3*pi/2, 0]
 
-# Initial joint position
+#Initial joint position
 qpos0 = data.qpos.copy()
 
-# Step the simulation.
+#Step the simulation.
 mujoco.mj_forward(model, data)
 
-# Use the last piece as an "end effector" to get a test point in cartesian 
+#Use the last piece as an "end effector" to get a test point in cartesian 
 # coordinates
 target = data.body('wrist_3_link').xpos
 print("Target =>",target)
@@ -314,7 +315,7 @@ class GradientDescentIK:
             q[i] = max(self.model.jnt_range[i][0], 
                        min(q[i], self.model.jnt_range[i][1]))
 
-    # Gradient Descent pseudocode implementation
+    #Gradient Descent pseudocode implementation
     def calculate(self, goal, init_q, body_id):
         """Calculate the desire joints angles for goal"""
         self.data.qpos = init_q
@@ -341,8 +342,8 @@ class GradientDescentIK:
 ```python
 #Init variables.
 body_id = model.body('wrist_3_link').id
-jacp = np.zeros((3, model.nv)) # translation jacobian
-jacr = np.zeros((3, model.nv)) # rotational jacobian
+jacp = np.zeros((3, model.nv)) #translation jacobian
+jacr = np.zeros((3, model.nv)) #rotational jacobian
 goal = [0.49, 0.13, 0.59]
 step_size = 0.5
 tol = 0.01
@@ -484,7 +485,7 @@ media.show_images(images)
 ### Levenberg-Marquardt
 
 ```python
-# Levenberg-Marquardt method
+#Levenberg-Marquardt method
 class LevenbegMarquardtIK:
     
     def __init__(self, model, data, step_size, tol, alpha, jacp, jacr, damping):
@@ -527,11 +528,11 @@ class LevenbegMarquardtIK:
             delta_q = j_inv @ error
             #compute next step
             self.data.qpos += self.step_size * delta_q
-            # check limits
+            #check limits
             self.check_joint_limits(self.data.qpos)
             #compute forward kinematics
             mujoco.mj_forward(self.model, self.data) 
-            # calculate new error
+            #calculate new error
             error = np.subtract(goal, self.data.body(body_id).xpos)  
 ```
 
@@ -555,7 +556,7 @@ ik.calculate(goal, init_q, body_id) #calculate the qpos
 
 result = data.qpos.copy()
 
-#plot results
+#Plot results
 print("Results")
 data.qpos = qpos0
 mujoco.mj_forward(model, data)
@@ -586,6 +587,10 @@ Inverse Kinematics. Keep in mind that this approach may not always produce
 optimal values for your specific needs and may not consider orientation. From 
 here, you can start experimenting with different techniques to fine-tune your 
 implementations using the libraries that I used.
+
+If you find any errors or would like to add more information, please DM me on
+[Twitter/x](https://twitter.com/_Alefram_) or send me an 
+[email](mailto:fraumalex@gmail.com) to update this post. I would appreciate it.
 
 You can check the full code [here](https://github.com/alefram/notebooks/blob/master/inverse_kinematics.ipynb)
 
