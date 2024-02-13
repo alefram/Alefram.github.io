@@ -22,7 +22,7 @@ jobs:
       - name: Install packages
         run: npm ci
       - name: Build project
-        run: npm run start
+        run: npm run build
       - name: Export static files
         run: npm run export
       - name: Add .nojekyll file
