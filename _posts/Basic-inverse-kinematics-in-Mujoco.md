@@ -1,6 +1,6 @@
 ---
   title: 'Basic inverse kinematics in MuJoCo'
-  date: '2023-12-14'
+  date: '2024-01-13'
   description: 'Basic IK for Mujoco'
   keywords: 'Robotics, Blog, Portfolio, inverse kinematics, Alexis Fraudita, Python'
 ---
