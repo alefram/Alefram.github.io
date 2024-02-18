@@ -582,6 +582,206 @@ media.show_images(images)
 
 ![lk-result-render](/images/lkresult.png "Gradient Descent result")
 
+## Simulation
+
+Let's try to simulate this movement. To understand how to implement it, I based
+on the [mjctrl](https://github.com/kevinzakka/mjctrl) repository from Kevin Zakka, 
+where he explains clear and pedagogical implementations of robotics controllers, 
+and by referencing the Mujoco 
+[colab](https://github.com/google-deepmind/mujoco?tab=readme-ov-file#getting-started)
+examples to render the simulations.
+
+I implemented this code in a Jupyter notebook, and to visualize my robot, I 
+render a video of it. First, I set up the video parameters so that the video 
+can run for 4 seconds.
+
+```python
+#Video setup
+import mediapy as media
+
+DURATION = 4 #(seconds)
+FRAMERATE = 60 #(Hz)
+frames = []
+```
+
+Then, I reset the model data, initialize the parameters, and obtain the initial 
+error for the simulation. In this case, I used the **Levenberg-Marquardt** method.
+
+```python
+#Reset state and time
+mujoco.mj_resetData(model, data)
+
+#Init parameters
+jacp = np.zeros((3, model.nv)) #translation jacobian
+jacr = np.zeros((3, model.nv)) #rotational jacobian
+step_size = 0.5
+tol = 0.01
+alpha = 0.5
+damping = 0.15
+
+#Get error.
+end_effector_id = model.body('wrist_3_link').id #"End-effector we wish to control.
+current_pose = data.body(end_effector_id).xpos #Current pose
+
+goal = [0.49, 0.13, 0.59] #Desire position
+
+error = np.subtract(goal, current_pose) #Init Error
+```
+
+I implemented the algorithm into a loop during the "DURATION" of the video, 
+calculating and updating inverse kinematics on each step frame. The difference 
+between this simulation and the last class implementations is the **mj_step** 
+method, which integrates in time and advances the simulation, applying forward 
+kinematics. Finally, I rendered and saved frames and displayed them using the 
+**MediaPy library**.
+
+```python
+#Simulate
+while data.time < DURATION:
+       
+    if (np.linalg.norm(error) >= tol):
+        #Calculate jacobian
+        mujoco.mj_jac(model, data, jacp, jacr, goal, end_effector_id)
+        #Calculate delta of joint q
+        n = jacp.shape[1]
+        I = np.identity(n)
+        product = jacp.T @ jacp + damping * I
+
+        if np.isclose(np.linalg.det(product), 0):
+            j_inv = np.linalg.pinv(product) @ jacp.T
+        else:
+            j_inv = np.linalg.inv(product) @ jacp.T
+
+        delta_q = j_inv @ error
+
+        #Compute next step
+        q = data.qpos.copy()
+        q += step_size * delta_q
+        
+        #Check limits
+        check_joint_limits(data.qpos)
+        
+        #Set control signal
+        data.ctrl = q
+        #Step the simulation.
+        mujoco.mj_step(model, data)
+
+        error = np.subtract(goal, data.body(end_effector_id).xpos)
+    
+    #Render and save frames.
+    if len(frames) < data.time * FRAMERATE:
+        renderer.update_scene(data)
+        pixels = renderer.render()
+        frames.append(pixels)
+        
+#Display video.
+media.show_video(frames, fps=FRAMERATE)
+```
+
+And this was the final result.
+
+![robot](/images/robot.gif)
+
+From here you can implement a lot of stuff, like creating a circle similar to
+**mjctrl** examples.
+
+![robot circle](/images/robotCircle.gif)
+
+Here is a full code implementation.
+
+```python
+import numpy as np
+import mujoco
+import mujoco.viewer as viewer
+import mediapy as media
+
+#Video Setup
+DURATION = 4 #(seconds)
+FRAMERATE = 60 #(Hz)
+frames = []
+
+#Reset state and time.
+mujoco.mj_resetData(model, data)
+
+#Init position.
+# pi = np.pi
+# data.qpos = [3*pi/2, -pi/2, pi/2, 3*pi/2, 3*pi/2, 0] #ENABLE if you want test circle
+
+#Init parameters
+jacp = np.zeros((3, model.nv)) #translation jacobian
+jacr = np.zeros((3, model.nv)) #rotational jacobian
+step_size = 0.5
+tol = 0.01
+alpha = 0.5
+damping = 0.15
+
+#Get error.
+end_effector_id = model.body('wrist_3_link').id #"End-effector we wish to control.
+current_pose = data.body(end_effector_id).xpos #Current pose
+
+goal = [0.49, 0.13, 0.59] #Desire position
+
+error = np.subtract(goal, current_pose) #Init Error
+
+def check_joint_limits(q):
+    """Check if the joints is under or above its limits"""
+    for i in range(len(q)):
+        q[i] = max(model.jnt_range[i][0], min(q[i], model.jnt_range[i][1]))
+
+def circle(t: float, r: float, h: float, k: float, f: float) -> np.ndarray:
+    """Return the (x, y) coordinates of a circle with radius r centered at (h, k)
+    as a function of time t and frequency f."""
+    x = r * np.cos(2 * np.pi * f * t) + h
+    y = r * np.sin(2 * np.pi * f * t) + k
+    z = 0.5
+    return np.array([x, y, z])
+
+#Simulate
+while data.time < DURATION:
+    
+    # goal = circle(data.time, 0.1, 0.5, 0.0, 0.5) #ENABLE to test circle.
+    
+    if (np.linalg.norm(error) >= tol):
+        #Calculate jacobian
+        mujoco.mj_jac(model, data, jacp, jacr, goal, end_effector_id)
+        #Calculate delta of joint q
+        n = jacp.shape[1]
+        I = np.identity(n)
+        product = jacp.T @ jacp + damping * I
+
+        if np.isclose(np.linalg.det(product), 0):
+            j_inv = np.linalg.pinv(product) @ jacp.T
+        else:
+            j_inv = np.linalg.inv(product) @ jacp.T
+
+        delta_q = j_inv @ error
+
+        #Compute next step
+        q = data.qpos.copy()
+        q += step_size * delta_q
+        
+        #Check limits
+        check_joint_limits(data.qpos)
+        
+        #Set control signal
+        data.ctrl = q 
+        #Step the simulation.
+        mujoco.mj_step(model, data)
+
+        error = np.subtract(goal, data.body(end_effector_id).xpos)
+    
+    #Render and save frames.
+    if len(frames) < data.time * FRAMERATE:
+        renderer.update_scene(data)
+        pixels = renderer.render()
+        frames.append(pixels)
+        
+#Display video.
+media.show_video(frames, fps=FRAMERATE)
+```
+
+## Conclusion
+
 So that's all for now! You've seen how MuJoCo can be used to implement simple 
 Inverse Kinematics. Keep in mind that this approach may not always produce 
 optimal values for your specific needs and may not consider orientation. From 
@@ -592,7 +792,7 @@ If you find any errors or would like to add more information, please DM me on
 [Twitter/x](https://twitter.com/_Alefram_) or send me an 
 [email](mailto:fraumalex@gmail.com) to update this post. I would appreciate it.
 
-You can check the full code [here](https://github.com/alefram/notebooks/blob/master/inverse_kinematics.ipynb)
+You can check the full Jupyter notebook [here](https://github.com/alefram/notebooks/blob/master/inverse_kinematics.ipynb)
 
 I hope this has been helpful, and don't forget to share it with anyone who 
 needs it.
@@ -604,3 +804,5 @@ needs it.
 * [3] Levenberg-Marquardt algorithm [wikipedia](https://en.wikipedia.org/wiki/Levenberg%E2%80%93Marquardt_algorithm)
 * [4] MuJoCo Python Bindings docs [Docs](https://mujoco.readthedocs.io/en/stable/python.html)
 * [5] mujoco_menagerie [UR5e](https://github.com/google-deepmind/mujoco_menagerie/blob/main/universal_robots_ur5e/README.md)
+* [6] kevinzakka mjctrl [repo](https://github.com/kevinzakka/mjctrl)
+* [7] Deepmind mujoco [repo](https://github.com/google-deepmind/mujoco)
