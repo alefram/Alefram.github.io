@@ -56,30 +56,33 @@ const About = () => {
                         and Software Developer.
                     </p>
                     <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
-                        I wrote my bachelor&apos;s thesis on developing a reinforcement
-                        learning environment to train a robot arm for manipulation.
-                        This experience has made me very interested in Robotics 
-                        and AI applications. That&apos;s why I created this 
-                        blog to share my learning notes and projects on what 
-                        I&apos;ve learned.
+                        I wrote my bachelor&apos;s thesis on the development of a 
+                        reinforcement learning environment to train a robot arm 
+                        for manipulation. This experience has made me very 
+                        interested in conducting research in robotics 
+                        and AI. That&apos;s why I created this blog to share my 
+                        learning notes and projects.
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        One question that really fascinates me is how to deploy 
-                        an AI agent in a space robot where there are not too 
-                        many computing resources(autonomous systems).
+                        Currently, my areas of interest are: simulation, 
+                        robot control, deep learning, reinforcement learning, 
+                        privacy in AI, edge computing, and space applications.
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
-                        Besides my learning, I work as a
-                        software developer developing tools for Laravel developers
-                        (check <a className="text-blue-600 dark:text-blue-300 text-opacity-90 font-bold" href="https://moonguard.dev"> this</a>).
-                        Previously, I was an assistant professor in the Digital
-                        Systems and Microprocessors Lab at the Central University
-                        of Venezuela
+                        Besides my learning, I also serve as a software 
+                        developer, building
+                        <a className="text-blue-600 dark:text-blue-300 
+                            text-opacity-90 font-bold" 
+                            href="https://moonguard.dev"> tools </a>
+                        for Laravel developers, and previously 
+                        held the position of Assistant Professor in the Digital 
+                        Systems and Microprocessors Lab at the Central 
+                        University of Venezuela. 
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        Some others interests that I enjoy are sports
-                        like table tennis, music production, videogames and watch
-                        movies that for me is a source of inspiration.
+                        Some other interests I enjoy include table tennis, 
+                        music production, video games, and watching films, 
+                        which serve as sources of inspiration for me.
                     </p>
                 </div>
 
