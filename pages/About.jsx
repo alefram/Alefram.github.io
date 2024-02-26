@@ -65,8 +65,8 @@ const About = () => {
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
                         Currently, my areas of interest are: simulation, 
-                        robot control, deep learning, AI agents, autonomous systems 
-                        privacy in AI, edge computing, and space applications.
+                        robot control, deep learning, AI agents, autonomous systems, 
+                        edge computing.
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
                         Besides my learning, I also serve as a software 
