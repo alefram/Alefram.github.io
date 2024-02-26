@@ -129,11 +129,6 @@ Where $\alpha$ is the learning rate that define the size of the step taken into
 the direction of the steepest descent during each iteraction [2]. Also is commun
 to define this parameter by trial and error.
 
-Where $\alpha$, is the learning reate that determines the size of the step 
-taken in the direction of the steepest descent during each iteration of the 
-gradient descent method [2]. It is common to define this parameter by trial and 
-error
-
 ```latex
 goal_pose = y
 q = current joint angles
