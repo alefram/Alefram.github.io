@@ -53,30 +53,24 @@ const About = () => {
                 <div className="max-w-screen-md mx-4">
                     <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
                         My name is Alexis Fraudita, I&apos;m Electrical Engineer
-                        and Software Developer.
+                        with a Minor in Computation and Control Systems 
                     </p>
                     <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
                         I wrote my bachelor&apos;s thesis on the development of a 
                         reinforcement learning environment to train a robot arm 
                         for manipulation. This experience has made me very 
-                        interested in conducting research in robotics 
+                        interested in working in robotics 
                         and AI. That&apos;s why I created this blog to share my 
                         learning notes and projects.
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
                         Currently, my areas of interest are: simulation, 
                         robot control, deep learning, AI agents, autonomous systems, 
-                        edge computing.
+                        embedded computing.
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
-                        Besides my learning, I also serve as a software 
-                        developer, building
-                        <a className="text-blue-600 dark:text-blue-300 
-                            text-opacity-90 font-bold" 
-                            href="https://moonguard.dev"> tools </a>
-                        for Laravel developers, and previously 
-                        held the position of Assistant Professor in the Digital 
-                        Systems and Microprocessors Lab at the Central 
+                        Previously held the position of Assistant Professor in 
+                        the Digital Systems and Microprocessors Lab at the Central 
                         University of Venezuela. 
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
