@@ -66,7 +66,8 @@ export default function Projects({projects}) {
                     </h1>
                 </div>
                 <div>
-                    <ul>
+                    <h2 className="font-bold text-xl">Personal</h2>
+                    <ul className="mt-4">
                         {projects.map(({ 
                             id, 
                             title, 
@@ -84,6 +85,20 @@ export default function Projects({projects}) {
                                 />
                             </li>
                         ))}
+                    </ul>
+                </div>
+                <div className="mt-10">
+                    <h2 className="font-bold text-xl">Contributions</h2>
+                    <ul className="mt-5">
+                        <li>
+                            <a className="underline text-blue-600 dark:text-blue-300" 
+                                href="https://github.com/google-deepmind/mujoco/commits?author=alefram">
+                                MuJoCo
+                            </a> &nbsp;
+                            <span className="text-neutral-800 dark:text-neutral-400">
+                                A general purpose physics simulator
+                            </span>
+                        </li>
                     </ul>
                 </div>
             </main>
