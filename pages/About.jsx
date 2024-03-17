@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Link from 'next/dist/client/link';
+import Footer from '../components/Footer';
 
 const About = () => {
 
@@ -65,8 +66,7 @@ const About = () => {
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
                         Currently, my areas of interest are: simulation, 
-                        robot control, deep learning, AI agents, autonomous systems, 
-                        embedded computing.
+                        control, deep learning, planning, embedded computing.
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
                         Previously held the position of Assistant Professor in 
@@ -80,51 +80,46 @@ const About = () => {
                     </p>
                 </div>
 
-                <div className="p-4 mt-5">
-                    <h1
-                        className=" text-blue-600 dark:text-blue-300 text-opacity-90 text-2xl font-bold
-                        text-center font-nunito">
-                        Also you can Find me On
-                    </h1>
-                    <div className="p-4 flex flex-row justify-center space-x-4">
-                        <div>
-                            <Link
-                                href="https://github.com/alefram"
-                                passHref={true}
-                            >
-                                <img
-                                    alt="github"
-                                    src="/images/github.svg"
-                                    className="w-8"
-                                />
-                            </Link>
-                        </div>
-                        <div>
-                            <Link
-                                href="https://www.linkedin.com/in/alexis-fraudita/"
-                                passHref={true}
-                            >
-                                <img
-                                    alt="linkedin"
-                                    src="/images/linkedin.svg"
-                                    className="w-8"
-                                />
-                            </Link>
-                        </div>
-                        <div>
-                            <Link
-                                href="https://twitter.com/_Alefram_"
-                                passHref={true}
-                            >
-                                <img
-                                    alt="twitter"
-                                    src="/images/x.svg"
-                                    className="w-8"
-                                />
-                            </Link>
-                        </div>
+                <div className="p-4 flex flew-row space-x-4">
+                    <div>
+                        <Link
+                            className="hover:text-blue-300 text-blue-600 
+                            dark:hover:text-blue-600 dark:text-blue-300"
+                            href="https://github.com/alefram"
+                            passHref={true}
+                        >
+                            GitHub
+                        </Link>
+                    </div>
+                    <div>
+                        <Link
+                            className="hover:text-blue-300 text-blue-600 
+                            dark:hover:text-blue-600 dark:text-blue-300"
+                            href="https://www.linkedin.com/in/alexis-fraudita/"
+                            passHref={true}
+                        >
+                            Linkedin
+                        </Link>
+                    </div>
+                    <div>
+                        <Link
+                            className="hover:text-blue-300 text-blue-600 
+                            dark:hover:text-blue-600 dark:text-blue-300"
+                            href="https://twitter.com/_Alefram_"
+                            passHref={true}
+                        >
+                            Twitter
+                        </Link>
+                    </div>
+                    <div>
+                        <Link 
+                            className="hover:text-blue-300 text-blue-600 
+                            dark:hover:text-blue-600 dark:text-blue-300"
+                            href="mailto:fraumalex@gmail.com">Email
+                        </Link>
                     </div>
                 </div>
+                <Footer/>
             </main>
         </div>
     );
