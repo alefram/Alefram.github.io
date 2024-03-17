@@ -91,7 +91,8 @@ export default function Projects({projects}) {
                     <h2 className="font-bold text-xl">Contributions</h2>
                     <ul className="mt-5">
                         <li>
-                            <a className="underline text-blue-600 dark:text-blue-300" 
+                            <a className="underline text-blue-600 hover:text-blue-300 
+                                dark:text-blue-300 dark:hover:text-blue-600" 
                                 href="https://github.com/google-deepmind/mujoco/commits?author=alefram">
                                 MuJoCo
                             </a> &nbsp;
