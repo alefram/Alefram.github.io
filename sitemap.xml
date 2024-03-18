@@ -9,32 +9,42 @@
 
 <url>
   <loc>https://alefram.github.io/</loc>
-  <lastmod>2023-06-09T02:48:32+00:00</lastmod>
+  <lastmod>2024-03-05T05:50:29+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://alefram.github.io/Projects</loc>
-  <lastmod>2023-06-09T02:48:32+00:00</lastmod>
+  <lastmod>2024-03-05T05:50:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://alefram.github.io/About</loc>
-  <lastmod>2023-06-09T02:48:32+00:00</lastmod>
+  <lastmod>2024-03-05T05:50:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://alefram.github.io/posts/how-to-use-python-for-pid-controller-design</loc>
-  <lastmod>2023-06-09T02:48:32+00:00</lastmod>
+  <loc>https://alefram.github.io/posts/Basic-inverse-kinematics-in-Mujoco</loc>
+  <lastmod>2024-03-05T05:50:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://alefram.github.io/posts/How-to-use-python-for-pid-controller-design</loc>
+  <lastmod>2024-03-05T05:50:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://alefram.github.io/posts/Hello-world</loc>
-  <lastmod>2023-06-09T02:48:32+00:00</lastmod>
+  <lastmod>2024-03-05T05:50:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://alefram.github.io/projects/TEG</loc>
-  <lastmod>2023-06-09T02:48:32+00:00</lastmod>
+  <lastmod>2024-03-05T05:50:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://alefram.github.io/projects/SCADA_SolarSystem</loc>
+  <lastmod>2024-03-05T05:50:29+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
