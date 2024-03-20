@@ -66,7 +66,7 @@ const About = () => {
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
                         Currently, my areas of interest are: simulation, 
-                        control, deep learning, planning, embedded computing.
+                        low level control, deep learning, planning, reinforcement learning.
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
                         Previously held the position of Assistant Professor in 
