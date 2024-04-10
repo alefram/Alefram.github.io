@@ -17,7 +17,7 @@ in university.
 
 So here is what I learned.
 
-## What is a PID controller?
+## What is a PID controller
 
 A PID controller is a "**brain**" for machines that helps them stay on track. It 
 takes in sensory input, compares it to a target, and adjusts as needed to 

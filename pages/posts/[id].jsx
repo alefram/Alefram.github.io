@@ -2,9 +2,12 @@ import Head from 'next/head';
 import { getAllPostsIds, getPostsData } from '../../lib/posts';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import TableOfContent from '../../components/TableOfContent';
 
 const Post = ({postData}) => {
-	return (
+    const headings = extractHeadings(postData.contentHtml);
+
+    return (
 		<div>
 			<Head>
 				<title>{postData.title}</title>
@@ -41,6 +44,7 @@ const Post = ({postData}) => {
 						<h1 className="text-2xl md:text-4xl text-neutral-900 dark:text-neutral-100 font-bold font-nunito">
 							{postData.title}
 						</h1>
+                        <TableOfContent headings={headings} />
                         <article 
                             className="text-base max-w-2xl mt-10 font-Roboto markdown prose 
                              prose-blue text-neutral-800 dark:text-neutral-400 dark:prose-invert" 
@@ -54,6 +58,21 @@ const Post = ({postData}) => {
 		</div>  
 		);
 };
+
+const extractHeadings = (contentHtml) => {
+    const headings = [];
+    const regex = /<h([1-6])[^>]*>(.*?)<\/h\1>/g;
+    let match;
+    
+    while ((match = regex.exec(contentHtml)) !== null) {
+        const level = parseInt(match[1]);
+        const title = match[2];
+        const id = `${title.toLowerCase().replace(/\s+/g, '-')}`;
+        headings.push({ id, level, title });
+    }
+
+    return headings;
+}
 
 export async function getStaticPaths() {
 	const paths = getAllPostsIds()

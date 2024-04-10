@@ -12,7 +12,7 @@ math/pseudocode into actual implementation, particularly in MuJoCo, which
 is my primary simulator for conducting experiments at the moment. Here's what 
 I discovered:
 
-## What is inverse kinematics?
+## What is inverse kinematics
 
 Imagine you have a six-joint robot manipulator with an end-effector, like a 
 gripper, at its tip. You want to move this end-effector to a specific point in 
