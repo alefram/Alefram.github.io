@@ -16,19 +16,19 @@ monitoring of a solar system across multiple sites.
 
 ## Features 
 
-1. Monitoring multiple sites.
-2. Flow charts   
-3. Solar PV monitoring: Power, Temperature, Solar Radiation, Status.
-4. Battery monitoring: Power, SoC, Current, status.
-5. Costumer monitoring: Voltage, Current, Power, Energy
+- Monitoring multiple sites.
+- Flow charts   
+- Solar PV monitoring: Power, Temperature, Solar Radiation, Status.
+- Battery monitoring: Power, SoC, Current, status.
+- Costumer monitoring: Voltage, Current, Power, Energy
 
 ## Resources
 
 Some of the resources that I have used to create this project are:
 
-* [Medium](https://medium.com/typeiqs/tagged/mango-automation)
-* [Mango website](https://teststore.mangoautomation.net/module/dashboards;jsessionid=27CCA6E6D1B3FD208DFB9E4665FBDA79)
+- [Medium](https://medium.com/typeiqs/tagged/mango-automation)
+- [Mango website](https://teststore.mangoautomation.net/module/dashboards;jsessionid=27CCA6E6D1B3FD208DFB9E4665FBDA79)
 
-If you want to know more about this project check my [*GitHub*](https://github.com/alefram/SCADA-SolarSystem)
+If you want to know more about this project, please check my [*GitHub*](https://github.com/alefram/SCADA-SolarSystem)
 
 

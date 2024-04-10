@@ -1,6 +1,6 @@
 ---
 title: 'TEG'
-description: 'A set of tools for the develop of AI agents in robot manipulation'
+description: 'A Reinforcement Learning enviroment for train agents in robot manipulation'
 image: 'images/projects/TEG.png'
 altImage: 'TEG'
 keywords: 'Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch'
@@ -13,22 +13,17 @@ for Developers and Researchers.
 
 ## Features 
 
-1. Reinforcement Learning enviroment for a single AI agent.
-2. Robot Models (Currently UR5 only).
-
-In the future I hope add more features like different Robot Models, 
-reinforcement learning environments and tools that even can create your own 
-reinforcement learning environments if you like.
+- Reinforcement Learning enviroment for a single AI agent.
+- Robot Models (Currently UR5 only).
 
 ## Resources
 
 Some of the resources that I have used to create this project are:
 
-* [OpenAI Gym](https://github.com/openai/gym)
-* [Mujoco](https://mujoco.org/)
-* [Mujoco py](https://github.com/openai/mujoco-py) 
-* [UR5](https://github.com/roboticsleeds/mujoco-ur5-model)
+- [OpenAI Gym](https://github.com/openai/gym)
+- [Mujoco](https://mujoco.org/)
+- [Mujoco py](https://github.com/openai/mujoco-py) 
+- [UR5](https://github.com/roboticsleeds/mujoco-ur5-model)
 
-This project is in continuous development so you can find issues and bugs but 
-If you wanna see more information about this project, you can visit my 
+If you want to see more information about this project, you can visit my 
 [*GitHub*](www.github.com/Alefram/TEG), I hope it would be usefull for you.
