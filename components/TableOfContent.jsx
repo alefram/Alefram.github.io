@@ -30,7 +30,7 @@ const TableOfContent = ({ headings }) => {
                                         <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
                                     </svg>
                                 ) : (
-                                    <svg className="text-slate-400 dark:text-slate-600" width="3" height="3" viewBox="0 0 3 3" className="mr-2 text-slate-400">
+                                    <svg className="text-slate-400 dark:text-slate-600 mr-2" width="3" height="3" viewBox="0 0 3 3">
                                         <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor"></circle>
                                     </svg>
                                 )}
