@@ -65,10 +65,10 @@ const About = () => {
                         learning notes and projects.
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        Currently, I'm exploring various topics that I'm curious 
+                        Currently, I am exploring various topics that I am curious 
                         about, including developing controllers for articulated 
                         robots, robotics simulation, computational efficiency in 
-                        reinforcement learning, and compilers for AI.
+                        reinforcement learning, and compilers for optimize AI.
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
                         Previously held the position of Assistant Professor in 
