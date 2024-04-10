@@ -54,7 +54,7 @@ const About = () => {
                 <div className="max-w-screen-md mx-4">
                     <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
                         My name is Alexis Fraudita, I&apos;m Electrical Engineer
-                        with a Minor in Computation and Control Systems 
+                        with a Minor in Electronics. 
                     </p>
                     <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
                         I wrote my bachelor&apos;s thesis on the development of a 
@@ -65,8 +65,10 @@ const About = () => {
                         learning notes and projects.
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        Currently, my areas of interest are: simulation, 
-                        low level control, deep learning, planning, reinforcement learning.
+                        Currently, I'm exploring various topics that I'm curious 
+                        about, including developing controllers for articulated 
+                        robots, robotics simulation, computational efficiency in 
+                        reinforcement learning, and compilers for AI.
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
                         Previously held the position of Assistant Professor in 
@@ -75,7 +77,7 @@ const About = () => {
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
                         Some other interests I enjoy include table tennis, 
-                        music production, video games, and watching films, 
+                        music, video games, and watching films, 
                         which serve as sources of inspiration for me.
                     </p>
                 </div>
