@@ -67,8 +67,8 @@ const About = () => {
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
                         Currently, I am exploring various topics that I am curious 
                         about, including developing controllers for robots, 
-                        robotics simulation, reinforcement learning,
-                        deep learning, and compilers.
+                        physics simulation, reinforcement learning,
+                        deep learning, parallel computing and compilers.
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
                         Previously held the position of Assistant Professor in 
