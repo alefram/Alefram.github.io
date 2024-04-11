@@ -54,21 +54,21 @@ const About = () => {
                 <div className="max-w-screen-md mx-4">
                     <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
                         My name is Alexis Fraudita, I&apos;m Electrical Engineer
-                        with a Minor in Electronics. 
+                        with a Minor in Electronics and control systems. 
                     </p>
                     <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
                         I wrote my bachelor&apos;s thesis on the development of a 
                         reinforcement learning environment to train a robot arm 
                         for manipulation. This experience has made me very 
                         interested in working in robotics 
-                        and AI. That&apos;s why I created this blog to share my 
-                        learning notes and projects.
+                        and AI closely related to hardware. That&apos;s why I created this 
+                        blog to share my learning notes and projects.
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
                         Currently, I am exploring various topics that I am curious 
-                        about, including developing controllers for articulated 
-                        robots, robotics simulation, computational efficiency in 
-                        reinforcement learning, and compilers for optimize AI.
+                        about, including developing controllers for robots, 
+                        robotics simulation, reinforcement learning,
+                        deep learning, and compilers.
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
                         Previously held the position of Assistant Professor in 
