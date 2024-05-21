@@ -787,7 +787,7 @@ If you find any errors or would like to add more information, please DM me on
 [Twitter/x](https://twitter.com/_Alefram_) or send me an 
 [email](mailto:fraumalex@gmail.com) to update this post. I would appreciate it.
 
-You can check the full Jupyter notebook [here](https://github.com/alefram/notebooks/blob/master/inverse_kinematics.ipynb)
+You can check the full Jupyter notebook [here](https://github.com/alefram/blog-notebooks/blob/master/inverse_kinematics.ipynb)
 
 I hope this has been helpful, and don't forget to share it with anyone who 
 needs it.

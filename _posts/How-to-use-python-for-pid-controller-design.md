@@ -392,7 +392,7 @@ produce optimal values for your specific needs. From here, you can start
 experimenting with different techniques to fine-tune your controller using 
 the libraries that we use. 
 
-You can check the full code [here](https://github.com/alefram/notebooks/blob/master/pid.ipynb)
+You can check the full code [here](https://github.com/alefram/blog-notebooks/blob/master/pid.ipynb)
 
 I hope this has been helpful, and I'll see you soon!
 
