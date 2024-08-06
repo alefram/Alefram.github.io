@@ -53,7 +53,7 @@ const About = () => {
 
                 <div className="max-w-screen-md mx-4">
                     <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
-                        My name is Alexis Fraudita, I&apos;m Electrical Engineer
+                        Hey I am Alex, I&apos;m Electrical Engineer
                         with a Minor in Electronics and control systems. 
                     </p>
                     <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
@@ -61,14 +61,14 @@ const About = () => {
                         reinforcement learning environment to train a robot arm 
                         for manipulation. This experience has made me very 
                         interested in working in robotics 
-                        and AI closely related to hardware. That&apos;s why I created this 
+                        and AI. That&apos;s why I created this 
                         blog to share my learning notes and projects.
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
                         Currently, I am exploring various topics that I am curious 
-                        about, including developing controllers for robots, 
+                        about, including control theory for robotics, 
                         physics simulation, reinforcement learning,
-                        deep learning, parallel computing.
+                        deep learning, parallel computing, embedded systems.
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
                         Previously held the position of Assistant Professor in 
@@ -76,7 +76,7 @@ const About = () => {
                         University of Venezuela. 
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        Some other interests I enjoy include table tennis, 
+                        Some other interests I enjoy include, cybersecurity, table tennis, 
                         music, video games, and watching films, 
                         which serve as sources of inspiration for me.
                     </p>
@@ -97,7 +97,7 @@ const About = () => {
                         <Link
                             className="hover:text-blue-300 text-blue-600 
                             dark:hover:text-blue-600 dark:text-blue-300"
-                            href="https://www.linkedin.com/in/alexis-fraudita/"
+                            href="https://www.linkedin.com/in/alefram/"
                             passHref={true}
                         >
                             Linkedin
