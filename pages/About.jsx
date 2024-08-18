@@ -68,7 +68,7 @@ const About = () => {
                         Currently, I am exploring various topics that I am curious 
                         about, including control theory for robotics, 
                         physics simulation, reinforcement learning,
-                        deep learning, parallel computing, embedded systems.
+                        deep learning, parallel computing and embedded systems.
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
                         Previously held the position of Assistant Professor in 
@@ -76,7 +76,7 @@ const About = () => {
                         University of Venezuela. 
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        Some other interests I enjoy include, cybersecurity, table tennis, 
+                        Some other interests I enjoy include, table tennis, 
                         music, video games, and watching films, 
                         which serve as sources of inspiration for me.
                     </p>
