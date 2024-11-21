@@ -68,7 +68,7 @@ const About = () => {
                         Currently, I am exploring various topics that I am curious 
                         about, including control theory, 
                         physics simulation, reinforcement learning,
-                        deep learning and embedded systems apply to robotics.
+                        deep learning and computer architecture apply to robotics and AI.
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
                         Previously held the position of Assistant Professor in 
