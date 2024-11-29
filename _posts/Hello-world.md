@@ -1,5 +1,5 @@
 ---
-  title: 'Hello World'
+  title: 'My learning resources'
   date: '2023-03-15'
   description: 'Welcome to my blog! In this first post, I&apos;d like to share some of the resources that have helped me learn. I hope they can be helpful for you too'
   keywords: 'Machine Learning, Robotics, Electronics, Reinforcement Learning, Blog, Portfolio, Alexis, Fraudita, Alexis Fraudita, Python, Pytorch'
@@ -7,17 +7,17 @@
 
 Welcome to my blog! In this first post, I&apos;d like to share some of the resources 
 that have helped me learn. I hope they can be helpful for you too. If you know 
-of any other useful resources, feel free to send me a message on [Twitter](https://twitter.com/_Alefram_) and 
+of any other useful resources, feel free to send me a message on [X](https://x.com/_Alefram_) and 
 I&apos;ll take a look and possibly add them to the list.
 
 AI and robotics are enormous fields with many different areas to explore.
 Personally, I tend to focus on...
 
-- Deep learning(DL).
-- Reinforcement learning(RL).
-- Optimal/adaptive Control.
-- simulation.
-- hardware implementation.
+- **Reinforcement Learning to continuous control.**
+- **Simulation and control for Robotics systems.**
+- **Computer Architecture trends for accelerate neural networks and Robotics.**
+
+Yeah is a lot!!!.
 
 ### Books
 
@@ -39,6 +39,7 @@ the bible of RL.
 - [Carnegie Mellon blog](https://blog.ml.cmu.edu/)
 - [SAIL blog](http://ai.stanford.edu/blog/robotics/)
 - [BAIR blog](https://bair.berkeley.edu/blog/)
+- [Nvidia technical blog](https://developer.nvidia.com/blog/category/robotics/)
 
 ### Courses
 
@@ -55,7 +56,6 @@ the bible of RL.
 - [Papers with code](https://paperswithcode.com/) to find papers with code examples.
 - [Distill](https://distill.pub/) interactive articles about AI.
 - [spinning up](https://spinningup.openai.com/en/latest/) a good intro to RL.
-- [Twitter](https://twitter.com) the best place to find researchers in AI.
 - [The AI Epiphany](https://www.youtube.com/@TheAIEpiphany) Aleksa Gordic youtube channel.
-- [Steve Brunton youtube channel](https://www.youtube.com/@Eigensteve).
-- [3blue1brown youtube channel](https://www.youtube.com/c/3blue1brown?app=desktop)
+- [Steve Brunton youtube channel](https://www.youtube.com/@Eigensteve). Math stuff
+- [3blue1brown youtube channel](https://www.youtube.com/c/3blue1brown?app=desktop) Best for math stuff

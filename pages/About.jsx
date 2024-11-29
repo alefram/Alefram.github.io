@@ -97,7 +97,7 @@ const About = () => {
                         <Link
                             className="hover:text-blue-300 text-blue-600 
                             dark:hover:text-blue-600 dark:text-blue-300"
-                            href="https://www.linkedin.com/in/alefram/"
+                            href="https://www.linkedin.com/in/alefram"
                             passHref={true}
                         >
                             Linkedin
@@ -107,10 +107,10 @@ const About = () => {
                         <Link
                             className="hover:text-blue-300 text-blue-600 
                             dark:hover:text-blue-600 dark:text-blue-300"
-                            href="https://twitter.com/_Alefram_"
+                            href="https://x.com/_Alefram_"
                             passHref={true}
                         >
-                            Twitter
+                            X
                         </Link>
                     </div>
                     <div>

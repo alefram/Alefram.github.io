@@ -14,9 +14,9 @@ const Footer = () => {
                             className="w-8"
                         />
                     </Link>
-                    <Link href="https://twitter.com/FrauditaAlexis">
+                    <Link href="https://x.com/_Alefram_">
                         <img 
-                            alt="twitterFooter" 
+                            alt="XFooter" 
                             src="/images/x.svg" 
                             className="w-8"
                         />                    
