@@ -23,7 +23,7 @@ export default function Home ({posts}) {
                 <meta property="type" content="website" />
                 <meta 
                     name="viewport" content="initial-scale=1.0, 
-                    widt
+                    width
                     h=device-width" key="viewport" 
                 />
                 <meta name="robots" content="index, follow"/>
