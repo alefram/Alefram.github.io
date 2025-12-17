@@ -19,12 +19,18 @@ jobs:
         uses: actions/setup-node@v3.0.0
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
       - name: Install packages
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Build project
-        run: npm run build
+        run: pnpm run build
       - name: Export static files
-        run: npm run export
+        run: pnpm run export
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
       - name: Deploy
