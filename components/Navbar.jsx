@@ -32,6 +32,12 @@ const Navbar = () => {
                                 Projects
                         </Link>
                         <Link 
+                            href="/Software" 
+                            className="text-neutral-900 font-bold hover:underline
+                            hover:text-blue-600 font-nunito dark:text-neutral-100 dark:hover:text-blue-300">
+                                Software
+                        </Link>
+                        <Link 
                             href="/About" 
                             className="text-neutral-900 font-bold hover:underline
                             hover:text-blue-600 font-nunito dark:text-neutral-100 dark:hover:text-blue-300">
