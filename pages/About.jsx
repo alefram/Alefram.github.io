@@ -52,44 +52,23 @@ const About = () => {
                 </div>
 
                 <div className="max-w-screen-md mx-4">
-                    <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
-                        Hey! I&apos;m Alex, I&apos;m an <strong className="text-neutral-300">Electrical Engineer</strong>
-                        (Minor in Electronics and Control Systems) and <strong className="text-neutral-300">Software Developer</strong>. 
-                    </p>
-                    <p className="mt-3 font-Roboto  text-neutral-800 dark:text-neutral-400">
-                        I wrote my bachelor&apos;s thesis on developing a 
-                         <strong className="text-neutral-300"> Reinforcement Learning </strong> 
-                         environment to train a robot arm for manipulation. 
-                         This experience sparked my
-                        interest in the intersection of Software, Robotics 
-                        and AI, which is why I created this 
-                        blog to share my learning notes and projects. I am 
-                        particularly driven by the intersection of hardware and 
-                        software, specifically through the simulation of robotic systems.
+                    <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
+                        Hey! I&apos;m Alex, a <strong className="text-neutral-300">Research Fellow at Istituto Italiano di Tecnologia</strong>.
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        Recently, my professional focus has been on building 
-                        <strong className="text-neutral-300"> scalable web applications and backend architecture</strong>. 
-                        I have experience developing robust products with 
-                        <strong className="text-neutral-300"> Laravel (PHP) and Python</strong>, as well as creating high-performance 
-                        tools with <strong className="text-neutral-300">Go</strong>.
+                        With a background as an Electrical Engineer, I am currently exploring the intersection of hardware and software, specifically through the simulation of complex robotic systems. I am interested in leveraging 
+                        <strong className="text-neutral-300"> Reinforcement Learning, Control systems, and Physics Simulation </strong> 
+                        to bridge the gap between digital models and real-world manipulation.
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        Currently, I am exploring various topics that I am curious 
-                        about, including <strong className="text-neutral-300">Control Theory, 
-                        Physics Simulation, Reinforcement Learning
-                        and Robot Programming(ROS/C++)</strong>.
+                        I am particularly driven by high-performance robot programming using 
+                        <strong className="text-neutral-300"> ROS and C++</strong> and electronics, as well as developing robust backend architectures. 
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
-                        Previously, I served as an Assistant Professor in the 
-                        Digital Systems and Microprocessors Lab at the Central 
-                        University of Venezuela, where I shared my passion for 
-                        hardware-software integration.
+                        Previously, I served as an Assistant Professor in the Digital Systems and Microprocessors Lab at the Central University of Venezuela, where I shared my passion for hardware-software integration.
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        Some other interests I enjoy include, table tennis, 
-                        music, video games, and watching films, 
-                        which serve as sources of inspiration for me.
+                        Some other interests I enjoy include table tennis, music, video games, and watching films, which serve as sources of inspiration for me.
                     </p>
                 </div>
 
