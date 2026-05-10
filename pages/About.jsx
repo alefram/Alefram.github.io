@@ -56,19 +56,20 @@ const About = () => {
                         Hey! I&apos;m Alex, a <strong className="text-neutral-300">Research Fellow at Istituto Italiano di Tecnologia</strong>.
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        With a background as an Electrical Engineer, I am currently exploring the intersection of hardware and software, specifically through the simulation of complex robotic systems. I am interested in leveraging 
-                        <strong className="text-neutral-300"> Reinforcement Learning, Control systems, and Physics Simulation </strong> 
-                        to bridge the gap between digital models and real-world manipulation.
-                    </p>
-                    <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        I am particularly driven by high-performance robot programming using 
-                        <strong className="text-neutral-300"> ROS and C++</strong> and electronics, as well as developing robust backend architectures. 
+                        With a background as an Electrical Engineer, I am currently exploring the development of complex robotic systems. I am interested in leveraging 
+                        <strong className="text-neutral-300"> Control systems, AI and Physics Simulation </strong> 
+                        to bridge the gap between digital models and real-world robots.
                     </p>
                     <p className='mt-3 font-Roboto text-neutral-800 dark:text-neutral-400'>
-                        Previously, I served as an Assistant Professor in the Digital Systems and Microprocessors Lab at the Central University of Venezuela, where I shared my passion for hardware-software integration.
+                        Previously, I served as an Assistant Professor in the 
+                        Digital Systems and Microprocessors Lab at the Central 
+                        University of Venezuela, where I shared my passion for 
+                        hardware-software integration.
                     </p>
                     <p className="mt-3 font-Roboto text-neutral-800 dark:text-neutral-400">
-                        Some other interests I enjoy include table tennis, music, video games, and watching films, which serve as sources of inspiration for me.
+                        Some other interests I enjoy include table tennis, 
+                        music, video games, and watching films, which serve as 
+                        sources of inspiration for me.
                     </p>
                 </div>
 

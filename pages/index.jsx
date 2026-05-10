@@ -58,7 +58,7 @@ export default function Home ({posts}) {
                 </div>
 
                 <p className="font-Roboto text-neutral-800 dark:text-neutral-400 px-3 md:p-0">
-                    Hi, I&apos;m Alex. Software Developer & Engineer sharing projects on Robotics and AI.
+                    Hi, Alex here. I am sharing my learning notes and projects on Robotics/AI and sometimes hardware why not.
                 </p>
 
                 <div className="mt-20 px-3 md:p-0">

@@ -105,34 +105,6 @@ export default function Projects({projects}) {
                                 A general purpose physics simulator
                             </span>
                         </li>
-                        <li className="flex items-center">
-                            <a href="https://github.com/taecontrol/moonguard" className="mr-2">
-                                <Image src="/images/github.svg" alt="MoonGuard GitHub link" width={20} height={20} />
-                            </a>
-                            <a className="underline text-blue-600 hover:text-blue-300 
-                                dark:text-blue-300 dark:hover:text-blue-600" 
-                                href="https://github.com/taecontrol/moonguard">
-                                MoonGuard
-                            </a>
-                            &nbsp;-&nbsp;
-                            <span className="text-neutral-800 dark:text-neutral-400">
-                                A Filament plugin to monitor multiple Laravel Apps.
-                            </span>
-                        </li>
-                        <li className="flex items-center">
-                            <a href="https://github.com/taecontrol/larvis" className="mr-2">
-                                <Image src="/images/github.svg" alt="Larvis GitHub link" width={20} height={20} />
-                            </a>
-                            <a className="underline text-blue-600 hover:text-blue-300 
-                                dark:text-blue-300 dark:hover:text-blue-600" 
-                                href="https://github.com/taecontrol/larvis">
-                                Larvis
-                            </a>
-                            &nbsp;-&nbsp;
-                            <span className="text-neutral-800 dark:text-neutral-400">
-                                A PHP package for Laravel that allows sending information to MoonGuard.
-                            </span>
-                        </li>
                     </ul>
                 </div>
             </main>
